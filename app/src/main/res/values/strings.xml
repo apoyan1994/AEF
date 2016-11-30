@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AEF</string>
+
+    <string name="item_home">Home</string>
+    <string name="item_about_us">About us</string>
+    <string name="item_news">News</string>
+    <string name="item_calendar_of_activities">Calendar of Activities</string>
+    <string name="item_projects">Projects</string>
+    <string name="item_contact_us">Contact us</string>
+
 </resources>

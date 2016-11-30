@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:title="@string/item_home"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/news"
+        android:title="@string/item_news"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/about_us"
+        android:title="@string/item_about_us"
+        app:showAsAction="never"/>
+
+    <!--<item-->
+        <!--android:id="@+id/calendar_of_activities"-->
+        <!--android:title="@string/item_calendar_of_activities"-->
+        <!--app:showAsAction="never"/>-->
+    <!--<item-->
+        <!--android:id="@+id/projects"-->
+        <!--android:title="@string/item_projects"-->
+        <!--app:showAsAction="never"/>-->
+    <item
+        android:id="@+id/contact_us"
+        android:title="@string/item_contact_us"
+        app:showAsAction="never"/>
+</menu>

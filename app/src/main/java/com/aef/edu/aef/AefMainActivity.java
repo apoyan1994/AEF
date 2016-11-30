@@ -6,39 +6,44 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.aef.edu.aef.handlers.AefContextHandler;
+import com.aef.edu.aef.handlers.AnimationHandler;
+import com.aef.edu.aef.interfaces.OnAnimationEndListener;
+
 public class AefMainActivity extends AppCompatActivity implements OnAnimationEndListener {
-    AnimationHandler animationHandler;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aef_main);
+	private AnimationHandler animationHandler;
 
-        if (null == savedInstanceState) {
-            animationHandler = new AnimationHandler(this, (ImageView) findViewById(R.id.aef_description), findViewById(R.id.letters_container),
-                    (TextView) findViewById(R.id.aef_latter_a),
-                    (TextView) findViewById(R.id.aef_latter_e), (TextView) findViewById(R.id.aef_latter_f));
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_aef_main);
 
-            findViewById(R.id.aef_description).post(new Runnable() {
-                @Override
-                public void run() {
-                    animationHandler.startAnimation();
-                }
-            });
-        }
-    }
+		if (null == savedInstanceState) {
+			animationHandler = new AnimationHandler(this, (ImageView) findViewById(R.id.aef_description), findViewById(R.id.letters_container),
+					(TextView) findViewById(R.id.aef_latter_a),
+					(TextView) findViewById(R.id.aef_latter_e), (TextView) findViewById(R.id.aef_latter_f));
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+			findViewById(R.id.aef_description).post(new Runnable() {
+				@Override
+				public void run() {
+					animationHandler.startAnimation();
+				}
+			});
+		}
+	}
 
-        if (requestCode == 45) {
-            finish();
-        }
-    }
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
 
-    @Override
-    public void onAnimationEnded() {
-        startActivityForResult(new Intent(getApplicationContext(), AefContextActivity.class), 45);
-    }
+		if (requestCode == 45) {
+			finish();
+		}
+	}
+
+	@Override
+	public void onAnimationEnded() {
+		startActivityForResult(new Intent(getApplicationContext(), AefContextHandler.class), 45);
+	}
 }

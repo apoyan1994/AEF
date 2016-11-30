@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aef.edu.aef">
+          package="com.aef.edu.aef">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/app_icon_cool"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -13,12 +17,21 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".AefContextActivity"></activity>
+        <activity android:name=".content_activities.AefContentHome"/>
+        <activity android:name=".content_activities.AefContextMoreDetails"/>
+        <activity android:name=".handlers.AefContextHandler">
+        </activity>
+        <activity android:name=".content_activities.AefContentNews">
+        </activity>
+        <activity android:name=".content_activities.AefAboutUs">
+        </activity>
+        <activity android:name=".content_activities.AefContactUs">
+        </activity>
     </application>
 
 </manifest>
