@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
              xmlns:tools="http://schemas.android.com/tools"
              android:id="@+id/activity_aef_main"
              android:layout_width="match_parent"
@@ -19,33 +18,35 @@
             android:id="@+id/letters_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/aef_description"
-            android:layout_centerHorizontal="true"
-            android:alpha="0"
-            android:orientation="horizontal"
-            tools:alpha="1">
+            android:rotationX="-270"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/aef_latter_a"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
-                android:text="A"
+                android:text="@string/latter_a"
+                android:textColor="@color/aef_white"
                 android:textSize="@dimen/text_size_128sp"/>
 
             <TextView
                 android:id="@+id/aef_latter_e"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
-                android:text="E"
+                android:text="@string/latter_e"
+                android:textColor="@color/aef_white"
                 android:textSize="@dimen/text_size_128sp"/>
 
             <TextView
                 android:id="@+id/aef_latter_f"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="F"
+                android:text="@string/latter_f"
+                android:textColor="@color/aef_white"
                 android:textSize="@dimen/text_size_128sp"/>
         </LinearLayout>
 
@@ -53,11 +54,8 @@
             android:id="@+id/aef_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:alpha="0"
             android:scaleType="fitStart"
-            android:src="@drawable/header_img"
-            tools:alpha="1"/>
+            android:src="@drawable/header_img"/>
 
     </LinearLayout>
 </FrameLayout>

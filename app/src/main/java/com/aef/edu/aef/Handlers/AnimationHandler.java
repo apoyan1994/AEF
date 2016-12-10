@@ -5,8 +5,8 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.aef.edu.aef.interfaces.OnAnimationEndListener;
 
@@ -16,64 +16,35 @@ import com.aef.edu.aef.interfaces.OnAnimationEndListener;
 
 public class AnimationHandler {
 
-	private AnimatorSet animatorSet;
-	private AnimatorSet animatorSet1;
-
 	private View lettersContainer;
-	private TextView latterA;
-	private TextView latterE;
-	private TextView latterF;
+	private ImageView aefImgDescription;
 
-	private ImageView imageDescr;
+	private int letterAnimationDuration = 1000;
+	private final int appStartDuration = 800;
 
 	private OnAnimationEndListener callBack;
 
-	public AnimationHandler(OnAnimationEndListener callBack, ImageView imageDescr, View lettersContainer,
-					 TextView latterA, TextView latterE, TextView latterF) {
+	public AnimationHandler(OnAnimationEndListener callBack, ImageView aefImgDescription, View lettersContainer) {
 		this.callBack = callBack;
-		this.imageDescr = imageDescr;
+		this.aefImgDescription = aefImgDescription;
 		this.lettersContainer = lettersContainer;
-		this.latterA = latterA;
-		this.latterE = latterE;
-		this.latterF = latterF;
 
-		init();
+		createAnimator();
 	}
 
-	private void init() {
-		animatorSet = new AnimatorSet();
-		animatorSet.playTogether(
-				ObjectAnimator.ofPropertyValuesHolder(
-						latterA,
-						PropertyValuesHolder.ofFloat("rotation", 0, 360))
-						.setDuration(1500),
-
-				ObjectAnimator.ofPropertyValuesHolder(
-						latterE,
-						PropertyValuesHolder.ofFloat("rotation", 0, 360))
-						.setDuration(1500),
-
-				ObjectAnimator.ofPropertyValuesHolder(
-						latterF,
-						PropertyValuesHolder.ofFloat("rotation", 0, 360))
-						.setDuration(1500),
+	private void createAnimator() {
+		final AnimatorSet lettersAnimatorSet = new AnimatorSet();
+		lettersAnimatorSet.setInterpolator(new LinearInterpolator());
+		lettersAnimatorSet.playTogether(
 
 				ObjectAnimator.ofPropertyValuesHolder(
 						lettersContainer,
-						PropertyValuesHolder.ofFloat("alpha", 0f, 1f))
-						.setDuration(1000)
+						PropertyValuesHolder.ofFloat("rotationX", -270, -360))
+						.setDuration(letterAnimationDuration)
+
 		);
 
-		ObjectAnimator alpha = ObjectAnimator.ofPropertyValuesHolder(
-				imageDescr,
-				PropertyValuesHolder.ofFloat("alpha", 0f, 1f))
-				.setDuration(2000);
-
-		animatorSet1 = new AnimatorSet();
-
-		animatorSet1.play(animatorSet).after(alpha);
-
-		animatorSet1.addListener(new Animator.AnimatorListener() {
+		lettersAnimatorSet.addListener(new Animator.AnimatorListener() {
 			@Override
 			public void onAnimationStart(Animator animation) {
 
@@ -81,12 +52,7 @@ public class AnimationHandler {
 
 			@Override
 			public void onAnimationEnd(Animator animation) {
-				latterA.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						callBack.onAnimationEnded();
-					}
-				}, 1000);
+				callBack.onAnimationEnded();
 			}
 
 			@Override
@@ -99,9 +65,12 @@ public class AnimationHandler {
 
 			}
 		});
-	}
 
-	public void startAnimation() {
-		animatorSet1.start();
+		aefImgDescription.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				lettersAnimatorSet.start();
+			}
+		}, appStartDuration);
 	}
 }

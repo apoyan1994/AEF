@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">AEF</string>
 
+    <string name="latter_a">A</string>
+    <string name="latter_e">E</string>
+    <string name="latter_f">F</string>
+
     <string name="item_home">Home</string>
     <string name="item_about_us">About us</string>
     <string name="item_news">News</string>

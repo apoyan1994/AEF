@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.aef.edu.aef.Constants;
+import com.aef.edu.aef.constants.Constants;
 import com.aef.edu.aef.content_activities.AefAboutUs;
 import com.aef.edu.aef.content_activities.AefContactUs;
 import com.aef.edu.aef.content_activities.AefContentHome;

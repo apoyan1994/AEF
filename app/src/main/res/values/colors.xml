@@ -7,4 +7,5 @@
     <color name="colorBlack">#000000</color>
     <color name="colorAqua">#00FFFF</color>
     <color name="colorGrays">#515959</color>
+    <color name="aef_white">#ffffff</color>
 </resources>

@@ -22,6 +22,7 @@ public class NetworkUtils {
 		return false;
 	}
 
+	//tox mna eli :)
 	public static boolean isInternetConnected (Context ctx) {
 		ConnectivityManager connectivityMgr = (ConnectivityManager) ctx
 				.getSystemService(Context.CONNECTIVITY_SERVICE);

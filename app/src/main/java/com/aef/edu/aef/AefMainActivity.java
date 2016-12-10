@@ -4,15 +4,18 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.aef.edu.aef.handlers.AefContextHandler;
 import com.aef.edu.aef.handlers.AnimationHandler;
 import com.aef.edu.aef.interfaces.OnAnimationEndListener;
 
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
 public class AefMainActivity extends AppCompatActivity implements OnAnimationEndListener {
 
-	private AnimationHandler animationHandler;
+	private final int AEF_REQUEST_CODE = 45;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,30 +23,25 @@ public class AefMainActivity extends AppCompatActivity implements OnAnimationEnd
 		setContentView(R.layout.activity_aef_main);
 
 		if (null == savedInstanceState) {
-			animationHandler = new AnimationHandler(this, (ImageView) findViewById(R.id.aef_description), findViewById(R.id.letters_container),
-					(TextView) findViewById(R.id.aef_latter_a),
-					(TextView) findViewById(R.id.aef_latter_e), (TextView) findViewById(R.id.aef_latter_f));
-
-			findViewById(R.id.aef_description).post(new Runnable() {
-				@Override
-				public void run() {
-					animationHandler.startAnimation();
-				}
-			});
+			new AnimationHandler(this, (ImageView) findViewById(R.id.aef_description), findViewById(R.id.letters_container));
 		}
+	}
+
+	@Override
+	public void onBackPressed() {
 	}
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 
-		if (requestCode == 45) {
+		if (requestCode == AEF_REQUEST_CODE) {
 			finish();
 		}
 	}
 
 	@Override
 	public void onAnimationEnded() {
-		startActivityForResult(new Intent(getApplicationContext(), AefContextHandler.class), 45);
+		startActivityForResult(new Intent(getApplicationContext(), AefContextHandler.class), AEF_REQUEST_CODE);
 	}
 }
