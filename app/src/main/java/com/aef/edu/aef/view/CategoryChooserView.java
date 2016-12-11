@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -81,15 +82,14 @@ public class CategoryChooserView extends View {
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		invalidate();
-
 		int action = MotionEventCompat.getActionMasked(event);
 
 		switch (action) {
 			case (MotionEvent.ACTION_DOWN):
-
-				return true;
+				Log.e("down", "Apoyan");
+				break;
 			case (MotionEvent.ACTION_MOVE):
+				Log.e("move", "Apoyan");
 				float getX = event.getX();
 				if (getX >= parentWidth || getX <= 0) {
 					onCategorySelectedListener.onCategorySelected(position);
@@ -98,19 +98,21 @@ public class CategoryChooserView extends View {
 				if (getX > x1Cord && getX < x2Cord) {
 					changePosition(event.getX());
 				}
-				return true;
+				break;
 			case (MotionEvent.ACTION_UP):
 
-				return true;
+				break;
 			case (MotionEvent.ACTION_CANCEL):
 
-				return true;
+				break;
 			case (MotionEvent.ACTION_OUTSIDE):
 
-				return true;
+				break;
 			default:
 				return super.onTouchEvent(event);
 		}
+		invalidate();
+		return true;
 	}
 
 	@Override

@@ -5,7 +5,6 @@
     android:id="@+id/activity_main_category_chooser"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAqua"
     tools:context="com.aef.edu.aef.handlers.MainCategoryChooser">
 
     <android.support.v7.widget.RecyclerView
