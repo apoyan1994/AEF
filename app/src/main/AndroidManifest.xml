@@ -22,20 +22,23 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity android:name=".content_activities.AefContentHome"/>
+
         <activity android:name=".content_activities.AefContextMoreDetails"/>
-        <activity android:name=".handlers.AefContextHandler">
-        </activity>
-        <activity android:name=".content_activities.AefContentNews">
-        </activity>
-        <activity android:name=".content_activities.AefAboutUs">
-        </activity>
-        <activity android:name=".content_activities.AefContactUs">
-        </activity>
-        <activity android:name=".handlers.MenuItemChooser">
-        </activity>
-        <activity android:name=".handlers.MainCategoryChooser">
-        </activity>
+
+        <activity android:name=".handlers.AefContextHandler"/>
+
+        <activity android:name=".content_activities.AefContentNews"/>
+
+        <activity android:name=".content_activities.AefAboutUs"/>
+
+        <activity android:name=".content_activities.AefContactUs"/>
+
+        <activity android:name=".handlers.SubCategoryChooser"/>
+
+        <activity android:name=".handlers.MainCategoryChooser"/>
+
     </application>
 
 </manifest>

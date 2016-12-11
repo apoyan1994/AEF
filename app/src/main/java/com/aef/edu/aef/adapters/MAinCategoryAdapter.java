@@ -3,13 +3,10 @@ package com.aef.edu.aef.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,12 +21,12 @@ import java.util.List;
  * Created by Hovo on 13/10/2016.
  */
 
-public class CategoryChooserAdapter extends RecyclerView.Adapter<CategoryChooserAdapter.ViewHolder> {
+public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapter.ViewHolder> {
 
 	private List<ContextDataItem> mData;
 	private Context context;
 
-	public CategoryChooserAdapter(Context context, List<ContextDataItem> mData) {
+	public MainCategoryAdapter(Context context, List<ContextDataItem> mData) {
 		this.context = context;
 		this.mData = mData;
 	}
@@ -44,20 +41,14 @@ public class CategoryChooserAdapter extends RecyclerView.Adapter<CategoryChooser
 		}
 	}
 
-
 	@Override
-	public int getItemViewType(int position) {
-		return position % 2;
-	}
-
-	@Override
-	public CategoryChooserAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.category_chooser_item, parent, false);
+	public MainCategoryAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_category_chooser_item, parent, false);
 		return new ViewHolder(view);
 	}
 
 	@Override
-	public void onBindViewHolder(CategoryChooserAdapter.ViewHolder holder, final int position) {
+	public void onBindViewHolder(MainCategoryAdapter.ViewHolder holder, final int position) {
 		final int gridPos = holder.getAdapterPosition();
 		holder.mTextView.setText(mData.get(gridPos).getText());
 

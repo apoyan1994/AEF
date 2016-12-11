@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.aef.edu.aef.constants.Constants;
+import com.aef.edu.aef.constants.AefConstants;
 import com.aef.edu.aef.content_activities.AefAboutUs;
 import com.aef.edu.aef.content_activities.AefContactUs;
 import com.aef.edu.aef.content_activities.AefContentHome;
@@ -55,30 +55,30 @@ public class AefContextHandler extends AppCompatActivity {
 
 		if (resultCode == Activity.RESULT_OK) {
 			if (null != data) {
-				int currentMenuItem = data.getIntExtra(Constants.KEY_MENU_ITEM, 0);
+				int currentMenuItem = data.getIntExtra(AefConstants.KEY_MENU_ITEM, 0);
 
 				switch (currentMenuItem) {
-					case Constants.KEY_MENU_ITEM_HOME:
+					case AefConstants.KEY_MENU_ITEM_HOME:
 						openHome();
 						break;
 
-					case Constants.KEY_MENU_ITEM_ABOUT_US:
+					case AefConstants.KEY_MENU_ITEM_ABOUT_US:
 						openAboutUs();
 						break;
 
-					case Constants.KEY_MENU_ITEM_NEWS:
+					case AefConstants.KEY_MENU_ITEM_NEWS:
 						openNews();
 						break;
 
-					case Constants.KEY_MENU_ITEM_CALENDAR_OF_ACTIVITIES:
+					case AefConstants.KEY_MENU_ITEM_CALENDAR_OF_ACTIVITIES:
 						openCalendarOfActivities();
 						break;
 
-					case Constants.KEY_MENU_ITEM_PROJECTS:
+					case AefConstants.KEY_MENU_ITEM_PROJECTS:
 						openProjects();
 						break;
 
-					case Constants.KEY_MENU_ITEM_CONTACT_US:
+					case AefConstants.KEY_MENU_ITEM_CONTACT_US:
 						openContactUs();
 						break;
 				}

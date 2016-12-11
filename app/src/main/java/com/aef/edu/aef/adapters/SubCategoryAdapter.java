@@ -25,12 +25,12 @@ import java.util.List;
  * Created by Hovo on 13/10/2016.
  */
 
-public class MenuItemsAdapter extends RecyclerView.Adapter<MenuItemsAdapter.ViewHolder> {
+public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.ViewHolder> {
 
 	private List<ContextDataItem> mData;
 	private Context context;
 
-	public MenuItemsAdapter(Context context, List<ContextDataItem> mData) {
+	public SubCategoryAdapter(Context context, List<ContextDataItem> mData) {
 		this.context = context;
 		this.mData = mData;
 	}
@@ -50,13 +50,13 @@ public class MenuItemsAdapter extends RecyclerView.Adapter<MenuItemsAdapter.View
 	}
 
 	@Override
-	public MenuItemsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_item_view, parent, false);
+	public SubCategoryAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.sub_category_chooser_item, parent, false);
 		return new ViewHolder(view);
 	}
 
 	@Override
-	public void onBindViewHolder(MenuItemsAdapter.ViewHolder holder, final int position) {
+	public void onBindViewHolder(SubCategoryAdapter.ViewHolder holder, final int position) {
 		final int gridPos = holder.getAdapterPosition();
 		holder.mTextView.setText(mData.get(gridPos).getText());
 		holder.mImageView.setImageBitmap(getScaledBitmap(mData.get(gridPos).getPhotoId()));

@@ -23,12 +23,12 @@ import java.util.List;
  * Created by Hovo on 13/10/2016.
  */
 
-public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> {
+public class ContentItemsAdapter extends RecyclerView.Adapter<ContentItemsAdapter.ViewHolder> {
 
 	private List<ContextDataItem> mData;
 	private Context context;
 
-	public ItemsAdapter(Context context, List<ContextDataItem> mData) {
+	public ContentItemsAdapter(Context context, List<ContextDataItem> mData) {
 		this.context = context;
 		this.mData = mData;
 	}
@@ -50,13 +50,13 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
 	}
 
 	@Override
-	public ItemsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.content_item_view, parent, false);
+	public ContentItemsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.content_item, parent, false);
 		return new ViewHolder(view);
 	}
 
 	@Override
-	public void onBindViewHolder(ItemsAdapter.ViewHolder holder, final int position) {
+	public void onBindViewHolder(ContentItemsAdapter.ViewHolder holder, final int position) {
 		final int gridPos = holder.getAdapterPosition();
 		holder.mTextView.setText(mData.get(gridPos).getText());
 		holder.mImageView.setImageResource(mData.get(gridPos).getPhotoId());

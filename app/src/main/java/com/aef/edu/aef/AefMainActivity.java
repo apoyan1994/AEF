@@ -1,15 +1,12 @@
 package com.aef.edu.aef;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import com.aef.edu.aef.handlers.AefContextHandler;
 import com.aef.edu.aef.handlers.AnimationHandler;
 import com.aef.edu.aef.handlers.MainCategoryChooser;
-import com.aef.edu.aef.handlers.MenuItemChooser;
 import com.aef.edu.aef.interfaces.OnAnimationEndListener;
 
 public class AefMainActivity extends AppCompatActivity implements OnAnimationEndListener {
@@ -42,7 +39,7 @@ public class AefMainActivity extends AppCompatActivity implements OnAnimationEnd
 	@Override
 	public void onAnimationEnded() {
 		//startActivityForResult(new Intent(getApplicationContext(), AefContextHandler.class), AEF_REQUEST_CODE);
-		//startActivityForResult(new Intent(getApplicationContext(), MenuItemChooser.class), AEF_REQUEST_CODE);
+		//startActivityForResult(new Intent(getApplicationContext(), SubCategoryChooser.class), AEF_REQUEST_CODE);
 		startActivityForResult(new Intent(getApplicationContext(), MainCategoryChooser.class), AEF_REQUEST_CODE);
 	}
 }

@@ -10,7 +10,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.aef.edu.aef.adapters.ItemsAdapter;
+import com.aef.edu.aef.adapters.ContentItemsAdapter;
 import com.aef.edu.aef.constants.AefConstants;
 import com.aef.edu.aef.constants.ConBigText;
 import com.aef.edu.aef.items.ContextDataItem;
@@ -46,7 +46,7 @@ public class AefContentNews extends AppCompatActivity {
 		recycler = (RecyclerView) findViewById(R.id.content_items_recycler_view);
 		recycler.setLayoutManager(itemsLayoutManager);
 
-		itemsAdapter = new ItemsAdapter(this, createContextDataItems());
+		itemsAdapter = new ContentItemsAdapter(this, createContextDataItems());
 		recycler.setAdapter(itemsAdapter);
 	}
 

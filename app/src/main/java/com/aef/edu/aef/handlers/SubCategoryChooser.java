@@ -6,19 +6,19 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.aef.edu.aef.R;
-import com.aef.edu.aef.adapters.MenuItemsAdapter;
+import com.aef.edu.aef.adapters.SubCategoryAdapter;
 import com.aef.edu.aef.constants.AefConstants;
 import com.aef.edu.aef.items.ContextDataItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuItemChooser extends AppCompatActivity {
+public class SubCategoryChooser extends AppCompatActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_menu_item_chooser);
+		setContentView(R.layout.activity_sub_caegory_chooser);
 
 		RecyclerView recyclerView = (RecyclerView) findViewById(R.id.item_chooser_recycler_view);
 		recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),
@@ -35,6 +35,6 @@ public class MenuItemChooser extends AppCompatActivity {
 		contextDataItems.add(item);
 		contextDataItems.add(item);
 
-		recyclerView.setAdapter(new MenuItemsAdapter(getApplicationContext(), contextDataItems));
+		recyclerView.setAdapter(new SubCategoryAdapter(getApplicationContext(), contextDataItems));
 	}
 }

@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.aef.edu.aef.R;
-import com.aef.edu.aef.adapters.MenuItemsFinalAdapter;
+import com.aef.edu.aef.adapters.MainCategoryAdapter;
 import com.aef.edu.aef.constants.AefConstants;
 import com.aef.edu.aef.items.ContextDataItem;
 
@@ -38,6 +38,6 @@ public class MainCategoryChooser extends AppCompatActivity {
 		contextDataItems.add(item);
 		contextDataItems.add(item);
 
-		recyclerView.setAdapter(new MenuItemsFinalAdapter(getApplicationContext(), contextDataItems));
+		recyclerView.setAdapter(new MainCategoryAdapter(getApplicationContext(), contextDataItems));
 	}
 }
