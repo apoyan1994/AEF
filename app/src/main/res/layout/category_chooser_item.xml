@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp">
+
+    <TextView
+        android:id="@+id/category_chooser_item_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="wefwefwedwferfer"/>
+
+    <com.aef.edu.aef.view.CategoryChooserView
+        android:id="@+id/tadata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"/>
+
+</FrameLayout>

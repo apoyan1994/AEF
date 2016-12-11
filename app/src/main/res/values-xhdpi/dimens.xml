@@ -6,4 +6,7 @@
     <!--text size-->
     <dimen name="text_size_128sp">128sp</dimen>
 
+    <!--recycler view span count-->
+    <integer name="grid_item_count">4</integer>
+
 </resources>

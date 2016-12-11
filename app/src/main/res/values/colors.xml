@@ -8,4 +8,12 @@
     <color name="colorAqua">#00FFFF</color>
     <color name="colorGrays">#515959</color>
     <color name="aef_white">#ffffff</color>
+
+    <color name="menu_item_normal_state">#1ea1abb3</color>
+    <color name="menu_item_pressed_state">#88939c</color>
+
+    <color name="black_shape">#68000000</color>
+    <color name="colorPrimary_shape">#1b2a7e</color>
+    <color name="colorAccent_shape">#b32153</color>
+    <color name="colorAccenst_shape">#5ed1ed</color>
 </resources>

@@ -32,6 +32,10 @@
         </activity>
         <activity android:name=".content_activities.AefContactUs">
         </activity>
+        <activity android:name=".handlers.MenuItemChooser">
+        </activity>
+        <activity android:name=".handlers.MainCategoryChooser">
+        </activity>
     </application>
 
 </manifest>
