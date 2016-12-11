@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.adapters.MenuItemsAdapter;
-import com.aef.edu.aef.constants.Constants;
+import com.aef.edu.aef.constants.AefConstants;
 import com.aef.edu.aef.items.ContextDataItem;
 
 import java.util.ArrayList;
@@ -25,8 +25,8 @@ public class MenuItemChooser extends AppCompatActivity {
 				getResources().getInteger(R.integer.grid_item_count)));
 
 		List<ContextDataItem> contextDataItems = new ArrayList<>();
-		ContextDataItem item = new ContextDataItem(R.drawable.children_lori_darpas_2014_img, Constants.CHILDREN_LORI_DARPAS_2014_DESCR,
-				Constants.CHILDREN_LORI_DARPAS_2014_URI);
+		ContextDataItem item = new ContextDataItem(R.drawable.children_lori_darpas_2014_img, AefConstants.CHILDREN_LORI_DARPAS_2014_DESCR,
+				AefConstants.CHILDREN_LORI_DARPAS_2014_URI);
 
 		contextDataItems.add(item);
 		contextDataItems.add(item);

@@ -6,9 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.aef.edu.aef.R;
-import com.aef.edu.aef.adapters.MainCategoryChooserAdapter;
 import com.aef.edu.aef.adapters.MenuItemsFinalAdapter;
-import com.aef.edu.aef.constants.Constants;
+import com.aef.edu.aef.constants.AefConstants;
 import com.aef.edu.aef.items.ContextDataItem;
 
 import java.util.ArrayList;
@@ -29,8 +28,8 @@ public class MainCategoryChooser extends AppCompatActivity {
 		recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
 		List<ContextDataItem> contextDataItems = new ArrayList<>();
-		ContextDataItem item = new ContextDataItem(R.drawable.children_lori_darpas_2014_img, Constants.CHILDREN_LORI_DARPAS_2014_DESCR,
-				Constants.CHILDREN_LORI_DARPAS_2014_URI, R.color.colorAccent);
+		ContextDataItem item = new ContextDataItem(R.drawable.children_lori_darpas_2014_img, AefConstants.CHILDREN_LORI_DARPAS_2014_DESCR,
+				AefConstants.CHILDREN_LORI_DARPAS_2014_URI, R.color.colorAccent);
 
 		contextDataItems.add(item);
 		contextDataItems.add(item);

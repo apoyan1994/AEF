@@ -11,8 +11,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.aef.edu.aef.adapters.ItemsAdapter;
+import com.aef.edu.aef.constants.AefConstants;
 import com.aef.edu.aef.constants.ConBigText;
-import com.aef.edu.aef.constants.Constants;
 import com.aef.edu.aef.items.ContextDataItem;
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.utils.TabOpenManager;
@@ -53,31 +53,31 @@ public class AefContentNews extends AppCompatActivity {
 	private List<ContextDataItem> createContextDataItems() {
 		List<ContextDataItem> contextDataItems = new ArrayList<>();
 
-		ContextDataItem item = new ContextDataItem(R.drawable.news_first_graduating_artsakh, Constants.NEWS_FIRST_GRADUATING_ARTSAKH_DESCR,
+		ContextDataItem item = new ContextDataItem(R.drawable.news_first_graduating_artsakh, AefConstants.NEWS_FIRST_GRADUATING_ARTSAKH_DESCR,
 				ConBigText.NEWS_FIRST_GRADUATING_ARTSAKH_TEXT);
 		contextDataItems.add(item);
 
-		item = new ContextDataItem(R.drawable.aef_holds_reception, Constants.AEF_HOLDS_RECEPTION_DESCR,
-				Constants.AEF_HOLDS_RECEPTION_URI);
+		item = new ContextDataItem(R.drawable.aef_holds_reception, AefConstants.AEF_HOLDS_RECEPTION_DESCR,
+				AefConstants.AEF_HOLDS_RECEPTION_URI);
 		contextDataItems.add(item);
 
-		item = new ContextDataItem(R.drawable.aef_launches_a_new_cholarship, Constants.AEF_LAUNCHES_NEW_SCHOLARSHIP_DESCR,
-				Constants.AEF_LAUNCHES_NEW_SCHOLARSHIP_URI);
+		item = new ContextDataItem(R.drawable.aef_launches_a_new_cholarship, AefConstants.AEF_LAUNCHES_NEW_SCHOLARSHIP_DESCR,
+				AefConstants.AEF_LAUNCHES_NEW_SCHOLARSHIP_URI);
 		contextDataItems.add(item);
 
-		item = new ContextDataItem(R.drawable.aef_65th_aniversary, Constants.AEF_65TH_ANNIVERSARY_DESCR,
-				Constants.AEF_65TH_ANNIVERSARY_URI);
+		item = new ContextDataItem(R.drawable.aef_65th_aniversary, AefConstants.AEF_65TH_ANNIVERSARY_DESCR,
+				AefConstants.AEF_65TH_ANNIVERSARY_URI);
 		contextDataItems.add(item);
 
-		item = new ContextDataItem(R.drawable.aef_65th_aniversary, Constants.AEF_65TH_PROGRAM_BOOKLET_DESCR,
-				Constants.AEF_65TH_PROGRAM_BOOKLET_URI);
+		item = new ContextDataItem(R.drawable.aef_65th_aniversary, AefConstants.AEF_65TH_PROGRAM_BOOKLET_DESCR,
+				AefConstants.AEF_65TH_PROGRAM_BOOKLET_URI);
 		contextDataItems.add(item);
 
-		item = new ContextDataItem(R.drawable.honor_ralph_tufenkian_and_hacop_baghdassarian, Constants.AEF_HONOR_RALPH_TUFENKIAN_AND_HACOP_BAGHDASSARIAN_DESCR,
-				Constants.AEF_HONOR_RALPH_TUFENKIAN_AND_HACOP_BAGHDASSARIAN_URI);
+		item = new ContextDataItem(R.drawable.honor_ralph_tufenkian_and_hacop_baghdassarian, AefConstants.AEF_HONOR_RALPH_TUFENKIAN_AND_HACOP_BAGHDASSARIAN_DESCR,
+				AefConstants.AEF_HONOR_RALPH_TUFENKIAN_AND_HACOP_BAGHDASSARIAN_URI);
 		contextDataItems.add(item);
 
-		item = new ContextDataItem(R.drawable.aef_donation_to_sarf, Constants.AEF_SARF_PRESS_RELEASE_DESCR,
+		item = new ContextDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
 				ConBigText.AEF_SARF_PRESS_RELEASE_TEXT);
 		contextDataItems.add(item);
 
