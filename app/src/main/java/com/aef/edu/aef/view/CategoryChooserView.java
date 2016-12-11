@@ -11,6 +11,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.aef.edu.aef.interfaces.OnCategorySelectedListener;
+
 /**
  * Created by agvan on 12/10/16.
  */
@@ -19,8 +21,11 @@ public class CategoryChooserView extends View {
 	private Paint paint;
 	private RectF rectf;
 
+	private OnCategorySelectedListener onCategorySelectedListener;
+
 	private int parentWidth;
 	private int parentHeight;
+	private int position;
 
 	float x1Cord = 0;
 	float x2Cord = 0;
@@ -60,6 +65,11 @@ public class CategoryChooserView extends View {
 		rectf = new RectF(x1Cord, 0, x2Cord, 200);
 	}
 
+	public void setOnCategorySelectedListener(OnCategorySelectedListener onCategorySelectedListener, int position) {
+		this.onCategorySelectedListener = onCategorySelectedListener;
+		this.position = position;
+	}
+
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		parentWidth = MeasureSpec.getSize(widthMeasureSpec);
@@ -81,6 +91,10 @@ public class CategoryChooserView extends View {
 				return true;
 			case (MotionEvent.ACTION_MOVE):
 				float getX = event.getX();
+				if (getX >= parentWidth || getX <= 0) {
+					onCategorySelectedListener.onCategorySelected(position);
+				}
+
 				if (getX > x1Cord && getX < x2Cord) {
 					changePosition(event.getX());
 				}

@@ -12,7 +12,7 @@
         android:text="wefwefwedwferfer"/>
 
     <com.aef.edu.aef.view.CategoryChooserView
-        android:id="@+id/tadata"
+        android:id="@+id/category_chooser_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"/>
