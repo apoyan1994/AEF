@@ -1,20 +1,18 @@
 package com.aef.edu.aef.adapters;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.aef.edu.aef.R;
+import com.aef.edu.aef.content_activities.AefContentNews;
 import com.aef.edu.aef.content_activities.AefContextMoreDetails;
 import com.aef.edu.aef.interfaces.OnCategorySelectedListener;
 import com.aef.edu.aef.items.ContextDataItem;
-import com.aef.edu.aef.utils.NetworkUtils;
 import com.aef.edu.aef.view.CategoryChooserView;
 
 import java.util.List;
@@ -26,10 +24,10 @@ import java.util.List;
 public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapter.ViewHolder> implements OnCategorySelectedListener {
 
 	private List<ContextDataItem> mData;
-	private Context context;
+	private Activity activity;
 
-	public MainCategoryAdapter(Context context, List<ContextDataItem> mData) {
-		this.context = context;
+	public MainCategoryAdapter(Activity activity, List<ContextDataItem> mData) {
+		this.activity = activity;
 		this.mData = mData;
 	}
 
@@ -56,13 +54,6 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 		final int gridPos = holder.getAdapterPosition();
 		holder.mTextView.setText(mData.get(gridPos).getText());
 		holder.categoryChooserView.setOnCategorySelectedListener(this, gridPos);
-
-		holder.mTextView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				openSubCategory(gridPos);
-			}
-		});
 	}
 
 	@Override
@@ -76,25 +67,8 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 	}
 
 	private void openSubCategory(int gridPos) {
-		String url = mData.get(gridPos).getUri();
-		if (null != url) {
-			if (url.contains("http") || url.contains("https")) {
-				if (NetworkUtils.isConnected(context)) {
-					final Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url));
-					context.startActivity(intent);
-
-				} else {
-					Toast.makeText(context, "No network connection", Toast.LENGTH_SHORT).show();
-				}
-
-			} else {
-				final Intent intent = new Intent(context, AefContextMoreDetails.class);
-				intent.putExtra(AefContextMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
-				intent.putExtra(AefContextMoreDetails.HOME_CONTENT, mData.get(gridPos).getUri());
-				intent.putExtra(AefContextMoreDetails.HOME_IMAGE, mData.get(gridPos).getPhotoId());
-				context.startActivity(intent);
-			}
-		}
+		final Intent intent = new Intent(activity, AefContentNews.class);
+		//intent.putExtra(AefContextMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
+		//activity.startActivity(intent);
 	}
-
 }

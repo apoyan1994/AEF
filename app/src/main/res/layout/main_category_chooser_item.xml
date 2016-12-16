@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="16dp">
+    android:layout_marginTop="8dp"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/category_chooser_item_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="wefwefwedwferfer"/>
+        android:layout_marginLeft="32dp"
+        android:text="test"/>
 
     <com.aef.edu.aef.view.CategoryChooserView
         android:id="@+id/category_chooser_view"
@@ -17,4 +19,4 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top"/>
 
-</FrameLayout>
+</LinearLayout>

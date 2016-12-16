@@ -11,6 +11,15 @@ public class ContextDataItem {
 	private String uri;
 	private int color;
 
+	public ContextDataItem(String text) {
+		this.text = text;
+	}
+
+	public ContextDataItem(int photoId, String text) {
+		this.photoId = photoId;
+		this.text = text;
+	}
+
 	public ContextDataItem(int photoId, String text, String uri) {
 		this.photoId = photoId;
 		this.text = text;

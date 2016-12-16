@@ -1,10 +1,11 @@
-package com.aef.edu.aef;
+package com.aef.edu.aef.aef;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.aef.edu.aef.R;
 import com.aef.edu.aef.handlers.AnimationHandler;
 import com.aef.edu.aef.handlers.MainCategoryChooser;
 import com.aef.edu.aef.interfaces.OnAnimationEndListener;

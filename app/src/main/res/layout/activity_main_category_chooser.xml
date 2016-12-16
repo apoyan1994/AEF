@@ -7,9 +7,15 @@
     android:layout_height="match_parent"
     tools:context="com.aef.edu.aef.handlers.MainCategoryChooser">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorLightGray"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/item_chooser_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"/>
 
 </RelativeLayout>
