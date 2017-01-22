@@ -117,3 +117,58 @@ public class SubCategoryChooser extends AppCompatActivity {
 		return contentDataItems;
 	}
 }
+
+
+/*maybe can helpful
+
+private void openHome() {
+		startActivityForResult(new Intent(getApplicationContext(), AefContentHome.class), 45);
+	}
+
+	private void openAboutUs() {
+		startActivityForResult(new Intent(getApplicationContext(), AefAboutUs.class), 46);
+	}
+
+	private void openNews() {
+		startActivityForResult(new Intent(getApplicationContext(), AefContentNews.class), 47);
+
+	}
+
+	private void openContactUs() {
+		startActivityForResult(new Intent(getApplicationContext(), AefContactUs.class), 50);
+	}
+
+	private void openCalendarOfActivities() {
+	}
+
+	private void openProjects() {
+	}
+
+	//*****************************
+
+	switch (currentMenuItem) {
+					case AefConstants.KEY_MENU_ITEM_HOME:
+						openHome();
+						break;
+
+					case AefConstants.KEY_MENU_ITEM_ABOUT_US:
+						openAboutUs();
+						break;
+
+					case AefConstants.KEY_MENU_ITEM_NEWS:
+						openNews();
+						break;
+
+					case AefConstants.KEY_MENU_ITEM_CALENDAR_OF_ACTIVITIES:
+						openCalendarOfActivities();
+						break;
+
+					case AefConstants.KEY_MENU_ITEM_PROJECTS:
+						openProjects();
+						break;
+
+					case AefConstants.KEY_MENU_ITEM_CONTACT_US:
+						openContactUs();
+						break;
+				}
+ */
