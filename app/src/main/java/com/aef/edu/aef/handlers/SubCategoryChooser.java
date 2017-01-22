@@ -1,5 +1,6 @@
 package com.aef.edu.aef.handlers;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -8,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.adapters.SubCategoryAdapter;
 import com.aef.edu.aef.constants.AefConstants;
+import com.aef.edu.aef.content_activities.AefAboutUs;
 import com.aef.edu.aef.items.ContentDataItem;
 
 import java.util.ArrayList;
@@ -20,17 +22,16 @@ public class SubCategoryChooser extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sub_caegory_chooser);
 
-		RecyclerView recyclerView = (RecyclerView) findViewById(R.id.item_chooser_recycler_view);
-		recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),
-				getResources().getInteger(R.integer.grid_item_count)));
-
 		int currentCategory = getIntent().getIntExtra(AefConstants.KEY_GRIDS_SELECTED_ITEM_POS, 0);
 
-		List<ContentDataItem> contentDataItems;
+		List<ContentDataItem> contentDataItems = null;
 
 		switch (currentCategory) {
 			case AefConstants.KEY_ABOUT_US:
-				contentDataItems = aboutUs();
+				openAboutUs();
+				break;
+			case AefConstants.KEY_NEWS:
+				contentDataItems = news();
 				break;
 			case AefConstants.KEY_CONTACT_US:
 				contentDataItems = News();
@@ -42,14 +43,19 @@ public class SubCategoryChooser extends AppCompatActivity {
 				contentDataItems = home();
 				break;
 			default:
-				contentDataItems = aboutUs();
+				contentDataItems = news();
 		}
 
+		if (contentDataItems != null) {
+			RecyclerView recyclerView = (RecyclerView) findViewById(R.id.item_chooser_recycler_view);
+			recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),
+					getResources().getInteger(R.integer.grid_item_count)));
 
-		recyclerView.setAdapter(new SubCategoryAdapter(this, contentDataItems));
+			recyclerView.setAdapter(new SubCategoryAdapter(this, contentDataItems));
+		}
 	}
 
-	private List<ContentDataItem> aboutUs() {
+	private List<ContentDataItem> news() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
 		ContentDataItem item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
@@ -104,7 +110,7 @@ public class SubCategoryChooser extends AppCompatActivity {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
 		ContentDataItem item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
-		R.string.aef_sarf_press_release_text);
+				R.string.aef_sarf_press_release_text);
 		contentDataItems.add(item);
 
 		contentDataItems.add(item);
@@ -116,6 +122,17 @@ public class SubCategoryChooser extends AppCompatActivity {
 
 		return contentDataItems;
 	}
+
+	private void openAboutUs() {
+		startActivityForResult(new Intent(getApplicationContext(), AefAboutUs.class), 44);
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+
+		finish();
+	}
 }
 
 
@@ -125,9 +142,7 @@ private void openHome() {
 		startActivityForResult(new Intent(getApplicationContext(), AefHome.class), 45);
 	}
 
-	private void openAboutUs() {
-		startActivityForResult(new Intent(getApplicationContext(), AefAboutUs.class), 46);
-	}
+
 
 	private void openNews() {
 		startActivityForResult(new Intent(getApplicationContext(), AefNews.class), 47);

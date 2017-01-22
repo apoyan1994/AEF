@@ -31,6 +31,9 @@ public class MainCategoryChooser extends AppCompatActivity {
 		ContentDataItem item = new ContentDataItem("About us");
 		contentDataItems.add(item);
 
+		item = new ContentDataItem("News");
+		contentDataItems.add(item);
+
 		item = new ContentDataItem("Contacts");
 		contentDataItems.add(item);
 
