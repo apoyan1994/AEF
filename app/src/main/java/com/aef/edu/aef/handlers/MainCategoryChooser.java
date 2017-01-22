@@ -10,7 +10,7 @@ import android.view.View;
 
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.adapters.MainCategoryAdapter;
-import com.aef.edu.aef.itemss.ContextDataItem;
+import com.aef.edu.aef.items.ContextDataItem;
 
 import java.util.ArrayList;
 import java.util.List;

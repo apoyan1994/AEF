@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.adapters.SubCategoryAdapter;
 import com.aef.edu.aef.constants.AefConstants;
-import com.aef.edu.aef.itemss.ContextDataItem;
+import com.aef.edu.aef.items.ContextDataItem;
 
 import java.util.ArrayList;
 import java.util.List;

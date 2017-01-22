@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.content_activities.AefContextMoreDetails;
-import com.aef.edu.aef.itemss.ContextDataItem;
+import com.aef.edu.aef.items.ContextDataItem;
 import com.aef.edu.aef.utils.AefUtils;
 
 import java.util.List;

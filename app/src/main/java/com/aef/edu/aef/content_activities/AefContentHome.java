@@ -12,7 +12,7 @@ import android.view.MenuItem;
 
 import com.aef.edu.aef.constants.AefConstants;
 import com.aef.edu.aef.constants.ConBigText;
-import com.aef.edu.aef.itemss.ContextDataItem;
+import com.aef.edu.aef.items.ContextDataItem;
 import com.aef.edu.aef.adapters.ContentItemsAdapter;
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.utils.TabOpenManager;

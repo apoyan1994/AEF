@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.content_activities.AefContentNews;
 import com.aef.edu.aef.interfaces.OnCategorySelectedListener;
-import com.aef.edu.aef.itemss.ContextDataItem;
+import com.aef.edu.aef.items.ContextDataItem;
 import com.aef.edu.aef.view.CategoryChooserView;
 
 import java.util.List;
