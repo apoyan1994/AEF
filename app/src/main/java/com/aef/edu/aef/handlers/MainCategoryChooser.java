@@ -1,12 +1,9 @@
 package com.aef.edu.aef.handlers;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MotionEvent;
-import android.view.View;
 
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.adapters.MainCategoryAdapter;
@@ -44,11 +41,5 @@ public class MainCategoryChooser extends AppCompatActivity {
 		contentDataItems.add(item);
 
 		recyclerView.setAdapter(new MainCategoryAdapter(this, contentDataItems));
-		recyclerView.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				return false;
-			}
-		});
 	}
 }

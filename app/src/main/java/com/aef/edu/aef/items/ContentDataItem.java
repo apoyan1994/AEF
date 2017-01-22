@@ -8,29 +8,17 @@ public class ContentDataItem {
 
 	private String text;
 	private int photoId;
-	private String uri;
+	private int stringResId;
 	private int color;
 
 	public ContentDataItem(String text) {
 		this.text = text;
 	}
 
-	public ContentDataItem(int photoId, String text) {
+	public ContentDataItem(int photoId, String text, int stringResId) {
 		this.photoId = photoId;
 		this.text = text;
-	}
-
-	public ContentDataItem(int photoId, String text, String uri) {
-		this.photoId = photoId;
-		this.text = text;
-		this.uri = uri;
-	}
-
-	public ContentDataItem(int photoId, String text, String uri, int color) {
-		this.photoId = photoId;
-		this.text = text;
-		this.uri = uri;
-		this.color = color;
+		this.stringResId = stringResId;
 	}
 
 	public String getText() {
@@ -41,8 +29,8 @@ public class ContentDataItem {
 		return photoId;
 	}
 
-	public String getUri() {
-		return uri;
+	public int getStringResId() {
+		return stringResId;
 	}
 
 	public int getColor() {

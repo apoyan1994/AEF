@@ -19,7 +19,13 @@ public class AefContentMoreDetails extends AppCompatActivity {
 		setContentView(R.layout.activity_show_text);
 
 		((TextView) findViewById(R.id.home_title)).setText(getIntent().getStringExtra(HOME_TITLE));
-		((TextView) findViewById(R.id.home_contetn)).setText(getIntent().getStringExtra(HOME_CONTENT));
-		((ImageView) findViewById(R.id.contest_image)).setImageResource(getIntent().getIntExtra(HOME_IMAGE, 0));
+		int resId = getIntent().getIntExtra(HOME_CONTENT, -1);
+		if (resId != -1) {
+			((TextView) findViewById(R.id.home_contetn)).setText(getText(resId));
+		}
+		resId = getIntent().getIntExtra(HOME_IMAGE, -1);
+		if (resId != -1) {
+			((ImageView) findViewById(R.id.contest_image)).setImageResource(resId);
+		}
 	}
 }

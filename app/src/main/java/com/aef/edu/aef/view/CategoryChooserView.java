@@ -146,7 +146,6 @@ public class CategoryChooserView extends View {
 
 				if (xCoordinate > x1Cord && xCoordinate < x2Cord && x1Cord > 0 && x2Cord < parentWidth) {
 					ViewParent parent = getParent();
-					Log.e("Aef_log", "a " + (Math.abs(event.getX() - oldX) > Math.abs(event.getY() - oldY)));
 					if (parent != null && Math.abs(event.getX() - oldX) > Math.abs(event.getY() - oldY)) {
 						parent.requestDisallowInterceptTouchEvent(true);
 					}

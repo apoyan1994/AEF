@@ -26,39 +26,35 @@ public class SubCategoryChooser extends AppCompatActivity {
 
 		int currentCategory = getIntent().getIntExtra(AefConstants.KEY_GRID_POS, 0);
 
-		List<ContentDataItem> contentDataItems = null;
+		List<ContentDataItem> contentDataItems;
 
 		switch (currentCategory) {
 			case 0:
 				contentDataItems = aboutUs();
 				break;
 			case 1:
-				contentDataItems = bB();
+				contentDataItems = News();
 				break;
 			case 2:
 				contentDataItems = cC();
 				break;
 			case 3:
-				break;
-			case 4:
-				break;
-			case 5:
-				break;
-			case 6:
+				contentDataItems = cC();
 				break;
 			default:
 				contentDataItems = aboutUs();
 		}
 
 
-		recyclerView.setAdapter(new SubCategoryAdapter(getApplicationContext(), contentDataItems));
+		recyclerView.setAdapter(new SubCategoryAdapter(this, contentDataItems));
 	}
 
 	private List<ContentDataItem> aboutUs() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
-		ContentDataItem item = new ContentDataItem(R.drawable.children_lori_darpas_2014_img, AefConstants.CHILDREN_LORI_DARPAS_2014_DESCR,
-				AefConstants.CHILDREN_LORI_DARPAS_2014_URI);
+		ContentDataItem item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
+				R.string.aef_sarf_press_release_text);
+		contentDataItems.add(item);
 
 		contentDataItems.add(item);
 		contentDataItems.add(item);
@@ -70,17 +66,35 @@ public class SubCategoryChooser extends AppCompatActivity {
 		return contentDataItems;
 	}
 
-	private List<ContentDataItem> bB() {
+	private List<ContentDataItem> News() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
-		ContentDataItem item = new ContentDataItem(R.drawable.children_lori_darpas_2014_img, AefConstants.CHILDREN_LORI_DARPAS_2014_DESCR,
-				AefConstants.CHILDREN_LORI_DARPAS_2014_URI);
+		ContentDataItem item = new ContentDataItem(R.drawable.news_first_graduating_artsakh, AefConstants.NEWS_FIRST_GRADUATING_ARTSAKH_DESCR,
+				R.string.news_first_graduating_artsakh_text);
+		contentDataItems.add(item);
 
-		contentDataItems.add(item);
-		contentDataItems.add(item);
-		contentDataItems.add(item);
-		contentDataItems.add(item);
-		contentDataItems.add(item);
+		//item = new ContentDataItem(R.drawable.aef_holds_reception, AefConstants.AEF_HOLDS_RECEPTION_DESCR,
+		//		AefConstants.AEF_HOLDS_RECEPTION_URI);
+		//contentDataItems.add(item);
+
+		//item = new ContentDataItem(R.drawable.aef_launches_a_new_cholarship, AefConstants.AEF_LAUNCHES_NEW_SCHOLARSHIP_DESCR,
+		//		AefConstants.AEF_LAUNCHES_NEW_SCHOLARSHIP_URI);
+		//contentDataItems.add(item);
+
+		//item = new ContentDataItem(R.drawable.aef_65th_aniversary, AefConstants.AEF_65TH_ANNIVERSARY_DESCR,
+		//		AefConstants.AEF_65TH_ANNIVERSARY_URI);
+		//contentDataItems.add(item);
+
+		//item = new ContentDataItem(R.drawable.aef_65th_aniversary, AefConstants.AEF_65TH_PROGRAM_BOOKLET_DESCR,
+		//		AefConstants.AEF_65TH_PROGRAM_BOOKLET_URI);
+		//contentDataItems.add(item);
+
+		//item = new ContentDataItem(R.drawable.honor_ralph_tufenkian_and_hacop_baghdassarian, AefConstants.AEF_HONOR_RALPH_TUFENKIAN_AND_HACOP_BAGHDASSARIAN_DESCR,
+		//		AefConstants.AEF_HONOR_RALPH_TUFENKIAN_AND_HACOP_BAGHDASSARIAN_URI);
+		//contentDataItems.add(item);
+
+		item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
+				R.string.aef_sarf_press_release_text);
 		contentDataItems.add(item);
 
 		return contentDataItems;
@@ -89,8 +103,9 @@ public class SubCategoryChooser extends AppCompatActivity {
 	private List<ContentDataItem> cC() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
-		ContentDataItem item = new ContentDataItem(R.drawable.children_lori_darpas_2014_img, AefConstants.CHILDREN_LORI_DARPAS_2014_DESCR,
-				AefConstants.CHILDREN_LORI_DARPAS_2014_URI);
+		ContentDataItem item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
+		R.string.aef_sarf_press_release_text);
+		contentDataItems.add(item);
 
 		contentDataItems.add(item);
 		contentDataItems.add(item);

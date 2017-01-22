@@ -30,14 +30,14 @@ public class ContentItemsAdapter extends RecyclerView.Adapter<ContentItemsAdapte
 		this.mData = mData;
 	}
 
-	public static class ViewHolder extends RecyclerView.ViewHolder {
+	static class ViewHolder extends RecyclerView.ViewHolder {
 		// each data item is just a string in this case
-		public TextView mTextView;
-		public ImageView mImageView;
-		;
-		public LinearLayout mContent;
+		TextView mTextView;
+		ImageView mImageView;
 
-		public ViewHolder(View v) {
+		LinearLayout mContent;
+
+		ViewHolder(View v) {
 			super(v);
 			mTextView = (TextView) v.findViewById(R.id.content_item_text);
 			mImageView = (ImageView) v.findViewById(R.id.content_item_icon);
@@ -62,7 +62,7 @@ public class ContentItemsAdapter extends RecyclerView.Adapter<ContentItemsAdapte
 			public void onClick(View v) {
 				final Intent intent = new Intent(context, AefContentMoreDetails.class);
 				intent.putExtra(AefContentMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
-				intent.putExtra(AefContentMoreDetails.HOME_CONTENT, mData.get(gridPos).getUri());
+				intent.putExtra(AefContentMoreDetails.HOME_CONTENT, mData.get(gridPos).getStringResId());
 				intent.putExtra(AefContentMoreDetails.HOME_IMAGE, mData.get(gridPos).getPhotoId());
 				context.startActivity(intent);
 			}

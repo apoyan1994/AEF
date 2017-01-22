@@ -1,6 +1,6 @@
 package com.aef.edu.aef.adapters;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -24,10 +24,10 @@ import java.util.List;
 public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.ViewHolder> {
 
 	private List<ContentDataItem> mData;
-	private Context context;
+	private Activity activity;
 
-	public SubCategoryAdapter(Context context, List<ContentDataItem> mData) {
-		this.context = context;
+	public SubCategoryAdapter(Activity activity, List<ContentDataItem> mData) {
+		this.activity = activity;
 		this.mData = mData;
 	}
 
@@ -55,16 +55,16 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
 	public void onBindViewHolder(SubCategoryAdapter.ViewHolder holder, final int position) {
 		final int gridPos = holder.getAdapterPosition();
 		holder.mTextView.setText(mData.get(gridPos).getText());
-		holder.mImageView.setImageBitmap(AefUtils.getScaledBitmap(context, mData.get(gridPos).getPhotoId(), 100, 100));
+		holder.mImageView.setImageBitmap(AefUtils.getScaledBitmap(activity, mData.get(gridPos).getPhotoId(), 100, 100));
 
 		holder.mContent.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				final Intent intent = new Intent(context, AefContentMoreDetails.class);
+				final Intent intent = new Intent(activity, AefContentMoreDetails.class);
 				intent.putExtra(AefContentMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
-				intent.putExtra(AefContentMoreDetails.HOME_CONTENT, mData.get(gridPos).getUri());
+				intent.putExtra(AefContentMoreDetails.HOME_CONTENT, mData.get(gridPos).getStringResId());
 				intent.putExtra(AefContentMoreDetails.HOME_IMAGE, mData.get(gridPos).getPhotoId());
-				context.startActivity(intent);
+				activity.startActivity(intent);
 			}
 		});
 	}
@@ -73,5 +73,4 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
 	public int getItemCount() {
 		return mData.size();
 	}
-
 }

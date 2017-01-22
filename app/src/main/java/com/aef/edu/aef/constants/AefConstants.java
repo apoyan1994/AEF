@@ -38,14 +38,14 @@ public class AefConstants {
 
 	public static final String AEF_65TH_PROGRAM_BOOKLET_URI = "http://aefweb.org/wp-content/uploads/2016/08/AEF_65th_Program_Booklet.pdf";
 	public static final String AEF_65TH_PROGRAM_BOOKLET_DESCR = "Armenian Educational Foundation’s 65th program booklet";
-    
-    public static final String AEF_HONOR_RALPH_TUFENKIAN_AND_HACOP_BAGHDASSARIAN_URI = "http://aefweb.org/wp-content/uploads/2016/08/AEF-Honor-Ralph-Tufenkian-and-Hacop-Baghdassarian.pdf";
-    public static final String AEF_HONOR_RALPH_TUFENKIAN_AND_HACOP_BAGHDASSARIAN_DESCR = "AEF Honor Ralph Tufenkian and Hacop Baghdassarian";
 
-	public static final String  ARMENIAN_EDUCATIONAL_FOUNDATION_DESCR = "Armenian Educational Foundation";
+	public static final String AEF_HONOR_RALPH_TUFENKIAN_AND_HACOP_BAGHDASSARIAN_URI = "http://aefweb.org/wp-content/uploads/2016/08/AEF-Honor-Ralph-Tufenkian-and-Hacop-Baghdassarian.pdf";
+	public static final String AEF_HONOR_RALPH_TUFENKIAN_AND_HACOP_BAGHDASSARIAN_DESCR = "AEF Honor Ralph Tufenkian and Hacop Baghdassarian";
+
+	public static final String ARMENIAN_EDUCATIONAL_FOUNDATION_DESCR = "Armenian Educational Foundation";
 
 	//public static final String NEWS_FIRST_GRADUATING_ARTSAKH_URI = "https://web.facebook.com/ArmenianEducationalFoundation/photos/?tab=album&album_id=1011761302271113&_rdr";
-	public static final String NEWS_FIRST_GRADUATING_ARTSAKH_DESCR = "AFirst Graduating Class of CIS Degree Program in Artsakh State University- Diploma Ceremony";
+	public static final String NEWS_FIRST_GRADUATING_ARTSAKH_DESCR = "First Graduating Class of CIS Degree Program in Artsakh State University- Diploma Ceremony";
 
 	public static final String AEF_SARF_PRESS_RELEASE_DESCR = "AEF SARF Press Release";
 

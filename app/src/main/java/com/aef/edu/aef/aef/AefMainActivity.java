@@ -13,19 +13,26 @@ import com.aef.edu.aef.interfaces.OnAnimationEndListener;
 public class AefMainActivity extends AppCompatActivity implements OnAnimationEndListener {
 
 	private final int AEF_REQUEST_CODE = 45;
+	private boolean canFinish;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_aef_main);
 
-		if (null == savedInstanceState) {
+		boolean isSavedInstanceStateNull = null == savedInstanceState;
+		canFinish = !isSavedInstanceStateNull;
+		if (isSavedInstanceStateNull) {
 			new AnimationHandler(this, (ImageView) findViewById(R.id.aef_description), findViewById(R.id.letters_container));
 		}
 	}
 
 	@Override
 	public void onBackPressed() {
+		//disable back press during animation
+		if (canFinish) {
+			super.onBackPressed();
+		}
 	}
 
 	@Override
@@ -34,13 +41,15 @@ public class AefMainActivity extends AppCompatActivity implements OnAnimationEnd
 
 		if (requestCode == AEF_REQUEST_CODE) {
 			finish();
+		} else {
+			canFinish = true;
 		}
 	}
 
 	@Override
 	public void onAnimationEnded() {
-		//startActivityForResult(new Intent(getApplicationContext(), AefContentHandler.class), AEF_REQUEST_CODE);
-		//startActivityForResult(new Intent(getApplicationContext(), SubCategoryChooser.class), AEF_REQUEST_CODE);
+		//will delete AefContentHandler
+		// startActivityForResult(new Intent(getApplicationContext(), AefContentHandler.class), AEF_REQUEST_CODE);
 		startActivityForResult(new Intent(getApplicationContext(), MainCategoryChooser.class), AEF_REQUEST_CODE);
 	}
 }

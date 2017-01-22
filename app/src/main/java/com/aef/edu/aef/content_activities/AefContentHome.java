@@ -11,7 +11,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.aef.edu.aef.constants.AefConstants;
-import com.aef.edu.aef.constants.ContentBigText;
 import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.adapters.ContentItemsAdapter;
 import com.aef.edu.aef.R;
@@ -52,16 +51,18 @@ public class AefContentHome extends AppCompatActivity {
 
 	private List<ContentDataItem> createContextDataItems() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
+		ContentDataItem item;
 
-		ContentDataItem item = new ContentDataItem(R.drawable.aef_2015_erebuni_img, AefConstants.AEF_2015_EREBUNI_DESCR,
-				AefConstants.AEF_2015_EREBUNI_URI);
-		contentDataItems.add(item);
+		//item = new ContentDataItem(R.drawable.aef_2015_erebuni_img, AefConstants.AEF_2015_EREBUNI_DESCR,
+		//		AefConstants.AEF_2015_EREBUNI_URI);
+		//contentDataItems.add(item);
 
-		item = new ContentDataItem(R.drawable.children_lori_darpas_2014_img, AefConstants.CHILDREN_LORI_DARPAS_2014_DESCR,
-				AefConstants.CHILDREN_LORI_DARPAS_2014_URI);
-		contentDataItems.add(item);
+		//item = new ContentDataItem(R.drawable.children_lori_darpas_2014_img, AefConstants.CHILDREN_LORI_DARPAS_2014_DESCR,
+		//		AefConstants.CHILDREN_LORI_DARPAS_2014_URI);
+		//contentDataItems.add(item);
 
-		item = new ContentDataItem(R.drawable.header_img_2, AefConstants.ARMENIAN_EDUCATIONAL_FOUNDATION_DESCR, ContentBigText.ARMENIAN_EDUCATIONAL_FOUNDATION_TEXT);
+		item = new ContentDataItem(R.drawable.header_img_2, AefConstants.ARMENIAN_EDUCATIONAL_FOUNDATION_DESCR,
+				R.string.armenian_educational_foundation_text);
 		contentDataItems.add(item);
 
 		return contentDataItems;
