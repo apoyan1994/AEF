@@ -19,7 +19,7 @@ import com.aef.edu.aef.utils.TabOpenManager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AefContentHome extends AppCompatActivity {
+public class AefHome extends AppCompatActivity {
 
 	private RecyclerView recycler;
 	private RecyclerView.Adapter itemsAdapter;

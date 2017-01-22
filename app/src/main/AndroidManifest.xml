@@ -23,13 +23,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".content_activities.AefContentHome"/>
+        <activity android:name=".content_activities.AefHome"/>
 
-        <activity android:name=".content_activities.AefContentMoreDetails"/>
+        <activity android:name=".content_activities.AefMoreDetails"/>
 
         <activity android:name=".handlers.AefContentHandler"/>
 
-        <activity android:name=".content_activities.AefContentNews"/>
+        <activity android:name=".content_activities.AefNews"/>
 
         <activity android:name=".content_activities.AefAboutUs"/>
 

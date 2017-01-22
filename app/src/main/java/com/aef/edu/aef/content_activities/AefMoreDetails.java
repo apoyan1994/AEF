@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.aef.edu.aef.R;
 
-public class AefContentMoreDetails extends AppCompatActivity {
+public class AefMoreDetails extends AppCompatActivity {
 
 	public static final String HOME_TITLE = "home_title";
 	public static final String HOME_CONTENT = "home_content";
@@ -16,12 +16,12 @@ public class AefContentMoreDetails extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_show_text);
+		setContentView(R.layout.activity_show_big_text);
 
 		((TextView) findViewById(R.id.home_title)).setText(getIntent().getStringExtra(HOME_TITLE));
 		int resId = getIntent().getIntExtra(HOME_CONTENT, -1);
 		if (resId != -1) {
-			((TextView) findViewById(R.id.home_contetn)).setText(getText(resId));
+			((TextView) findViewById(R.id.home_content)).setText(getText(resId));
 		}
 		resId = getIntent().getIntExtra(HOME_IMAGE, -1);
 		if (resId != -1) {

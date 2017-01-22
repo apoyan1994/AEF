@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.aef.edu.aef.content_activities.AefContentMoreDetails;
+import com.aef.edu.aef.content_activities.AefMoreDetails;
 import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.R;
 
@@ -60,10 +60,10 @@ public class ContentItemsAdapter extends RecyclerView.Adapter<ContentItemsAdapte
 		holder.mContent.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				final Intent intent = new Intent(context, AefContentMoreDetails.class);
-				intent.putExtra(AefContentMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
-				intent.putExtra(AefContentMoreDetails.HOME_CONTENT, mData.get(gridPos).getStringResId());
-				intent.putExtra(AefContentMoreDetails.HOME_IMAGE, mData.get(gridPos).getPhotoId());
+				final Intent intent = new Intent(context, AefMoreDetails.class);
+				intent.putExtra(AefMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
+				intent.putExtra(AefMoreDetails.HOME_CONTENT, mData.get(gridPos).getStringResId());
+				intent.putExtra(AefMoreDetails.HOME_IMAGE, mData.get(gridPos).getPhotoId());
 				context.startActivity(intent);
 			}
 		});

@@ -77,10 +77,10 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 
 	private void openSubCategory(int gridPos) {
 		Intent sendIntent = new Intent(activity, SubCategoryChooser.class);
-		sendIntent.putExtra(AefConstants.KEY_GRID_POS, gridPos);
+		sendIntent.putExtra(AefConstants.KEY_GRIDS_SELECTED_ITEM_POS, gridPos);
 		activity.startActivity(sendIntent);
-//		final Intent intent = new Intent(activity, AefContentNews.class);
-//		intent.putExtra(AefContentMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
+//		final Intent intent = new Intent(activity, AefNews.class);
+//		intent.putExtra(AefMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
 //		activity.startActivity(intent);
 	}
 }

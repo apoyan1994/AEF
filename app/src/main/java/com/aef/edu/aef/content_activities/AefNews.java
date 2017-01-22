@@ -18,7 +18,7 @@ import com.aef.edu.aef.utils.TabOpenManager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AefContentNews extends AppCompatActivity {
+public class AefNews extends AppCompatActivity {
 
 	private RecyclerView recycler;
 	private RecyclerView.Adapter itemsAdapter;

@@ -24,7 +24,7 @@ public class SubCategoryChooser extends AppCompatActivity {
 		recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),
 				getResources().getInteger(R.integer.grid_item_count)));
 
-		int currentCategory = getIntent().getIntExtra(AefConstants.KEY_GRID_POS, 0);
+		int currentCategory = getIntent().getIntExtra(AefConstants.KEY_GRIDS_SELECTED_ITEM_POS, 0);
 
 		List<ContentDataItem> contentDataItems;
 
@@ -122,7 +122,7 @@ public class SubCategoryChooser extends AppCompatActivity {
 /*maybe can helpful
 
 private void openHome() {
-		startActivityForResult(new Intent(getApplicationContext(), AefContentHome.class), 45);
+		startActivityForResult(new Intent(getApplicationContext(), AefHome.class), 45);
 	}
 
 	private void openAboutUs() {
@@ -130,7 +130,7 @@ private void openHome() {
 	}
 
 	private void openNews() {
-		startActivityForResult(new Intent(getApplicationContext(), AefContentNews.class), 47);
+		startActivityForResult(new Intent(getApplicationContext(), AefNews.class), 47);
 
 	}
 
