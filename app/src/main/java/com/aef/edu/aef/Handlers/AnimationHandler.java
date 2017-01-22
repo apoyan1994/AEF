@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 
+import com.aef.edu.aef.constants.AefConstants;
 import com.aef.edu.aef.interfaces.OnAnimationEndListener;
 
 /**
@@ -39,7 +40,7 @@ public class AnimationHandler {
 
 				ObjectAnimator.ofPropertyValuesHolder(
 						lettersContainer,
-						PropertyValuesHolder.ofFloat("rotationX", -270, -360))
+						PropertyValuesHolder.ofFloat(AefConstants.ROTATION_X, -270, -360))
 						.setDuration(letterAnimationDuration)
 
 		);

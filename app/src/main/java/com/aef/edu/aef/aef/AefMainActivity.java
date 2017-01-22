@@ -41,8 +41,6 @@ public class AefMainActivity extends AppCompatActivity implements OnAnimationEnd
 
 		if (requestCode == AEF_REQUEST_CODE) {
 			finish();
-		} else {
-			canFinish = true;
 		}
 	}
 
@@ -51,5 +49,6 @@ public class AefMainActivity extends AppCompatActivity implements OnAnimationEnd
 		//will delete AefContentHandler
 		// startActivityForResult(new Intent(getApplicationContext(), AefContentHandler.class), AEF_REQUEST_CODE);
 		startActivityForResult(new Intent(getApplicationContext(), MainCategoryChooser.class), AEF_REQUEST_CODE);
+		canFinish = true;
 	}
 }
