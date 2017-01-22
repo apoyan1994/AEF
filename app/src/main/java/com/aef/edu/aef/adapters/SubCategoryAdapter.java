@@ -31,13 +31,13 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
 		this.mData = mData;
 	}
 
-	public static class ViewHolder extends RecyclerView.ViewHolder {
+	static class ViewHolder extends RecyclerView.ViewHolder {
 		// each data item is just a string in this case
-		public TextView mTextView;
-		public ImageView mImageView;
-		public FrameLayout mContent;
+		TextView mTextView;
+		ImageView mImageView;
+		FrameLayout mContent;
 
-		public ViewHolder(View v) {
+		ViewHolder(View v) {
 			super(v);
 			mTextView = (TextView) v.findViewById(R.id.menu_item_text);
 			mImageView = (ImageView) v.findViewById(R.id.menu_item_icon);
