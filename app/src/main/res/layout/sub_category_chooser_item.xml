@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/menu_item_container"
+    android:id="@+id/grid_item_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/gray_background_selector"
@@ -10,7 +10,7 @@
     android:layout_marginTop="8dp">
 
     <ImageView
-        android:id="@+id/menu_item_icon"
+        android:id="@+id/grid_item_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -18,7 +18,7 @@
         android:scaleType="centerCrop"/>
 
     <TextView
-        android:id="@+id/menu_item_text"
+        android:id="@+id/grid_item_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"

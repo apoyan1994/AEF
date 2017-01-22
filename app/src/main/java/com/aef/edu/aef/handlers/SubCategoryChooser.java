@@ -29,17 +29,17 @@ public class SubCategoryChooser extends AppCompatActivity {
 		List<ContentDataItem> contentDataItems;
 
 		switch (currentCategory) {
-			case 0:
+			case AefConstants.KEY_ABOUT_US:
 				contentDataItems = aboutUs();
 				break;
-			case 1:
+			case AefConstants.KEY_CONTACT_US:
 				contentDataItems = News();
 				break;
-			case 2:
-				contentDataItems = cC();
+			case AefConstants.KEY_HOME:
+				contentDataItems = home();
 				break;
-			case 3:
-				contentDataItems = cC();
+			case AefConstants.KEY_MORE_DETAILS:
+				contentDataItems = home();
 				break;
 			default:
 				contentDataItems = aboutUs();
@@ -77,7 +77,7 @@ public class SubCategoryChooser extends AppCompatActivity {
 		//		AefConstants.AEF_HOLDS_RECEPTION_URI);
 		//contentDataItems.add(item);
 
-		//item = new ContentDataItem(R.drawable.aef_launches_a_new_cholarship, AefConstants.AEF_LAUNCHES_NEW_SCHOLARSHIP_DESCR,
+		//item = new ContentDataItem(R.drawable.aef_launches_a_new_scholarship, AefConstants.AEF_LAUNCHES_NEW_SCHOLARSHIP_DESCR,
 		//		AefConstants.AEF_LAUNCHES_NEW_SCHOLARSHIP_URI);
 		//contentDataItems.add(item);
 
@@ -100,7 +100,7 @@ public class SubCategoryChooser extends AppCompatActivity {
 		return contentDataItems;
 	}
 
-	private List<ContentDataItem> cC() {
+	private List<ContentDataItem> home() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
 		ContentDataItem item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,

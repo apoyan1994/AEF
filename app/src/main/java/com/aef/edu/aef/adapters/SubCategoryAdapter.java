@@ -39,9 +39,9 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
 
 		ViewHolder(View v) {
 			super(v);
-			mTextView = (TextView) v.findViewById(R.id.menu_item_text);
-			mImageView = (ImageView) v.findViewById(R.id.menu_item_icon);
-			mContent = (FrameLayout) v.findViewById(R.id.menu_item_container);
+			mTextView = (TextView) v.findViewById(R.id.grid_item_text);
+			mImageView = (ImageView) v.findViewById(R.id.grid_item_icon);
+			mContent = (FrameLayout) v.findViewById(R.id.grid_item_container);
 		}
 	}
 
