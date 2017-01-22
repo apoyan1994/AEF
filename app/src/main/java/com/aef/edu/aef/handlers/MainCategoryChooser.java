@@ -25,21 +25,9 @@ public class MainCategoryChooser extends AppCompatActivity {
 		init();
 	}
 
-	public class CustomLinearLayoutManager extends LinearLayoutManager {
-
-		public CustomLinearLayoutManager(Context context) {
-			super(context);
-		}
-
-		@Override
-		public boolean canScrollVertically() {
-			return true;
-		}
-	}
-
 	private void init() {
 		RecyclerView recyclerView = (RecyclerView) findViewById(R.id.item_chooser_recycler_view);
-		recyclerView.setLayoutManager(new CustomLinearLayoutManager(getApplicationContext()));
+		recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
