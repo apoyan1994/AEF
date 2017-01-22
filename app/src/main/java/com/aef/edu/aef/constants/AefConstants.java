@@ -52,4 +52,7 @@ public class AefConstants {
 	//menu items
 	public static final String KEY_MENU_ITEM = "menu_item";
 
+	//extra key
+	public static final String KEY_GRID_POS = "grid_pos";
+
 }
