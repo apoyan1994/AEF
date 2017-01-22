@@ -23,14 +23,14 @@ import java.util.List;
  * Created by Hovo on 13/10/2016.
  */
 
-public class MainCategoryAdapter1 extends RecyclerView.Adapter<MainCategoryAdapter1.ViewHolder> implements OnCategorySelectedListener {
+public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapter.ViewHolder> implements OnCategorySelectedListener {
 
 	private List<ContentDataItem> mData;
 	private Activity activity;
 
 	private Bitmap arrowBitmap;
 
-	public MainCategoryAdapter1(Activity activity, List<ContentDataItem> mData) {
+	public MainCategoryAdapter(Activity activity, List<ContentDataItem> mData) {
 		this.activity = activity;
 		this.mData = mData;
 	}
@@ -48,7 +48,7 @@ public class MainCategoryAdapter1 extends RecyclerView.Adapter<MainCategoryAdapt
 	}
 
 	@Override
-	public MainCategoryAdapter1.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+	public MainCategoryAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_category_chooser_item, parent, false);
 		arrowBitmap = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(activity.getResources(),
 				R.drawable.large_arrow_left_right), activity.getResources().getInteger(R.integer.chooser_item_width),
@@ -57,7 +57,7 @@ public class MainCategoryAdapter1 extends RecyclerView.Adapter<MainCategoryAdapt
 	}
 
 	@Override
-	public void onBindViewHolder(MainCategoryAdapter1.ViewHolder holder, final int position) {
+	public void onBindViewHolder(MainCategoryAdapter.ViewHolder holder, final int position) {
 		final int itemPos = holder.getAdapterPosition();
 		//holder.mTextView.setText();
 		holder.categoryChooserView.setOnCategorySelectedListener(this, itemPos);
