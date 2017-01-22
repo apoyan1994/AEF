@@ -6,14 +6,10 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 
 import com.aef.edu.aef.adapters.ContentItemsAdapter;
 import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.R;
-import com.aef.edu.aef.utils.TabOpenManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,18 +50,5 @@ public class AefNews extends AppCompatActivity {
 //		ContentDataItem
 
 		return contentDataItems;
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.menu_main, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		TabOpenManager.openNewTab(this, item.getItemId());
-		return super.onOptionsItemSelected(item);
 	}
 }
