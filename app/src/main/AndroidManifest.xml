@@ -25,9 +25,9 @@
 
         <activity android:name=".content_activities.AefContentHome"/>
 
-        <activity android:name=".content_activities.AefContextMoreDetails"/>
+        <activity android:name=".content_activities.AefContentMoreDetails"/>
 
-        <activity android:name=".handlers.AefContextHandler"/>
+        <activity android:name=".handlers.AefContentHandler"/>
 
         <activity android:name=".content_activities.AefContentNews"/>
 

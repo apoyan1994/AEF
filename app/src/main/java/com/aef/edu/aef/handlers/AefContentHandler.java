@@ -12,12 +12,12 @@ import com.aef.edu.aef.content_activities.AefContentHome;
 import com.aef.edu.aef.content_activities.AefContentNews;
 import com.aef.edu.aef.R;
 
-public class AefContextHandler extends AppCompatActivity {
+public class AefContentHandler extends AppCompatActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_aef_context_handler);
+		setContentView(R.layout.activity_aef_content_handler);
 
 		if (null == savedInstanceState) {
 			openHome();

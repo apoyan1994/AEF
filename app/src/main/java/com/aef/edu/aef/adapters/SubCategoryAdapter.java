@@ -2,8 +2,6 @@ package com.aef.edu.aef.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aef.edu.aef.R;
-import com.aef.edu.aef.content_activities.AefContextMoreDetails;
-import com.aef.edu.aef.items.ContextDataItem;
+import com.aef.edu.aef.content_activities.AefContentMoreDetails;
+import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.utils.AefUtils;
 
 import java.util.List;
@@ -25,10 +23,10 @@ import java.util.List;
 
 public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.ViewHolder> {
 
-	private List<ContextDataItem> mData;
+	private List<ContentDataItem> mData;
 	private Context context;
 
-	public SubCategoryAdapter(Context context, List<ContextDataItem> mData) {
+	public SubCategoryAdapter(Context context, List<ContentDataItem> mData) {
 		this.context = context;
 		this.mData = mData;
 	}
@@ -62,10 +60,10 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
 		holder.mContent.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				final Intent intent = new Intent(context, AefContextMoreDetails.class);
-				intent.putExtra(AefContextMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
-				intent.putExtra(AefContextMoreDetails.HOME_CONTENT, mData.get(gridPos).getUri());
-				intent.putExtra(AefContextMoreDetails.HOME_IMAGE, mData.get(gridPos).getPhotoId());
+				final Intent intent = new Intent(context, AefContentMoreDetails.class);
+				intent.putExtra(AefContentMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
+				intent.putExtra(AefContentMoreDetails.HOME_CONTENT, mData.get(gridPos).getUri());
+				intent.putExtra(AefContentMoreDetails.HOME_IMAGE, mData.get(gridPos).getPhotoId());
 				context.startActivity(intent);
 			}
 		});

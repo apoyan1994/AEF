@@ -2,6 +2,8 @@ package com.aef.edu.aef.adapters;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +11,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.aef.edu.aef.R;
-import com.aef.edu.aef.content_activities.AefContentNews;
-import com.aef.edu.aef.content_activities.AefContextMoreDetails;
+import com.aef.edu.aef.handlers.SubCategoryChooser;
 import com.aef.edu.aef.interfaces.OnCategorySelectedListener;
-import com.aef.edu.aef.items.ContextDataItem;
+import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.view.CategoryChooserView;
 
 import java.util.List;
@@ -23,10 +24,12 @@ import java.util.List;
 
 public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapter.ViewHolder> implements OnCategorySelectedListener {
 
-	private List<ContextDataItem> mData;
+	private List<ContentDataItem> mData;
 	private Activity activity;
 
-	public MainCategoryAdapter(Activity activity, List<ContextDataItem> mData) {
+	private Bitmap arrowBitmap;
+
+	public MainCategoryAdapter(Activity activity, List<ContentDataItem> mData) {
 		this.activity = activity;
 		this.mData = mData;
 	}
@@ -46,14 +49,19 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 	@Override
 	public MainCategoryAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_category_chooser_item, parent, false);
+		arrowBitmap = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(activity.getResources(),
+				R.drawable.large_arrow_left_right), activity.getResources().getInteger(R.integer.chooser_item_width),
+				activity.getResources().getInteger(R.integer.chooser_item_height), false);
 		return new ViewHolder(view);
 	}
 
 	@Override
 	public void onBindViewHolder(MainCategoryAdapter.ViewHolder holder, final int position) {
-		final int gridPos = holder.getAdapterPosition();
-		holder.mTextView.setText(mData.get(gridPos).getText());
-		holder.categoryChooserView.setOnCategorySelectedListener(this, gridPos);
+		final int itemPos = holder.getAdapterPosition();
+		//holder.mTextView.setText();
+		holder.categoryChooserView.setOnCategorySelectedListener(this, itemPos);
+		holder.categoryChooserView.setArrowBitmap(arrowBitmap);
+		holder.categoryChooserView.setItemText(mData.get(itemPos).getText());
 	}
 
 	@Override
@@ -67,8 +75,9 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 	}
 
 	private void openSubCategory(int gridPos) {
-		final Intent intent = new Intent(activity, AefContentNews.class);
-		//intent.putExtra(AefContextMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
-		//activity.startActivity(intent);
+		activity.startActivity(new Intent(activity, SubCategoryChooser.class));
+//		final Intent intent = new Intent(activity, AefContentNews.class);
+//		intent.putExtra(AefContentMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
+//		activity.startActivity(intent);
 	}
 }

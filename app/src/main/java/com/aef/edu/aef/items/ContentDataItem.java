@@ -4,29 +4,29 @@ package com.aef.edu.aef.items;
  * Created by Hovo on 13/10/2016.
  */
 
-public class ContextDataItem {
+public class ContentDataItem {
 
 	private String text;
 	private int photoId;
 	private String uri;
 	private int color;
 
-	public ContextDataItem(String text) {
+	public ContentDataItem(String text) {
 		this.text = text;
 	}
 
-	public ContextDataItem(int photoId, String text) {
+	public ContentDataItem(int photoId, String text) {
 		this.photoId = photoId;
 		this.text = text;
 	}
 
-	public ContextDataItem(int photoId, String text, String uri) {
+	public ContentDataItem(int photoId, String text, String uri) {
 		this.photoId = photoId;
 		this.text = text;
 		this.uri = uri;
 	}
 
-	public ContextDataItem(int photoId, String text, String uri, int color) {
+	public ContentDataItem(int photoId, String text, String uri, int color) {
 		this.photoId = photoId;
 		this.text = text;
 		this.uri = uri;

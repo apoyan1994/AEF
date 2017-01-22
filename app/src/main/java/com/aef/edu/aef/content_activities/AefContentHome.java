@@ -11,8 +11,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.aef.edu.aef.constants.AefConstants;
-import com.aef.edu.aef.constants.ConBigText;
-import com.aef.edu.aef.items.ContextDataItem;
+import com.aef.edu.aef.constants.ContentBigText;
+import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.adapters.ContentItemsAdapter;
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.utils.TabOpenManager;
@@ -29,7 +29,7 @@ public class AefContentHome extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_aef_context);
+		setContentView(R.layout.activity_aef_content);
 
 		Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
 		toolbar.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorAqua));
@@ -50,21 +50,21 @@ public class AefContentHome extends AppCompatActivity {
 		recycler.setAdapter(itemsAdapter);
 	}
 
-	private List<ContextDataItem> createContextDataItems() {
-		List<ContextDataItem> contextDataItems = new ArrayList<>();
+	private List<ContentDataItem> createContextDataItems() {
+		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
-		ContextDataItem item = new ContextDataItem(R.drawable.aef_2015_erebuni_img, AefConstants.AEF_2015_EREBUNI_DESCR,
+		ContentDataItem item = new ContentDataItem(R.drawable.aef_2015_erebuni_img, AefConstants.AEF_2015_EREBUNI_DESCR,
 				AefConstants.AEF_2015_EREBUNI_URI);
-		contextDataItems.add(item);
+		contentDataItems.add(item);
 
-		item = new ContextDataItem(R.drawable.children_lori_darpas_2014_img, AefConstants.CHILDREN_LORI_DARPAS_2014_DESCR,
+		item = new ContentDataItem(R.drawable.children_lori_darpas_2014_img, AefConstants.CHILDREN_LORI_DARPAS_2014_DESCR,
 				AefConstants.CHILDREN_LORI_DARPAS_2014_URI);
-		contextDataItems.add(item);
+		contentDataItems.add(item);
 
-		item = new ContextDataItem(R.drawable.header_img_2, AefConstants.ARMENIAN_EDUCATIONAL_FOUNDATION_DESCR, ConBigText.ARMENIAN_EDUCATIONAL_FOUNDATION_TEXT);
-		contextDataItems.add(item);
+		item = new ContentDataItem(R.drawable.header_img_2, AefConstants.ARMENIAN_EDUCATIONAL_FOUNDATION_DESCR, ContentBigText.ARMENIAN_EDUCATIONAL_FOUNDATION_TEXT);
+		contentDataItems.add(item);
 
-		return contextDataItems;
+		return contentDataItems;
 	}
 
 	@Override

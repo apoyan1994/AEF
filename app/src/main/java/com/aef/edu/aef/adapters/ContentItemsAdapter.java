@@ -10,8 +10,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.aef.edu.aef.content_activities.AefContextMoreDetails;
-import com.aef.edu.aef.items.ContextDataItem;
+import com.aef.edu.aef.content_activities.AefContentMoreDetails;
+import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.R;
 
 import java.util.List;
@@ -22,10 +22,10 @@ import java.util.List;
 
 public class ContentItemsAdapter extends RecyclerView.Adapter<ContentItemsAdapter.ViewHolder> {
 
-	private List<ContextDataItem> mData;
+	private List<ContentDataItem> mData;
 	private Context context;
 
-	public ContentItemsAdapter(Context context, List<ContextDataItem> mData) {
+	public ContentItemsAdapter(Context context, List<ContentDataItem> mData) {
 		this.context = context;
 		this.mData = mData;
 	}
@@ -60,10 +60,10 @@ public class ContentItemsAdapter extends RecyclerView.Adapter<ContentItemsAdapte
 		holder.mContent.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				final Intent intent = new Intent(context, AefContextMoreDetails.class);
-				intent.putExtra(AefContextMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
-				intent.putExtra(AefContextMoreDetails.HOME_CONTENT, mData.get(gridPos).getUri());
-				intent.putExtra(AefContextMoreDetails.HOME_IMAGE, mData.get(gridPos).getPhotoId());
+				final Intent intent = new Intent(context, AefContentMoreDetails.class);
+				intent.putExtra(AefContentMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
+				intent.putExtra(AefContentMoreDetails.HOME_CONTENT, mData.get(gridPos).getUri());
+				intent.putExtra(AefContentMoreDetails.HOME_IMAGE, mData.get(gridPos).getPhotoId());
 				context.startActivity(intent);
 			}
 		});

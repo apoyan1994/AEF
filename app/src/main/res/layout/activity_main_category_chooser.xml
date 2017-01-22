@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main_category_chooser"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/area_gradient"
     tools:context="com.aef.edu.aef.handlers.MainCategoryChooser">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorLightGray"/>
+        android:alpha="0.1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/app_icon"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/item_chooser_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="46dp"
         android:background="@android:color/transparent"/>
 
-</RelativeLayout>
+</FrameLayout>

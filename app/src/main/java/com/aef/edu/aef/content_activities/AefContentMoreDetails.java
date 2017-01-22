@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.aef.edu.aef.R;
 
-public class AefContextMoreDetails extends AppCompatActivity {
+public class AefContentMoreDetails extends AppCompatActivity {
 
 	public static final String HOME_TITLE = "home_title";
 	public static final String HOME_CONTENT = "home_content";
