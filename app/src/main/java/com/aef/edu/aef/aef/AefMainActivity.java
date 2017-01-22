@@ -46,8 +46,6 @@ public class AefMainActivity extends AppCompatActivity implements OnAnimationEnd
 
 	@Override
 	public void onAnimationEnded() {
-		//will delete AefContentHandler
-		// startActivityForResult(new Intent(getApplicationContext(), AefContentHandler.class), AEF_REQUEST_CODE);
 		startActivityForResult(new Intent(getApplicationContext(), MainCategoryChooser.class), AEF_REQUEST_CODE);
 		canFinish = true;
 	}
