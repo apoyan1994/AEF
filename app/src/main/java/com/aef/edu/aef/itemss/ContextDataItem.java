@@ -1,4 +1,4 @@
-package com.aef.edu.aef.items;
+package com.aef.edu.aef.itemss;
 
 /**
  * Created by Hovo on 13/10/2016.

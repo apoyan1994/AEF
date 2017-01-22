@@ -2,8 +2,6 @@ package com.aef.edu.aef.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +12,7 @@ import android.widget.TextView;
 
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.content_activities.AefContextMoreDetails;
-import com.aef.edu.aef.items.ContextDataItem;
+import com.aef.edu.aef.itemss.ContextDataItem;
 import com.aef.edu.aef.utils.AefUtils;
 
 import java.util.List;
