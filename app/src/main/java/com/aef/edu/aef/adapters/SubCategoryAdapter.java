@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.content_activities.AefContextMoreDetails;
-import com.aef.edu.aef.items.ContextDataItem;
+import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.utils.AefUtils;
 
 import java.util.List;
@@ -23,10 +23,10 @@ import java.util.List;
 
 public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.ViewHolder> {
 
-	private List<ContextDataItem> mData;
+	private List<ContentDataItem> mData;
 	private Context context;
 
-	public SubCategoryAdapter(Context context, List<ContextDataItem> mData) {
+	public SubCategoryAdapter(Context context, List<ContentDataItem> mData) {
 		this.context = context;
 		this.mData = mData;
 	}

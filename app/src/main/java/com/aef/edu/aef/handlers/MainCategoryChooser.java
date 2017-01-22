@@ -10,7 +10,7 @@ import android.view.View;
 
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.adapters.MainCategoryAdapter;
-import com.aef.edu.aef.items.ContextDataItem;
+import com.aef.edu.aef.items.ContentDataItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,27 +41,27 @@ public class MainCategoryChooser extends AppCompatActivity {
 		RecyclerView recyclerView = (RecyclerView) findViewById(R.id.item_chooser_recycler_view);
 		recyclerView.setLayoutManager(new CustomLinearLayoutManager(getApplicationContext()));
 
-		List<ContextDataItem> contextDataItems = new ArrayList<>();
+		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
-		ContextDataItem item = new ContextDataItem("");
-		contextDataItems.add(item);
+		ContentDataItem item = new ContentDataItem("");
+		contentDataItems.add(item);
 
-		item = new ContextDataItem("");//About us");
-		contextDataItems.add(item);
+		item = new ContentDataItem("");//About us");
+		contentDataItems.add(item);
 
-		item = new ContextDataItem("");//Contacts");
-		contextDataItems.add(item);
+		item = new ContentDataItem("");//Contacts");
+		contentDataItems.add(item);
 
-		item = new ContextDataItem("");//Home");
-		contextDataItems.add(item);
+		item = new ContentDataItem("");//Home");
+		contentDataItems.add(item);
 
-		item = new ContextDataItem("");//More details");
-		contextDataItems.add(item);
+		item = new ContentDataItem("");//More details");
+		contentDataItems.add(item);
 
-		item = new ContextDataItem("");//news 11");
-		contextDataItems.add(item);
+		item = new ContentDataItem("");//news 11");
+		contentDataItems.add(item);
 
-		recyclerView.setAdapter(new MainCategoryAdapter(this, contextDataItems));
+		recyclerView.setAdapter(new MainCategoryAdapter(this, contentDataItems));
 		recyclerView.setOnTouchListener(new View.OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {

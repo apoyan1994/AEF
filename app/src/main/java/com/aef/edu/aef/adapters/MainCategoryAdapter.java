@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.content_activities.AefContentNews;
 import com.aef.edu.aef.interfaces.OnCategorySelectedListener;
-import com.aef.edu.aef.items.ContextDataItem;
+import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.view.CategoryChooserView;
 
 import java.util.List;
@@ -22,10 +22,10 @@ import java.util.List;
 
 public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapter.ViewHolder> implements OnCategorySelectedListener {
 
-	private List<ContextDataItem> mData;
+	private List<ContentDataItem> mData;
 	private Activity activity;
 
-	public MainCategoryAdapter(Activity activity, List<ContextDataItem> mData) {
+	public MainCategoryAdapter(Activity activity, List<ContentDataItem> mData) {
 		this.activity = activity;
 		this.mData = mData;
 	}

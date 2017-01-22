@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.aef.edu.aef.content_activities.AefContextMoreDetails;
-import com.aef.edu.aef.items.ContextDataItem;
+import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.R;
 
 import java.util.List;
@@ -22,10 +22,10 @@ import java.util.List;
 
 public class ContentItemsAdapter extends RecyclerView.Adapter<ContentItemsAdapter.ViewHolder> {
 
-	private List<ContextDataItem> mData;
+	private List<ContentDataItem> mData;
 	private Context context;
 
-	public ContentItemsAdapter(Context context, List<ContextDataItem> mData) {
+	public ContentItemsAdapter(Context context, List<ContentDataItem> mData) {
 		this.context = context;
 		this.mData = mData;
 	}
