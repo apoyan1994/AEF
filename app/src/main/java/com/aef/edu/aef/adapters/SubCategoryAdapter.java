@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aef.edu.aef.R;
-import com.aef.edu.aef.content_activities.AefContextMoreDetails;
+import com.aef.edu.aef.content_activities.AefContentMoreDetails;
 import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.utils.AefUtils;
 
@@ -60,10 +60,10 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
 		holder.mContent.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				final Intent intent = new Intent(context, AefContextMoreDetails.class);
-				intent.putExtra(AefContextMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
-				intent.putExtra(AefContextMoreDetails.HOME_CONTENT, mData.get(gridPos).getUri());
-				intent.putExtra(AefContextMoreDetails.HOME_IMAGE, mData.get(gridPos).getPhotoId());
+				final Intent intent = new Intent(context, AefContentMoreDetails.class);
+				intent.putExtra(AefContentMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
+				intent.putExtra(AefContentMoreDetails.HOME_CONTENT, mData.get(gridPos).getUri());
+				intent.putExtra(AefContentMoreDetails.HOME_IMAGE, mData.get(gridPos).getPhotoId());
 				context.startActivity(intent);
 			}
 		});

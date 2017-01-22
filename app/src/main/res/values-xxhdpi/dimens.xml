@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="chooser_item_height">160</integer>
+    <integer name="chooser_item_width">480</integer>
+    <integer name="chooser_item_text_size">36</integer>
+</resources>

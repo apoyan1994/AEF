@@ -12,7 +12,7 @@ import android.view.MenuItem;
 
 import com.aef.edu.aef.adapters.ContentItemsAdapter;
 import com.aef.edu.aef.constants.AefConstants;
-import com.aef.edu.aef.constants.ConBigText;
+import com.aef.edu.aef.constants.ContentBigText;
 import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.utils.TabOpenManager;
@@ -29,7 +29,7 @@ public class AefContentNews extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_aef_context);
+		setContentView(R.layout.activity_aef_content);
 
 		Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
 		toolbar.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorAqua));
@@ -54,7 +54,7 @@ public class AefContentNews extends AppCompatActivity {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
 		ContentDataItem item = new ContentDataItem(R.drawable.news_first_graduating_artsakh, AefConstants.NEWS_FIRST_GRADUATING_ARTSAKH_DESCR,
-				ConBigText.NEWS_FIRST_GRADUATING_ARTSAKH_TEXT);
+				ContentBigText.NEWS_FIRST_GRADUATING_ARTSAKH_TEXT);
 		contentDataItems.add(item);
 
 		item = new ContentDataItem(R.drawable.aef_holds_reception, AefConstants.AEF_HOLDS_RECEPTION_DESCR,
@@ -78,7 +78,7 @@ public class AefContentNews extends AppCompatActivity {
 		contentDataItems.add(item);
 
 		item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
-				ConBigText.AEF_SARF_PRESS_RELEASE_TEXT);
+				ContentBigText.AEF_SARF_PRESS_RELEASE_TEXT);
 		contentDataItems.add(item);
 
 		return contentDataItems;

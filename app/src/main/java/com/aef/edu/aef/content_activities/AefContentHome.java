@@ -11,7 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.aef.edu.aef.constants.AefConstants;
-import com.aef.edu.aef.constants.ConBigText;
+import com.aef.edu.aef.constants.ContentBigText;
 import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.adapters.ContentItemsAdapter;
 import com.aef.edu.aef.R;
@@ -29,7 +29,7 @@ public class AefContentHome extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_aef_context);
+		setContentView(R.layout.activity_aef_content);
 
 		Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
 		toolbar.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorAqua));
@@ -61,7 +61,7 @@ public class AefContentHome extends AppCompatActivity {
 				AefConstants.CHILDREN_LORI_DARPAS_2014_URI);
 		contentDataItems.add(item);
 
-		item = new ContentDataItem(R.drawable.header_img_2, AefConstants.ARMENIAN_EDUCATIONAL_FOUNDATION_DESCR, ConBigText.ARMENIAN_EDUCATIONAL_FOUNDATION_TEXT);
+		item = new ContentDataItem(R.drawable.header_img_2, AefConstants.ARMENIAN_EDUCATIONAL_FOUNDATION_DESCR, ContentBigText.ARMENIAN_EDUCATIONAL_FOUNDATION_TEXT);
 		contentDataItems.add(item);
 
 		return contentDataItems;

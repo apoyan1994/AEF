@@ -4,7 +4,7 @@ package com.aef.edu.aef.constants;
  * Created by agvan on 10/16/16.
  */
 
-public class ConBigText {
+public class ContentBigText {
 
 	public static final String  ARMENIAN_EDUCATIONAL_FOUNDATION_TEXT = "Since 1950, the Armenian Educational Foundation, Inc. (AEF) has been a cornerstone of the Armenian educational movement around the world. It has lent a helping hand to hundreds of students and to dozens of schools in numerous nations. Through its many years of giving, it has proven to be one of the most enduring and productive organizations in the Diaspora.\n" +
 			"\n" +

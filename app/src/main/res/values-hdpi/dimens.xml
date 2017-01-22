@@ -2,5 +2,8 @@
 <resources>
     <!--recycler view span count-->
     <integer name="grid_item_count">3</integer>
+    <integer name="chooser_item_height">80</integer>
+    <integer name="chooser_item_width">240</integer>
+    <integer name="chooser_item_text_size">20</integer>
 
 </resources>

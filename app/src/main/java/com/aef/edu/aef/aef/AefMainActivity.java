@@ -39,7 +39,7 @@ public class AefMainActivity extends AppCompatActivity implements OnAnimationEnd
 
 	@Override
 	public void onAnimationEnded() {
-		//startActivityForResult(new Intent(getApplicationContext(), AefContextHandler.class), AEF_REQUEST_CODE);
+		//startActivityForResult(new Intent(getApplicationContext(), AefContentHandler.class), AEF_REQUEST_CODE);
 		//startActivityForResult(new Intent(getApplicationContext(), SubCategoryChooser.class), AEF_REQUEST_CODE);
 		startActivityForResult(new Intent(getApplicationContext(), MainCategoryChooser.class), AEF_REQUEST_CODE);
 	}

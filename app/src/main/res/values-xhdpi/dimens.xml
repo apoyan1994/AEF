@@ -9,4 +9,7 @@
     <!--recycler view span count-->
     <integer name="grid_item_count">4</integer>
 
+    <integer name="chooser_item_height">107</integer>
+    <integer name="chooser_item_width">320</integer>
+
 </resources>

@@ -43,22 +43,16 @@ public class MainCategoryChooser extends AppCompatActivity {
 
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
-		ContentDataItem item = new ContentDataItem("");
+		ContentDataItem item = new ContentDataItem("About us");
 		contentDataItems.add(item);
 
-		item = new ContentDataItem("");//About us");
+		item = new ContentDataItem("Contacts");
 		contentDataItems.add(item);
 
-		item = new ContentDataItem("");//Contacts");
+		item = new ContentDataItem("Home");
 		contentDataItems.add(item);
 
-		item = new ContentDataItem("");//Home");
-		contentDataItems.add(item);
-
-		item = new ContentDataItem("");//More details");
-		contentDataItems.add(item);
-
-		item = new ContentDataItem("");//news 11");
+		item = new ContentDataItem("More details");
 		contentDataItems.add(item);
 
 		recyclerView.setAdapter(new MainCategoryAdapter(this, contentDataItems));
