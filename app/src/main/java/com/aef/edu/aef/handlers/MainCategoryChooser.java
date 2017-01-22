@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.aef.edu.aef.R;
-import com.aef.edu.aef.adapters.MainCategoryAdapter;
+import com.aef.edu.aef.adapters.MainCategoryAdapter1;
 import com.aef.edu.aef.items.ContentDataItem;
 
 import java.util.ArrayList;
@@ -55,7 +55,7 @@ public class MainCategoryChooser extends AppCompatActivity {
 		item = new ContentDataItem("More details");
 		contentDataItems.add(item);
 
-		recyclerView.setAdapter(new MainCategoryAdapter(this, contentDataItems));
+		recyclerView.setAdapter(new MainCategoryAdapter1(this, contentDataItems));
 		recyclerView.setOnTouchListener(new View.OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
