@@ -20,12 +20,12 @@ import java.util.List;
  * Created by Hovo on 13/10/2016.
  */
 
-public class MainCategoryAdapterr extends RecyclerView.Adapter<MainCategoryAdapterr.ViewHolder> implements OnCategorySelectedListener {
+public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapter.ViewHolder> implements OnCategorySelectedListener {
 
 	private List<ContextDataItem> mData;
 	private Activity activity;
 
-	public MainCategoryAdapterr(Activity activity, List<ContextDataItem> mData) {
+	public MainCategoryAdapter(Activity activity, List<ContextDataItem> mData) {
 		this.activity = activity;
 		this.mData = mData;
 	}
@@ -43,13 +43,13 @@ public class MainCategoryAdapterr extends RecyclerView.Adapter<MainCategoryAdapt
 	}
 
 	@Override
-	public MainCategoryAdapterr.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+	public MainCategoryAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_category_chooser_item, parent, false);
 		return new ViewHolder(view);
 	}
 
 	@Override
-	public void onBindViewHolder(MainCategoryAdapterr.ViewHolder holder, final int position) {
+	public void onBindViewHolder(MainCategoryAdapter.ViewHolder holder, final int position) {
 		final int gridPos = holder.getAdapterPosition();
 		holder.mTextView.setText(mData.get(gridPos).getText());
 		holder.categoryChooserView.setOnCategorySelectedListener(this, gridPos);
