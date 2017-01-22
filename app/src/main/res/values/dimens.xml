@@ -7,5 +7,5 @@
     <dimen name="text_size_128sp">128sp</dimen>
 
     <!--recycler view span count-->
-    <integer name="grid_item_count">3</integer>
+    <integer name="grid_item_count">2</integer>
 </resources>
