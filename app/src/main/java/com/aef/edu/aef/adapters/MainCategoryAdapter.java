@@ -14,7 +14,6 @@ import com.aef.edu.aef.R;
 import com.aef.edu.aef.constants.AefConstants;
 import com.aef.edu.aef.handlers.SubCategoryChooser;
 import com.aef.edu.aef.interfaces.OnCategorySelectedListener;
-import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.view.CategoryChooserView;
 
 import java.util.List;
@@ -25,14 +24,14 @@ import java.util.List;
 
 public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapter.ViewHolder> implements OnCategorySelectedListener {
 
-	private List<ContentDataItem> mData;
+	private List<String> contentData;
 	private Activity activity;
 
 	private Bitmap arrowBitmap;
 
-	public MainCategoryAdapter(Activity activity, List<ContentDataItem> mData) {
+	public MainCategoryAdapter(Activity activity, List<String> contentData) {
 		this.activity = activity;
-		this.mData = mData;
+		this.contentData = contentData;
 	}
 
 	static class ViewHolder extends RecyclerView.ViewHolder {
@@ -59,15 +58,15 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 	@Override
 	public void onBindViewHolder(MainCategoryAdapter.ViewHolder holder, final int position) {
 		final int itemPos = holder.getAdapterPosition();
-		//holder.mTextView.setText();
+		//holder.itemText.setText();
 		holder.categoryChooserView.setOnCategorySelectedListener(this, itemPos);
 		holder.categoryChooserView.setArrowBitmap(arrowBitmap);
-		holder.categoryChooserView.setItemText(mData.get(itemPos).getText());
+		holder.categoryChooserView.setItemText(contentData.get(itemPos));
 	}
 
 	@Override
 	public int getItemCount() {
-		return mData.size();
+		return contentData.size();
 	}
 
 	@Override
@@ -80,7 +79,7 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 		sendIntent.putExtra(AefConstants.KEY_GRIDS_SELECTED_ITEM_POS, gridPos);
 		activity.startActivity(sendIntent);
 //		final Intent intent = new Intent(activity, AefNews.class);
-//		intent.putExtra(AefMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
+//		intent.putExtra(AefContentActivity.HOME_TITLE, contentData.get(gridPos).getText());
 //		activity.startActivity(intent);
 	}
 }

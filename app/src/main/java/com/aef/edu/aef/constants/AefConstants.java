@@ -14,13 +14,23 @@ public class AefConstants {
 	public static final int KEY_CALENDAR_OF_ACTIVITIES = 5;
 	public static final int KEY_PROJECTS = 6;
 
-	//*************strings**************//
+	//************* item type **************//
+
+	public static final int TYPE_IMAGE = 11;
+
+	//************* home item **************//
+
+	public static final String HOME_TITLE = "home_title";
+	public static final String HOME_CONTENT = "home_content";
+	public static final String HOME_IMAGE = "home_image";
+
+	//************* animation **************//
 
 	public static final String ROTATION_Y = "rotationY";
 	public static final String ROTATION_X = "rotationX";
 	public static final String ALPHA = "alpha";
 
-	//*************strings**************//
+	//************* strings **************//
 
 	public static final String AEF_2015_EREBUNI_URI = "https://www.facebook.com/ArmenianEducationalFoundation/photos/a.1011783945602182.1073741845.268962789884305/1011783972268846/?type=3&theater";
 	public static final String AEF_2015_EREBUNI_DESCR = "2015 AEF Scholarship Reception in Yerevan, Armenia";
@@ -55,5 +65,7 @@ public class AefConstants {
 
 	//extra key
 	public static final String KEY_GRIDS_SELECTED_ITEM_POS = "grid_selected_item_pos";
+	public static final String KEY_SUB_CATEGORY_NICK_NAME = "sub_category_nick_name";
+	public static final String KEY_SUB_CATEGORY_NICK_POS = "sub_category_nick_pos";
 
 }

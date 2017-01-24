@@ -6,8 +6,7 @@
     android:id="@+id/activity_aef_about_us"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.aef.edu.aef.content_activities.AefAboutUs">
+    android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/main.appbar"

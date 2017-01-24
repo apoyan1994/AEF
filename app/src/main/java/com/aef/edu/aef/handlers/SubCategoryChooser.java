@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.adapters.SubCategoryAdapter;
 import com.aef.edu.aef.constants.AefConstants;
-import com.aef.edu.aef.content_activities.AefAboutUs;
+import com.aef.edu.aef.content_activities.AefContentActivity;
 import com.aef.edu.aef.items.ContentDataItem;
 
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class SubCategoryChooser extends AppCompatActivity {
 
 		switch (currentCategory) {
 			case AefConstants.KEY_ABOUT_US:
-				openAboutUs();
+				contentDataItems = openAboutUs();
 				break;
 			case AefConstants.KEY_NEWS:
 				contentDataItems = news();
@@ -59,7 +59,7 @@ public class SubCategoryChooser extends AppCompatActivity {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
 		ContentDataItem item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
-				R.string.aef_sarf_press_release_text);
+				R.string.aef_sarf_press_release_text, AefConstants.TYPE_IMAGE);
 		contentDataItems.add(item);
 
 		contentDataItems.add(item);
@@ -74,9 +74,10 @@ public class SubCategoryChooser extends AppCompatActivity {
 
 	private List<ContentDataItem> News() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
+		int index = 0;
 
 		ContentDataItem item = new ContentDataItem(R.drawable.news_first_graduating_artsakh, AefConstants.NEWS_FIRST_GRADUATING_ARTSAKH_DESCR,
-				R.string.news_first_graduating_artsakh_text);
+				R.string.news_first_graduating_artsakh_text, AefConstants.TYPE_IMAGE, "news", index++);
 		contentDataItems.add(item);
 
 		//item = new ContentDataItem(R.drawable.aef_holds_reception, AefConstants.AEF_HOLDS_RECEPTION_DESCR,
@@ -100,7 +101,7 @@ public class SubCategoryChooser extends AppCompatActivity {
 		//contentDataItems.add(item);
 
 		item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
-				R.string.aef_sarf_press_release_text);
+				R.string.aef_sarf_press_release_text, AefConstants.TYPE_IMAGE, "news", index++);
 		contentDataItems.add(item);
 
 		return contentDataItems;
@@ -110,7 +111,7 @@ public class SubCategoryChooser extends AppCompatActivity {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
 		ContentDataItem item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
-				R.string.aef_sarf_press_release_text);
+				R.string.aef_sarf_press_release_text, AefConstants.TYPE_IMAGE);
 		contentDataItems.add(item);
 
 		contentDataItems.add(item);
@@ -123,8 +124,21 @@ public class SubCategoryChooser extends AppCompatActivity {
 		return contentDataItems;
 	}
 
-	private void openAboutUs() {
-		startActivityForResult(new Intent(getApplicationContext(), AefAboutUs.class), 44);
+	private List<ContentDataItem> openAboutUs() {
+		List<ContentDataItem> contentDataItems = new ArrayList<>();
+
+		ContentDataItem item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
+				R.string.aef_sarf_press_release_text, AefConstants.TYPE_IMAGE);
+		contentDataItems.add(item);
+
+		contentDataItems.add(item);
+		contentDataItems.add(item);
+		contentDataItems.add(item);
+		contentDataItems.add(item);
+		contentDataItems.add(item);
+		contentDataItems.add(item);
+
+		return contentDataItems;
 	}
 
 	@Override

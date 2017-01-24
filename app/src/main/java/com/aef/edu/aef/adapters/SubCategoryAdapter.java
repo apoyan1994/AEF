@@ -11,7 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aef.edu.aef.R;
-import com.aef.edu.aef.content_activities.AefMoreDetails;
+import com.aef.edu.aef.constants.AefConstants;
+import com.aef.edu.aef.content_activities.AefContentActivity;
 import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.utils.AefUtils;
 
@@ -23,25 +24,25 @@ import java.util.List;
 
 public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.ViewHolder> {
 
-	private List<ContentDataItem> mData;
+	private List<ContentDataItem> contentData;
 	private Activity activity;
 
-	public SubCategoryAdapter(Activity activity, List<ContentDataItem> mData) {
+	public SubCategoryAdapter(Activity activity, List<ContentDataItem> contentData) {
 		this.activity = activity;
-		this.mData = mData;
+		this.contentData = contentData;
 	}
 
 	static class ViewHolder extends RecyclerView.ViewHolder {
 		// each data item is just a string in this case
-		TextView mTextView;
-		ImageView mImageView;
-		FrameLayout mContent;
+		TextView itemText;
+		ImageView itemImage;
+		FrameLayout itemContainer;
 
 		ViewHolder(View v) {
 			super(v);
-			mTextView = (TextView) v.findViewById(R.id.grid_item_text);
-			mImageView = (ImageView) v.findViewById(R.id.grid_item_icon);
-			mContent = (FrameLayout) v.findViewById(R.id.grid_item_container);
+			itemText = (TextView) v.findViewById(R.id.grid_item_text);
+			itemImage = (ImageView) v.findViewById(R.id.grid_item_icon);
+			itemContainer = (FrameLayout) v.findViewById(R.id.grid_item_container);
 		}
 	}
 
@@ -54,16 +55,15 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
 	@Override
 	public void onBindViewHolder(SubCategoryAdapter.ViewHolder holder, final int position) {
 		final int gridPos = holder.getAdapterPosition();
-		holder.mTextView.setText(mData.get(gridPos).getText());
-		holder.mImageView.setImageBitmap(AefUtils.getScaledBitmap(activity, mData.get(gridPos).getPhotoId(), 100, 100));
+		holder.itemText.setText(contentData.get(gridPos).getText());
+		holder.itemImage.setImageBitmap(AefUtils.getScaledBitmap(activity, contentData.get(gridPos).getPhotoId(), 100, 100));
 
-		holder.mContent.setOnClickListener(new View.OnClickListener() {
+		holder.itemContainer.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				final Intent intent = new Intent(activity, AefMoreDetails.class);
-				intent.putExtra(AefMoreDetails.HOME_TITLE, mData.get(gridPos).getText());
-				intent.putExtra(AefMoreDetails.HOME_CONTENT, mData.get(gridPos).getStringResId());
-				intent.putExtra(AefMoreDetails.HOME_IMAGE, mData.get(gridPos).getPhotoId());
+				final Intent intent = new Intent(activity, AefContentActivity.class);
+				intent.putExtra(AefConstants.KEY_SUB_CATEGORY_NICK_NAME, contentData.get(gridPos).getNickName());
+				intent.putExtra(AefConstants.KEY_SUB_CATEGORY_NICK_POS, contentData.get(gridPos).getNickPos());
 				activity.startActivity(intent);
 			}
 		});
@@ -71,6 +71,6 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
 
 	@Override
 	public int getItemCount() {
-		return mData.size();
+		return contentData.size();
 	}
 }

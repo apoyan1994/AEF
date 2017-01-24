@@ -4,10 +4,10 @@
     android:id="@+id/grid_item_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/gray_background_selector"
     android:layout_marginBottom="16dp"
     android:layout_marginRight="16dp"
-    android:layout_marginTop="8dp">
+    android:layout_marginTop="8dp"
+    android:background="@drawable/gray_background_selector">
 
     <ImageView
         android:id="@+id/grid_item_icon"
