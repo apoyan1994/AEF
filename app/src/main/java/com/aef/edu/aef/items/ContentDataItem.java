@@ -7,10 +7,16 @@ package com.aef.edu.aef.items;
 public class ContentDataItem {
 
 	private String nickName;
+	private String itemText;
 	private int nickPos;
 	private String description;
 	private int photoId;
 	private int type;
+
+	public ContentDataItem(String nickName, String itemText) {
+		this.nickName = nickName;
+		this.itemText = itemText;
+	}
 
 	public ContentDataItem(int photoId, String description, String nickName, int nickPos) {
 		this.photoId = photoId;
@@ -21,6 +27,10 @@ public class ContentDataItem {
 
 	public String getNickName() {
 		return nickName;
+	}
+
+	public String getItemText() {
+		return itemText;
 	}
 
 	public int getNickPos() {

@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.adapters.MainCategoryAdapter;
+import com.aef.edu.aef.constants.AefConstants;
 import com.aef.edu.aef.items.ContentDataItem;
 
 import java.util.ArrayList;
@@ -26,14 +27,17 @@ public class MainCategoryChooser extends AppCompatActivity {
 		RecyclerView recyclerView = (RecyclerView) findViewById(R.id.item_chooser_recycler_view);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
-		List<String> contentDataItems = new ArrayList<>();
-
-		contentDataItems.add("About us");
-		contentDataItems.add("News");
-		contentDataItems.add("Contacts");
-		contentDataItems.add("Home");
-		contentDataItems.add("More details");
+		List<ContentDataItem> contentDataItems = new ArrayList<>();
+		contentDataItems.add(addItem(AefConstants.KEY_MAIN_ABOUT_US, "About us"));
+		contentDataItems.add(addItem(AefConstants.KEY_MAIN_NEWS, "News"));
+		contentDataItems.add(addItem(AefConstants.KEY_MAIN_CONTACT_US, "Contact us"));
+		contentDataItems.add(addItem(AefConstants.KEY_MAIN_HOME, "Home"));
+		contentDataItems.add(addItem(AefConstants.KEY_MAIN_MORE_DETAILS, "More details"));
 
 		recyclerView.setAdapter(new MainCategoryAdapter(this, contentDataItems));
+	}
+
+	private ContentDataItem addItem(String nickName, String itemText) {
+		return new ContentDataItem(nickName, itemText);
 	}
 }

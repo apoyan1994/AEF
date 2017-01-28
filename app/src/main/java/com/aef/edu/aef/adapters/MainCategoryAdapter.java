@@ -14,6 +14,7 @@ import com.aef.edu.aef.R;
 import com.aef.edu.aef.constants.AefConstants;
 import com.aef.edu.aef.handlers.SubCategoryChooser;
 import com.aef.edu.aef.interfaces.OnCategorySelectedListener;
+import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.view.CategoryChooserView;
 
 import java.util.List;
@@ -24,12 +25,12 @@ import java.util.List;
 
 public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapter.ViewHolder> implements OnCategorySelectedListener {
 
-	private List<String> contentData;
+	private List<ContentDataItem> contentData;
 	private Activity activity;
 
 	private Bitmap arrowBitmap;
 
-	public MainCategoryAdapter(Activity activity, List<String> contentData) {
+	public MainCategoryAdapter(Activity activity, List<ContentDataItem> contentData) {
 		this.activity = activity;
 		this.contentData = contentData;
 	}
@@ -61,7 +62,7 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 		//holder.itemText.setText();
 		holder.categoryChooserView.setOnCategorySelectedListener(this, itemPos);
 		holder.categoryChooserView.setArrowBitmap(arrowBitmap);
-		holder.categoryChooserView.setItemText(contentData.get(itemPos));
+		holder.categoryChooserView.setItemText(contentData.get(itemPos).getItemText());
 	}
 
 	@Override
@@ -76,7 +77,7 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 
 	private void openSubCategory(int gridPos) {
 		Intent sendIntent = new Intent(activity, SubCategoryChooser.class);
-		sendIntent.putExtra(AefConstants.KEY_GRIDS_SELECTED_ITEM_POS, gridPos);
+		sendIntent.putExtra(AefConstants.KEY_GRIDS_SELECTED_ITEM_POS, contentData.get(gridPos).getNickName());
 		activity.startActivity(sendIntent);
 //		final Intent intent = new Intent(activity, AefNews.class);
 //		intent.putExtra(AefContentActivity.HOME_TITLE, contentData.get(gridPos).getDescription());

@@ -6,13 +6,13 @@ package com.aef.edu.aef.constants;
 
 public class AefConstants {
 
-	public static final int KEY_ABOUT_US = 0;
-	public static final int KEY_NEWS = 1;
-	public static final int KEY_CONTACT_US = 2;
-	public static final int KEY_HOME = 3;
-	public static final int KEY_MORE_DETAILS = 4;
-	public static final int KEY_CALENDAR_OF_ACTIVITIES = 5;
-	public static final int KEY_PROJECTS = 6;
+	public static final String KEY_MAIN_ABOUT_US = "main_about_us";
+	public static final String KEY_MAIN_NEWS = "main_news";
+	public static final String KEY_MAIN_CONTACT_US = "main_contact_us";
+	public static final String KEY_MAIN_HOME = "main_home";
+	public static final String KEY_MAIN_MORE_DETAILS = "main_more_details";
+	public static final String KEY_MAIN_CALENDAR_OF_ACTIVITIES = "main_calendar_of_activities";
+	public static final String KEY_MAIN_PROJECTS = "main_projects";
 
 	//************* item type **************//
 

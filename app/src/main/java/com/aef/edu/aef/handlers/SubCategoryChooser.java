@@ -21,24 +21,24 @@ public class SubCategoryChooser extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sub_caegory_chooser);
 
-		int currentCategory = getIntent().getIntExtra(AefConstants.KEY_GRIDS_SELECTED_ITEM_POS, 0);
+		String currentCategory = getIntent().getStringExtra(AefConstants.KEY_GRIDS_SELECTED_ITEM_POS);
 
 		List<ContentDataItem> contentDataItems = null;
 
 		switch (currentCategory) {
-			case AefConstants.KEY_ABOUT_US:
+			case AefConstants.KEY_MAIN_ABOUT_US:
 				contentDataItems = openAboutUs();
 				break;
-			case AefConstants.KEY_NEWS:
+			case AefConstants.KEY_MAIN_NEWS:
 				contentDataItems = news();
 				break;
-			case AefConstants.KEY_CONTACT_US:
+			case AefConstants.KEY_MAIN_CONTACT_US:
 				contentDataItems = News();
 				break;
-			case AefConstants.KEY_HOME:
+			case AefConstants.KEY_MAIN_HOME:
 				contentDataItems = home();
 				break;
-			case AefConstants.KEY_MORE_DETAILS:
+			case AefConstants.KEY_MAIN_MORE_DETAILS:
 				contentDataItems = home();
 				break;
 			default:
