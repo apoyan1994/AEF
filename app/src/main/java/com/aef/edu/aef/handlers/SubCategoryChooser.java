@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.adapters.SubCategoryAdapter;
 import com.aef.edu.aef.constants.AefConstants;
-import com.aef.edu.aef.content_activities.AefContentActivity;
 import com.aef.edu.aef.items.ContentDataItem;
 
 import java.util.ArrayList;
@@ -57,16 +56,10 @@ public class SubCategoryChooser extends AppCompatActivity {
 
 	private List<ContentDataItem> news() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
+		int index = 0;
 
 		ContentDataItem item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
-				R.string.aef_sarf_press_release_text, AefConstants.TYPE_IMAGE);
-		contentDataItems.add(item);
-
-		contentDataItems.add(item);
-		contentDataItems.add(item);
-		contentDataItems.add(item);
-		contentDataItems.add(item);
-		contentDataItems.add(item);
+				"news", index++);
 		contentDataItems.add(item);
 
 		return contentDataItems;
@@ -77,7 +70,7 @@ public class SubCategoryChooser extends AppCompatActivity {
 		int index = 0;
 
 		ContentDataItem item = new ContentDataItem(R.drawable.news_first_graduating_artsakh, AefConstants.NEWS_FIRST_GRADUATING_ARTSAKH_DESCR,
-				R.string.news_first_graduating_artsakh_text, AefConstants.TYPE_IMAGE, "news", index++);
+				"news", index++);
 		contentDataItems.add(item);
 
 		//item = new ContentDataItem(R.drawable.aef_holds_reception, AefConstants.AEF_HOLDS_RECEPTION_DESCR,
@@ -101,7 +94,7 @@ public class SubCategoryChooser extends AppCompatActivity {
 		//contentDataItems.add(item);
 
 		item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
-				R.string.aef_sarf_press_release_text, AefConstants.TYPE_IMAGE, "news", index++);
+				"news", index++);
 		contentDataItems.add(item);
 
 		return contentDataItems;
@@ -109,16 +102,10 @@ public class SubCategoryChooser extends AppCompatActivity {
 
 	private List<ContentDataItem> home() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
+		int index = 0;
 
 		ContentDataItem item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
-				R.string.aef_sarf_press_release_text, AefConstants.TYPE_IMAGE);
-		contentDataItems.add(item);
-
-		contentDataItems.add(item);
-		contentDataItems.add(item);
-		contentDataItems.add(item);
-		contentDataItems.add(item);
-		contentDataItems.add(item);
+				"home", index++);
 		contentDataItems.add(item);
 
 		return contentDataItems;
@@ -126,16 +113,14 @@ public class SubCategoryChooser extends AppCompatActivity {
 
 	private List<ContentDataItem> openAboutUs() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
+		int index = 0;
 
 		ContentDataItem item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
-				R.string.aef_sarf_press_release_text, AefConstants.TYPE_IMAGE);
+				"about_us", index++);
 		contentDataItems.add(item);
 
-		contentDataItems.add(item);
-		contentDataItems.add(item);
-		contentDataItems.add(item);
-		contentDataItems.add(item);
-		contentDataItems.add(item);
+		item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
+				"about_us", index++);
 		contentDataItems.add(item);
 
 		return contentDataItems;

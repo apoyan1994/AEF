@@ -70,7 +70,7 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ViewHold
 			holder.mImageView.setImageResource(contentData.get(gridPos).getPhotoId());
 
 		} else {
-			holder.mTextView.setText(contentData.get(gridPos).getText());
+			holder.mTextView.setText(contentData.get(gridPos).getDescription());
 		}
 	}
 

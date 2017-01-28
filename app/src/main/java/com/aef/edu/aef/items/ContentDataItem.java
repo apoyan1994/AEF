@@ -8,24 +8,13 @@ public class ContentDataItem {
 
 	private String nickName;
 	private int nickPos;
-	private String text;
+	private String description;
 	private int photoId;
-	private int stringResId;
-	private int color;
 	private int type;
 
-	public ContentDataItem(int photoId, String text, int stringResId, int type) {
+	public ContentDataItem(int photoId, String description, String nickName, int nickPos) {
 		this.photoId = photoId;
-		this.text = text;
-		this.stringResId = stringResId;
-		this.type = type;
-	}
-
-	public ContentDataItem(int photoId, String text, int stringResId, int type, String nickName, int nickPos) {
-		this.photoId = photoId;
-		this.text = text;
-		this.stringResId = stringResId;
-		this.type = type;
+		this.description = description;
 		this.nickName = nickName;
 		this.nickPos = nickPos;
 	}
@@ -38,20 +27,12 @@ public class ContentDataItem {
 		return nickPos;
 	}
 
-	public String getText() {
-		return text;
+	public String getDescription() {
+		return description;
 	}
 
 	public int getPhotoId() {
 		return photoId;
-	}
-
-	public int getStringResId() {
-		return stringResId;
-	}
-
-	public int getColor() {
-		return color;
 	}
 
 	public int getType() {

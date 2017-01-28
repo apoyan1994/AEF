@@ -79,7 +79,7 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 		sendIntent.putExtra(AefConstants.KEY_GRIDS_SELECTED_ITEM_POS, gridPos);
 		activity.startActivity(sendIntent);
 //		final Intent intent = new Intent(activity, AefNews.class);
-//		intent.putExtra(AefContentActivity.HOME_TITLE, contentData.get(gridPos).getText());
+//		intent.putExtra(AefContentActivity.HOME_TITLE, contentData.get(gridPos).getDescription());
 //		activity.startActivity(intent);
 	}
 }

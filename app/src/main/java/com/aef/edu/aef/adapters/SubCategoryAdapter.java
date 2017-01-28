@@ -55,7 +55,7 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
 	@Override
 	public void onBindViewHolder(SubCategoryAdapter.ViewHolder holder, final int position) {
 		final int gridPos = holder.getAdapterPosition();
-		holder.itemText.setText(contentData.get(gridPos).getText());
+		holder.itemText.setText(contentData.get(gridPos).getDescription());
 		holder.itemImage.setImageBitmap(AefUtils.getScaledBitmap(activity, contentData.get(gridPos).getPhotoId(), 100, 100));
 
 		holder.itemContainer.setOnClickListener(new View.OnClickListener() {
