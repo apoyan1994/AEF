@@ -18,11 +18,18 @@ import android.widget.LinearLayout;
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.interfaces.OnCategorySelectedListener;
 
+import java.util.Calendar;
+
 /**
  * Created by agvan on 12/10/16.
  */
 
 public class CategoryChooserView extends View {
+
+	private static final int MAX_CLICK_DURATION = 200;
+	private static final int MAX_MOVE_SIZE = 10;
+
+	private long startClickTime;
 
 	private int KEY_ITEM_WIDTH;
 	private int KEY_ITEM_HEIGHT;
@@ -126,6 +133,7 @@ public class CategoryChooserView extends View {
 
 		switch (action) {
 			case (MotionEvent.ACTION_DOWN):
+				startClickTime = Calendar.getInstance().getTimeInMillis();
 				oldX = xCoordinate;
 				oldY = event.getY();
 
@@ -162,6 +170,11 @@ public class CategoryChooserView extends View {
 
 				break;
 			case (MotionEvent.ACTION_UP):
+				long clickDuration = Calendar.getInstance().getTimeInMillis() - startClickTime;
+				if (clickDuration < MAX_CLICK_DURATION && isStartedInsideObject && oldX - event.getX() < MAX_MOVE_SIZE) {
+					isCategorySelected = true;
+					onCategorySelectedListener.onCategorySelected(position);
+				}
 				isStartedInsideObject = false;
 				isCategorySelected = false;
 
@@ -180,6 +193,8 @@ public class CategoryChooserView extends View {
 
 		return true;
 	}
+
+
 
 	private void backStateAnimation() {
 		ValueAnimator animation = ValueAnimator.ofFloat(x1Cord, parentWidth / 2 - KEY_ITEM_WIDTH / 2);

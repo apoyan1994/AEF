@@ -55,15 +55,16 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
 	@Override
 	public void onBindViewHolder(SubCategoryAdapter.ViewHolder holder, final int position) {
 		final int gridPos = holder.getAdapterPosition();
-		holder.itemText.setText(contentData.get(gridPos).getDescription());
+		holder.itemText.setText(contentData.get(gridPos).getItemText());
 		holder.itemImage.setImageBitmap(AefUtils.getScaledBitmap(activity, contentData.get(gridPos).getPhotoId(), 100, 100));
 
 		holder.itemContainer.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				final Intent intent = new Intent(activity, AefContentActivity.class);
-				intent.putExtra(AefConstants.KEY_SUB_CATEGORY_NICK_NAME, contentData.get(gridPos).getNickName());
-				intent.putExtra(AefConstants.KEY_SUB_CATEGORY_NICK_POS, contentData.get(gridPos).getNickPos());
+				intent.putExtra(AefConstants.KEY_MAIN_CATEGORY_NICK_NAME, contentData.get(gridPos).getMainNickName());
+				intent.putExtra(AefConstants.KEY_SUB_CATEGORY_NICK_NAME, contentData.get(gridPos).getSubNickName());
+				intent.putExtra(AefConstants.KEY_SUB_CATEGORY_TITLE, contentData.get(gridPos).getItemText());
 				activity.startActivity(intent);
 			}
 		});

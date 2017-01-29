@@ -20,8 +20,8 @@ public class AnimationHandler {
 	private View lettersContainer;
 	private ImageView aefImgDescription;
 
-	private int letterAnimationDuration = 1;//1000;
-	private final int appStartDuration = 1;//800;
+	private int letterAnimationDuration = 1000;
+	private final int appStartDuration = 800;
 
 	private OnAnimationEndListener callBack;
 

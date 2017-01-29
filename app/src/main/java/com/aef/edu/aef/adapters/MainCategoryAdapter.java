@@ -28,6 +28,8 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 	private List<ContentDataItem> contentData;
 	private Activity activity;
 
+	private boolean subCategoryOpened = false;
+
 	private Bitmap arrowBitmap;
 
 	public MainCategoryAdapter(Activity activity, List<ContentDataItem> contentData) {
@@ -72,15 +74,19 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 
 	@Override
 	public void onCategorySelected(int position) {
-		openSubCategory(position);
+		if (!subCategoryOpened) {
+			subCategoryOpened = true;
+			openSubCategory(position);
+		}
 	}
 
 	private void openSubCategory(int gridPos) {
 		Intent sendIntent = new Intent(activity, SubCategoryChooser.class);
-		sendIntent.putExtra(AefConstants.KEY_GRIDS_SELECTED_ITEM_POS, contentData.get(gridPos).getNickName());
-		activity.startActivity(sendIntent);
-//		final Intent intent = new Intent(activity, AefNews.class);
-//		intent.putExtra(AefContentActivity.HOME_TITLE, contentData.get(gridPos).getDescription());
-//		activity.startActivity(intent);
+		sendIntent.putExtra(AefConstants.KEY_MAIN_CATEGORY_NICK_NAME, contentData.get(gridPos).getMainNickName());
+		activity.startActivityForResult(sendIntent, 1);
+	}
+
+	public void setSubCategoryOpened(boolean subCategoryOpened) {
+		this.subCategoryOpened = subCategoryOpened;
 	}
 }

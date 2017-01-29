@@ -6,46 +6,44 @@ package com.aef.edu.aef.items;
 
 public class ContentDataItem {
 
-	private String nickName;
+	private String mainNickName;
+	private String subNickName;
 	private String itemText;
-	private int nickPos;
-	private String description;
 	private int photoId;
-	private int type;
 
-	public ContentDataItem(String nickName, String itemText) {
-		this.nickName = nickName;
+	public ContentDataItem setMainNickName(String mainNickName) {
+		this.mainNickName = mainNickName;
+		return this;
+	}
+
+	public ContentDataItem setSubNickName(String subNickName) {
+		this.subNickName = subNickName;
+		return this;
+	}
+
+	public ContentDataItem setItemText(String itemText) {
 		this.itemText = itemText;
+		return this;
 	}
 
-	public ContentDataItem(int photoId, String description, String nickName, int nickPos) {
+	public ContentDataItem setPhotoId(int photoId) {
 		this.photoId = photoId;
-		this.description = description;
-		this.nickName = nickName;
-		this.nickPos = nickPos;
+		return this;
 	}
 
-	public String getNickName() {
-		return nickName;
+	public String getMainNickName() {
+		return mainNickName;
+	}
+
+	public String getSubNickName() {
+		return subNickName;
 	}
 
 	public String getItemText() {
 		return itemText;
 	}
 
-	public int getNickPos() {
-		return nickPos;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
 	public int getPhotoId() {
 		return photoId;
-	}
-
-	public int getType() {
-		return type;
 	}
 }

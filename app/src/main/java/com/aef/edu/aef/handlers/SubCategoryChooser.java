@@ -16,18 +16,20 @@ import java.util.List;
 
 public class SubCategoryChooser extends AppCompatActivity {
 
+	String currentCategory;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sub_caegory_chooser);
 
-		String currentCategory = getIntent().getStringExtra(AefConstants.KEY_GRIDS_SELECTED_ITEM_POS);
+		currentCategory = getIntent().getStringExtra(AefConstants.KEY_MAIN_CATEGORY_NICK_NAME);
 
-		List<ContentDataItem> contentDataItems = null;
+		List<ContentDataItem> contentDataItems;
 
 		switch (currentCategory) {
 			case AefConstants.KEY_MAIN_ABOUT_US:
-				contentDataItems = openAboutUs();
+				contentDataItems = aboutUs();
 				break;
 			case AefConstants.KEY_MAIN_NEWS:
 				contentDataItems = news();
@@ -56,22 +58,15 @@ public class SubCategoryChooser extends AppCompatActivity {
 
 	private List<ContentDataItem> news() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
-		int index = 0;
-
-		ContentDataItem item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
-				"news", index++);
-		contentDataItems.add(item);
+		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR, ""));
 
 		return contentDataItems;
 	}
 
 	private List<ContentDataItem> News() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
-		int index = 0;
 
-		ContentDataItem item = new ContentDataItem(R.drawable.news_first_graduating_artsakh, AefConstants.NEWS_FIRST_GRADUATING_ARTSAKH_DESCR,
-				"news", index++);
-		contentDataItems.add(item);
+		contentDataItems.add(addItem(R.drawable.news_first_graduating_artsakh, AefConstants.NEWS_FIRST_GRADUATING_ARTSAKH_DESCR, ""));
 
 		//item = new ContentDataItem(R.drawable.aef_holds_reception, AefConstants.AEF_HOLDS_RECEPTION_DESCR,
 		//		AefConstants.AEF_HOLDS_RECEPTION_URI);
@@ -93,36 +88,28 @@ public class SubCategoryChooser extends AppCompatActivity {
 		//		AefConstants.AEF_HONOR_RALPH_TUFENKIAN_AND_HACOP_BAGHDASSARIAN_URI);
 		//contentDataItems.add(item);
 
-		item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
-				"news", index++);
-		contentDataItems.add(item);
+		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR, ""));
 
 		return contentDataItems;
 	}
 
 	private List<ContentDataItem> home() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
-		int index = 0;
-
-		ContentDataItem item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
-				"home", index++);
-		contentDataItems.add(item);
+		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR, ""));
 
 		return contentDataItems;
 	}
 
-	private List<ContentDataItem> openAboutUs() {
+	private List<ContentDataItem> aboutUs() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
-		int index = 0;
 
-		ContentDataItem item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
-				"about_us", index++);
-		contentDataItems.add(item);
-
-		item = new ContentDataItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR,
-				"about_us", index++);
-		contentDataItems.add(item);
-
+		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ABOUT_US_TEXT, AefConstants.KEY_SUB_ABOUT_US_ABOUT_US));
+		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ACHIEVEMENTS_TEXT, AefConstants.KEY_SUB_ABOUT_US_ACHIEVEMENTS));
+		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_MEMBERSHIP_TEXT, AefConstants.KEY_SUB_ABOUT_US_MEMBERSHIP));
+		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ENDOWMENTS_TEXT, AefConstants.KEY_SUB_ABOUT_US_ENDOWMENTS));
+		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_HISTORY_TEXT, AefConstants.KEY_SUB_ABOUT_US_HISTORY));
+		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_NON_PROFIT_TEXT, AefConstants.KEY_SUB_ABOUT_US_NON_PROFIT));
+		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ANNUAL_ALLOCATION_TEXT, AefConstants.KEY_SUB_ABOUT_US_ANNUAL_ALLOCATION));
 		return contentDataItems;
 	}
 
@@ -131,6 +118,14 @@ public class SubCategoryChooser extends AppCompatActivity {
 		super.onActivityResult(requestCode, resultCode, data);
 
 		finish();
+	}
+
+	private ContentDataItem addItem(int photoId, String itemText, String subNickName) {
+		return new ContentDataItem()
+				.setPhotoId(photoId)
+				.setItemText(itemText)
+				.setMainNickName(currentCategory)
+				.setSubNickName(subNickName);
 	}
 }
 

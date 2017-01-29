@@ -14,6 +14,30 @@ public class AefConstants {
 	public static final String KEY_MAIN_CALENDAR_OF_ACTIVITIES = "main_calendar_of_activities";
 	public static final String KEY_MAIN_PROJECTS = "main_projects";
 
+	public static final String KEY_MAIN_ABOUT_US_TEXT = "About us";
+	public static final String KEY_MAIN_NEWS_TEXT = "News";
+	public static final String KEY_MAIN_CONTACT_US_TEXT = "Contact us";
+	public static final String KEY_MAIN_HOME_TEXT = "Home";
+	public static final String KEY_MAIN_MORE_DETAILS_TEXT = "More details";
+	public static final String KEY_MAIN_CALENDAR_OF_ACTIVITIES_TEXT = "Calendar of activities";
+	public static final String KEY_MAIN_PROJECTS_TEXT = "Projects";
+
+	public static final String KEY_SUB_ABOUT_US_ABOUT_US = "sub_about_us_about_us";
+	public static final String KEY_SUB_ABOUT_US_ACHIEVEMENTS = "sub_about_us_achievements";
+	public static final String KEY_SUB_ABOUT_US_MEMBERSHIP = "sub_about_us_membership";
+	public static final String KEY_SUB_ABOUT_US_ENDOWMENTS = "sub_about_us_endowments";
+	public static final String KEY_SUB_ABOUT_US_HISTORY = "sub_about_us_history";
+	public static final String KEY_SUB_ABOUT_US_NON_PROFIT = "sub_about_us_non_profit";
+	public static final String KEY_SUB_ABOUT_US_ANNUAL_ALLOCATION = "sub_about_us_annual_allocation";
+
+	public static final String KEY_SUB_ABOUT_US_ABOUT_US_TEXT = "About Us";
+	public static final String KEY_SUB_ABOUT_US_ACHIEVEMENTS_TEXT = "Achievements";
+	public static final String KEY_SUB_ABOUT_US_MEMBERSHIP_TEXT = "Membership";
+	public static final String KEY_SUB_ABOUT_US_ENDOWMENTS_TEXT = "Endowments";
+	public static final String KEY_SUB_ABOUT_US_HISTORY_TEXT = "History";
+	public static final String KEY_SUB_ABOUT_US_NON_PROFIT_TEXT = "Profit";
+	public static final String KEY_SUB_ABOUT_US_ANNUAL_ALLOCATION_TEXT = "Allocation";
+
 	//************* item type **************//
 
 	public static final int TYPE_IMAGE = 11;
@@ -64,8 +88,8 @@ public class AefConstants {
 	public static final String KEY_MENU_ITEM = "menu_item";
 
 	//extra key
-	public static final String KEY_GRIDS_SELECTED_ITEM_POS = "grid_selected_item_pos";
+	public static final String KEY_MAIN_CATEGORY_NICK_NAME = "main_category_nick_name";
 	public static final String KEY_SUB_CATEGORY_NICK_NAME = "sub_category_nick_name";
-	public static final String KEY_SUB_CATEGORY_NICK_POS = "sub_category_nick_pos";
+	public static final String KEY_SUB_CATEGORY_TITLE = "sub_category_title";
 
 }

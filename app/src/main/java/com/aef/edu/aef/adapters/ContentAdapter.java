@@ -6,12 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.aef.edu.aef.constants.AefConstants;
-import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.R;
+import com.aef.edu.aef.items.TextImageItem;
 
 import java.util.List;
 
@@ -21,10 +19,12 @@ import java.util.List;
 
 public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ViewHolder> {
 
-	private List<ContentDataItem> contentData;
+	private final int TYPE_TEXT = -1;
+
+	private List<TextImageItem> contentData;
 	private Context context;
 
-	public ContentAdapter(Context context, List<ContentDataItem> contentData) {
+	public ContentAdapter(Context context, List<TextImageItem> contentData) {
 		this.context = context;
 		this.contentData = contentData;
 	}
@@ -34,30 +34,26 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ViewHold
 		TextView mTextView;
 		ImageView mImageView;
 
-		LinearLayout mContent;
-
 		ViewHolder(View v) {
 			super(v);
 			mTextView = (TextView) v.findViewById(R.id.content_item_text);
 			mImageView = (ImageView) v.findViewById(R.id.content_item_icon);
-			mContent = (LinearLayout) v.findViewById(R.id.content_item_container);
 		}
 	}
 
 	@Override
 	public int getItemViewType(int position) {
-		contentData.get(position).getType();
-		return super.getItemViewType(position);
+		return contentData.get(position).getPhotoId();
 	}
 
 	@Override
 	public ContentAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 		View view;
-		if (viewType == AefConstants.TYPE_IMAGE) {
-			view = LayoutInflater.from(parent.getContext()).inflate(R.layout.text_view_item, parent, false);
+		if (viewType == TYPE_TEXT) {
+			view = LayoutInflater.from(parent.getContext()).inflate(R.layout.content_text_view_item, parent, false);
 
 		} else {
-			view = LayoutInflater.from(parent.getContext()).inflate(R.layout.image_view_item, parent, false);
+			view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ccontent_image_view_item, parent, false);
 		}
 		return new ViewHolder(view);
 	}
@@ -66,11 +62,11 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ViewHold
 	public void onBindViewHolder(ContentAdapter.ViewHolder holder, final int position) {
 		final int gridPos = holder.getAdapterPosition();
 
-		if (contentData.get(gridPos).getType() == AefConstants.TYPE_IMAGE) {
-			holder.mImageView.setImageResource(contentData.get(gridPos).getPhotoId());
+		if (contentData.get(gridPos).getPhotoId() == TYPE_TEXT) {
+			holder.mTextView.setText(context.getResources().getText(contentData.get(gridPos).getItemTextId()));
 
 		} else {
-			holder.mTextView.setText(contentData.get(gridPos).getDescription());
+			holder.mImageView.setImageResource(contentData.get(gridPos).getPhotoId());
 		}
 	}
 

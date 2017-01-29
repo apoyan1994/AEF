@@ -1,5 +1,6 @@
 package com.aef.edu.aef.handlers;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +16,8 @@ import java.util.List;
 
 public class MainCategoryChooser extends AppCompatActivity {
 
+	private MainCategoryAdapter mainCategoryAdapter;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,16 +31,26 @@ public class MainCategoryChooser extends AppCompatActivity {
 		recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
-		contentDataItems.add(addItem(AefConstants.KEY_MAIN_ABOUT_US, "About us"));
-		contentDataItems.add(addItem(AefConstants.KEY_MAIN_NEWS, "News"));
-		contentDataItems.add(addItem(AefConstants.KEY_MAIN_CONTACT_US, "Contact us"));
-		contentDataItems.add(addItem(AefConstants.KEY_MAIN_HOME, "Home"));
-		contentDataItems.add(addItem(AefConstants.KEY_MAIN_MORE_DETAILS, "More details"));
+		contentDataItems.add(addItem(AefConstants.KEY_MAIN_ABOUT_US, AefConstants.KEY_MAIN_ABOUT_US_TEXT));
+		contentDataItems.add(addItem(AefConstants.KEY_MAIN_NEWS, AefConstants.KEY_MAIN_NEWS_TEXT));
+		contentDataItems.add(addItem(AefConstants.KEY_MAIN_CONTACT_US, AefConstants.KEY_MAIN_CONTACT_US_TEXT));
+		contentDataItems.add(addItem(AefConstants.KEY_MAIN_HOME, AefConstants.KEY_MAIN_HOME_TEXT));
+		contentDataItems.add(addItem(AefConstants.KEY_MAIN_MORE_DETAILS, AefConstants.KEY_MAIN_MORE_DETAILS_TEXT));
 
-		recyclerView.setAdapter(new MainCategoryAdapter(this, contentDataItems));
+		mainCategoryAdapter = new MainCategoryAdapter(this, contentDataItems);
+		recyclerView.setAdapter(mainCategoryAdapter);
 	}
 
-	private ContentDataItem addItem(String nickName, String itemText) {
-		return new ContentDataItem(nickName, itemText);
+	private ContentDataItem addItem(String mainNickName, String itemText) {
+		return new ContentDataItem()
+				.setMainNickName(mainNickName)
+				.setItemText(itemText);
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		if (mainCategoryAdapter != null)
+			mainCategoryAdapter.setSubCategoryOpened(false);
 	}
 }
