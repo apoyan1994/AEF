@@ -4,7 +4,7 @@
              android:id="@+id/activity_aef_main"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:background="@color/colorAccent"
+             android:background="@color/colorYellow"
              tools:context="com.aef.edu.aef.aef.AefMainActivity">
 
 
@@ -19,8 +19,8 @@
             android:id="@+id/letters_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:rotationX="-270"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:rotationX="-270">
 
             <TextView
                 android:id="@+id/aef_latter_a"
@@ -51,12 +51,24 @@
                 android:textSize="@dimen/text_size_128sp"/>
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/aef_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="fitStart"
-            android:src="@drawable/header_img"/>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/aef_description"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="fitStart"
+                android:src="@drawable/header_img"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:text="Հայ Կրթական Հիմնարկություն"/>
+
+        </FrameLayout>
 
     </LinearLayout>
 </FrameLayout>
