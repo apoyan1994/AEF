@@ -58,7 +58,7 @@ public class SubCategoryChooser extends AppCompatActivity {
 
 	private List<ContentDataItem> news() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
-		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR, ""));
+		//contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR, ""));
 
 		return contentDataItems;
 	}
@@ -66,7 +66,7 @@ public class SubCategoryChooser extends AppCompatActivity {
 	private List<ContentDataItem> News() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
-		contentDataItems.add(addItem(R.drawable.news_first_graduating_artsakh, AefConstants.NEWS_FIRST_GRADUATING_ARTSAKH_DESCR, ""));
+		//contentDataItems.add(addItem(R.drawable.news_first_graduating_artsakh, AefConstants.NEWS_FIRST_GRADUATING_ARTSAKH_DESCR, ""));
 
 		//item = new ContentDataItem(R.drawable.aef_holds_reception, AefConstants.AEF_HOLDS_RECEPTION_DESCR,
 		//		AefConstants.AEF_HOLDS_RECEPTION_URI);
@@ -88,14 +88,14 @@ public class SubCategoryChooser extends AppCompatActivity {
 		//		AefConstants.AEF_HONOR_RALPH_TUFENKIAN_AND_HACOP_BAGHDASSARIAN_URI);
 		//contentDataItems.add(item);
 
-		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR, ""));
+		//contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR, ""));
 
 		return contentDataItems;
 	}
 
 	private List<ContentDataItem> home() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
-		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR, ""));
+		//contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR, ""));
 
 		return contentDataItems;
 	}
@@ -103,13 +103,13 @@ public class SubCategoryChooser extends AppCompatActivity {
 	private List<ContentDataItem> aboutUs() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
-		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ABOUT_US_TEXT, AefConstants.KEY_SUB_ABOUT_US_ABOUT_US));
-		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ACHIEVEMENTS_TEXT, AefConstants.KEY_SUB_ABOUT_US_ACHIEVEMENTS));
-		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_MEMBERSHIP_TEXT, AefConstants.KEY_SUB_ABOUT_US_MEMBERSHIP));
-		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ENDOWMENTS_TEXT, AefConstants.KEY_SUB_ABOUT_US_ENDOWMENTS));
-		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_HISTORY_TEXT, AefConstants.KEY_SUB_ABOUT_US_HISTORY));
-		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_NON_PROFIT_TEXT, AefConstants.KEY_SUB_ABOUT_US_NON_PROFIT));
-		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ANNUAL_ALLOCATION_TEXT, AefConstants.KEY_SUB_ABOUT_US_ANNUAL_ALLOCATION));
+//		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ABOUT_US_TEXT, AefConstants.KEY_SUB_ABOUT_US_ABOUT_US));
+//		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ACHIEVEMENTS_TEXT, AefConstants.KEY_SUB_ABOUT_US_ACHIEVEMENTS));
+//		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_MEMBERSHIP_TEXT, AefConstants.KEY_SUB_ABOUT_US_MEMBERSHIP));
+//		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ENDOWMENTS_TEXT, AefConstants.KEY_SUB_ABOUT_US_ENDOWMENTS));
+//		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_HISTORY_TEXT, AefConstants.KEY_SUB_ABOUT_US_HISTORY));
+//		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_NON_PROFIT_TEXT, AefConstants.KEY_SUB_ABOUT_US_NON_PROFIT));
+//		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ANNUAL_ALLOCATION_TEXT, AefConstants.KEY_SUB_ABOUT_US_ANNUAL_ALLOCATION));
 		return contentDataItems;
 	}
 

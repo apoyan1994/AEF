@@ -3,4 +3,5 @@
     <integer name="chooser_item_height">216</integer>
     <integer name="chooser_item_width">640</integer>
     <integer name="chooser_item_text_size">40</integer>
+    <!--jnjem inch or chi ashxati -->
 </resources>

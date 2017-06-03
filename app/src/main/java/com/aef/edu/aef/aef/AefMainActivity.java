@@ -3,14 +3,17 @@ package com.aef.edu.aef.aef;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Display;
 import android.widget.ImageView;
 
 import com.aef.edu.aef.R;
 import com.aef.edu.aef.handlers.AnimationHandler;
-import com.aef.edu.aef.handlers.MainCategoryChooser;
 import com.aef.edu.aef.interfaces.OnAnimationEndListener;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 public class AefMainActivity extends AppCompatActivity implements OnAnimationEndListener {
 
@@ -34,6 +37,18 @@ public class AefMainActivity extends AppCompatActivity implements OnAnimationEnd
 			animationStarted = true;
 			new AnimationHandler(this, (ImageView) findViewById(R.id.aef_description), findViewById(R.id.letters_container));
 		}
+
+		Display display = getWindowManager().getDefaultDisplay();
+		Point size = new Point();
+		display.getSize(size);
+		int width = size.x;
+		int height = size.y;
+		width = height = (int)(Math.min(width, height) / 2.6);
+
+		Glide.with(this)
+				.load(R.drawable.aef_icon_inside_png)
+				.apply(RequestOptions.centerCropTransform().override(width, height))
+				.into((ImageView) findViewById(R.id.aef_description));
 	}
 
 	@Override
@@ -52,7 +67,7 @@ public class AefMainActivity extends AppCompatActivity implements OnAnimationEnd
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);;
+		super.onActivityResult(requestCode, resultCode, data);
 		if (requestCode == AEF_REQUEST_CODE) {
 			finish();
 		}

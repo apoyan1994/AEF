@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:id="@+id/activity_aef_main"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:background="@color/colorYellow"
-             tools:context="com.aef.edu.aef.aef.AefMainActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/activity_aef_main"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/colorYellow"
+              android:orientation="vertical"
+              android:weightSum="100"
+              tools:context="com.aef.edu.aef.aef.AefMainActivity">
 
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="10"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
+        android:layout_height="0dp"
+        android:layout_weight="90"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <LinearLayout
@@ -51,24 +57,43 @@
                 android:textSize="@dimen/text_size_128sp"/>
         </LinearLayout>
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/aef_description"
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:scaleType="fitStart"
-                android:src="@drawable/header_img"/>
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="100dp"
-                android:text="Հայ Կրթական Հիմնարկություն"/>
+                <ImageView
+                    android:id="@+id/aef_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:scaleType="fitCenter"/>
 
-        </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Հայ Կրթական Հիմնարկություն"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Armenian Educational Foundation"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Because Education Matter"/>
+
+            </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
-</FrameLayout>
+</LinearLayout>

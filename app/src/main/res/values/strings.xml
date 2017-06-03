@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">AEF</string>
+    <string name="app_name">ՀԿՀ</string>
 
-    <string name="latter_a">A</string>
-    <string name="latter_e">E</string>
-    <string name="latter_f">F</string>
+    <string name="latter_a">Հ</string>
+    <string name="latter_e">Կ</string>
+    <string name="latter_f">Հ</string>
 
     <string name="item_home">Home</string>
     <string name="item_about_us">About us</string>
@@ -18,236 +18,56 @@
     <!--***  Home  ***-->
 
 	<string name="home_text_aef">
-        		Armenian Educational Foundation
-        Since 1950, the Armenian Educational Foundation, Inc. (AEF) has been a cornerstone of the Armenian educational movement around the world. It has lent a helping hand to hundreds of students and to dozens of schools in numerous nations. Through its many years of giving, it has proven to be one of the most enduring and productive organizations in the Diaspora.
-        The AEF’s fundamental aim has always been the advancement of the Armenian heritage through the support of education. Its great successes have earned the organization widespread respect, recognition and appreciation.
-        Over the past half-century, the AEF has grown into a thriving organization with a diverse membership of dedicated individuals. The AEF welcomes to its fold anyone who shares the commitment of its founding members and who will bring to the organization new energy and fresh ideas.
-        As it looks with optimism toward the future, the AEF hopes to be of even greater assistance to young Armenians pursuing higher education, as well as to continue providing financial help to institutions in Armenia, the United States and around the world.
+
 	</string>
 
     <!--***  About Us  ***-->
 
 	<string name="about_us_text_about_us">
-        About Us
 
-        The Armenian Educational Foundation, Inc. (AEF) has been a cornerstone of the Armenian educational movement around the world. It has lent a helping hand to hundreds of students and to dozens of schools in numerous nations. Through its many years of giving, it has proven to be one of the most enduring and productive organizations in the Diaspora.
 	</string>
 
 	<string name="about_us_text_our_mission">
-        OUR MISSION
-        SINCE 1950
-        To render financial assistance to Armenian educational institutions, and to assist students of Armenian parentage.
+
     </string>
 
     <string name="about_us_text_our_history">
-                Our History
 
-        Since 1950, the Armenian Educational Foundation, Inc. (AEF) has been a cornerstone of the Armenian educational movement around the world. It has lent a helping hand to hundreds of students and to dozens of schools in numerous nations. Through its many years of giving, it has proven to be one of the most enduring and productive organizations in the Diaspora.
-        The AEF’s fundamental aim has always been the advancement of the Armenian heritage through the support of education. Its great successes have earned the organization widespread respect, recognition and appreciation.
-        AEF has grown into a thriving organization with a diverse membership of dedicated individuals. The AEF welcomes to its fold anyone who shares the commitment of its founding members and who will bring to the organization new energy and fresh ideas.
-        The Armenian Educational Foundation is a non-profit, tax-exempt organization based in Glendale, California.
     </string>
 
     <string name="about_us_text_board_of_directors">
-                Vahe Hacopian\n
-        <b>President</b>\n\n\
 
-                Peter Baghdassarian, Esq.\n
-        <b>Vice President</b>\n\n
-
-                Parouir Akopian\n
-        <b>Secretary</b>\n\n
-
-                Sheila Papayans\n
-        <b>Assistant Secretary</b>\n\n
-
-                Hermineh Pakhanians\n
-        <b>Treasurer</b>\n\n
-
-                Aida Rechdouni Jooharian, MD\n
-        <b>Assistant Treasurer</b>\n\n
-
-                Alec Baghdasaryan\n
-        <b>AEF Board of Director Member</b>\n\n
-
-                Hacop Baghdassarian\n
-        <b>AEF Board of Director Member</b>\n\n
-
-                Al Cabraloff\n
-        <b>AEF Board of Director Member</b>\n\n
-
-                Hilda Fidanian\n
-        <b>AEF Board of Director Member</b>\n\n
-
-                George Issaians\n
-        <b>AEF Board of Director Member</b>\n\n
-
-                Varoujan Keosseian\n
-        <b>AEF Board of Director Member</b>\n\n
-
-                Neshan Peroomian\n
-        <b>AEF Board of Director Member</b>\n\n
-
-                Melody Petrossian, Esq.\n
-        <b>AEF Board of Director Member</b>\n\n
-
-                Aida Yeghiazarian\n
-        <b>AEF Board of Director Member</b>\n
     </string>
 
     <!--***  Achievements  ***-->
 
     <string name="about_us_text_achievements_part_1">
-      Renovating Schools in Armenia
 
-        Renovated approximately 200 village schools in Armenia, Artsakh and Javakhk
-        Establishing History
-
-        In 1986 the Armenian Educational Foundation Chair of Modern Armenian History was established at the University of California, Los Angeles, (UCLA) with a half a million dollars collected from the AEF board members, general membership, and friends.
-        Granting Scholarships
-
-        Granting 190 shcolarthips in Armenia and Artskah and numerous scholarships in Diaspora
-        Renovation after Disasters
-
-        The devastating earthquake that struck Armenia in December 1988 created opportunity for AEF into action to renovate schools in Armenia.  Since that date the AEF has renovated over 180 schools in Armenia, Artsakh and Javakhk
-        University Computer Programs Degree
-
-        Financed Computer Information Systems Degree programs in Artskah State University
-        Amernia Scholarships
-
-        Since 1994 over 1700 scholarships has been given to the students in universities in Armenia.
     </string>
 
     <string name="about_us_text_achievements_part_2">
-            Leading Educational Movement
 
-        Since 1950 AEF has been a cornerstone of the Armenian educational movement around the world
-        Diaspora Scholarships
-
-        Since 1963 over 450 scholarships has been given to the students in Diaspora
-        Helping Schools Around the World
-
-        AEF has been credited with building and supporting numerous Armenian day schools around the world. The first schools built by the organization were the Levon and Sophia Hagopian Armenian School in Athens, Greece and the Levon and Sophia Hagopian College in BourjHammoud, Lebanon.
-        Donating Computers
-
-        To date over 100 computers have been distributed to village schools renovated by AEF in Armenia, Artsakh, and Javakhk
-        Building Schools in America
-
-        AEF has participated in the building of the first two Armenian day school in the United States: Holy Martyr’s Ferrahian Elementary and High School and Mesrobian School
-        Professional Training
-
-        AEF provided computer hardware, software, and professional training to teachers in the villages
-        Helping Schools
-
-        In addition to helping the schools above AEF has made donations  to day schools and preschools in the US, Canada and Lebanon
-        School Supplies
-
-        Since 2007 the School Supply Committee of AEF has sent school supplies to village schools in Armenia, Artsakh  and Javakhk to a total of 15,000 students.
-        Renovating Schools
-
-        AEF was one of the nine Armenian Organizations receiving funds ($333,333) from Life Insurance Settlement for Survivors of Genocide. AEF allocated 100% of the funds for renovations of schools and furnish new desks to schools renovated by AEF.
     </string>
 
     <!--***  Membership  ***-->
 
     <string name="about_us_text_membership">
-                Membership in the Armenian Educational Foundation is available to all, regardless of nationality, race, religious or political affiliation, which share the vision of the organization and are willing to assist in promoting the purpose and mission of the organization.
-        Membership dues are $500 per year due on June 1st of each year.  The AEF membership fee was set at $500 per year in 1950 and has remained unchanged to date.
-        A “member” is defined as an “individual” or “husband and wife”.  Both “husband and wife” are considered members but are entitled to only one vote at General Membership meetings.  Either the husband or wife may be elected to the Board of Directors, but not both.  In the event the husband and wife wish to be “individual” members, and both pay the required annual membership dues, each spouse is considered an “individual” member and is entitled to one vote each at General Membership meetings.
-        Anyone who wishes to become an AEF member can apply by completing a simple application available for download online.(See download link below)
-        Please sign and date application and enclose your tax-deductible annual membership dues.
-        Click here to download Application >>“Membership Application”
 
-        Note: The application will be processed and submitted at the next Board of Directors meeting for approval.
     </string>
 
     <!--***  Endowments  ***-->
 
     <string name="about_us_text_membership_endowments_and_donations">
-                Endowments and Donations
 
-        Much of the capital funds belonging to the Armenian Educational Foundation (AEF) derive from permanent endowments in the form of bequests and trusts, as well as donations. These generous contributions have enabled the AEF to maintain it sommitment to furthering the educational endeavors of Armenian youth and to provide financial assistance to Armenian Schools.
-
-        Bequests and Trusts
-
-        In general a bequest is some form of personal property passed on in a will. In a few instances, the AEF has benefited from living wills in which case the benefactor hands over monies or property while he or she is still alive. Over the years, the AEF has also set up trusts such that a given sum of money is placed in a high yield account with the AEF receiving the interest from that account as its Trustee. By definition, any money held in banks in trust cannot be invested for the purchase of property.
-
-        Establishing the organization’s initial financial base were the following permanent endowments set up in the late 1950s:
-
-        the Levon and Sophia Hagopian Educational Trust Fund created with $260,000 from a donation of 80 acres of land in Fresno.
-        the Yervant and Felicia Kouyumjian and Kaloust and Virginia Torosian funds established with $25,000 and $35,000, respectively, to support specifically the Palandjian College (Jemaran) in Beirut, Lebanon
-        the Van Der Bedrosian Memorial Fund formed with $275,000 from the living trust of Paul and Elizabeth Der Bedrosian
-        Donations
-
-        The organization has also received numerous donations from individuals seeking to make tax-deductible contributions. These charitable gifts give the AEF spending flexibility and, in the past, have allowed the group to make income-generating property investments.
-
-        The most benevolent donation to be received by the AEF came from the Tracinda Corporation in 1986 when the organization received 60,000 shares of stock in the company. Soon after, these shares were redeemed for a cash value of $840,000. Also in 1986, Khachik and Margaret Shatikian donated $50,000, of which $25,000 helped to create the Modern Armenian History Chair at UCLA. Another noteworthy donation of $50,000 came in 1994 from Manoog and Yeghia Movsisian.
-
-        Today as always, the AEF is continually seeking ways to strengthen its financial base to generate the necessary capital to increase the funds available for scholarships and continue providing financial support to day schools.
     </string>
 
     <string name="about_us_text_membership_endowments_funds">
-                AEF holds and administers endowment funds for various educational grants and scholarships in Diaspora and Armenia
 
-        Tufenkian Fund
-
-        Established in 1992, the $230,000 fund provides $24,500 annually in scholarships to students attending universities in the United States, Armenia and Artsakh.
-        Palanjian Jemaran Fund
-
-        Established in 1994, the $60,000 fund provides $3,000 or more annually to the Aslanian Palanjian Jemaran school in Beirut.
-        Jorjorian Fund (Anjar)
-
-        Established in 1994, the $85,000 fund provides $6,000 annually in scholarships to graduates from the Gulbenkian School in Anjar who attend universities in Lebanon.
-        Peshtilmajian Fund
-
-        Established in 1998, the $60,000 fund provides support for scholarships in Armenian Genocide Studies in Armenia.
-        Movsessian Fund
-
-        Established in 2003, the $50,000 fund provides full tuition scholarships to students attending public universities in Armenia majoring in Law.
-        Shrikian Fund (Anjar)
-
-        Established in 2004, the $150,000 fund provides $10,000 in annual support for the Gulbenkian School in Anjar, Lebanon.
-        Fidanian Fund
-
-        Established in 2005, the $100,000 fund provides $5,000 annually to cover the full tuition for five students in Armenia.
-        Shrikian Fund (Antelias)
-
-        Established in 2007, the $150,000 fund provides for the preparation of priests at Antelias Seminary.
-        Jorjorian Fund (Armenia)
-
-        Established in 2012, the fund provides full tuition scholarships for 24 Armenia public university students who are graduates of high schools in Stepanakert, Alaverdi, Spitak, Gyumri, Echmiatzin, Dilijan and Stepanakert.
-        Vahe Shrikian Fund (Anjar)
-
-        Established in 2012, the $150,000 fund provides financial support to the Anjar school and university scholarships for graduates of Anjar schools.
-        Mirzaian Fund
-
-        Established in 2013, the $20,000 fund provides two full tuition scholarships for students attending public universities in Armenia majoring in Animation.
-        John Varjabedian Fund
-
-        Established in 2014, the $50,000 fund provides scholarships to students attending public universities in Armenian and are graduates from high schools in the New Arabkir region in Yerevan.
-        Ghassemian Fund
-
-        Established in 2014, the $100,000 fund provides full tuition scholarships to 16 Artsakh State University students who are graduates of high schools in Artsakh.
-        Markarian-Arakelians Educational Fund
-
-        Established in 2016, the $250,000 fund provides full tuition scholarships to 15 students attending universities in Armenia and Artsakh. Additonally, this endowment will provide funds to purchase musical instruments and/or repair village schools.
     </string>
 
     <!--***  501 non profit  ***-->
 
     <string name="about_us_text_501_non_profit">
-
-        Since 1950 AEF has been a  charitable,  not for profit 501 (c ) (3) organization and all donations to AEF are tax deductible to the extent allowed by law.
-
-
-
-        For more information please contact
-
-        Phone: (818) 242-4154
-
-        Email: aef@aefweb.org
-
-        Corporate Office Location: 600 W. Broadway, Suite 130, Glendale, CA 91204
 
     </string>
 </resources>
