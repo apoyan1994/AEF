@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="activity_horizontal_margin">64dp</dimen>
+
+    <!--text size-->
+    <dimen name="text_size_128sp">128sp</dimen>
+
+    <!--recycler view span count-->
+    <integer name="grid_item_count">3</integer>
+
+</resources>

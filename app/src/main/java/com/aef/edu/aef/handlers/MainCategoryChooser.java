@@ -1,6 +1,5 @@
 package com.aef.edu.aef.handlers;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -31,11 +30,14 @@ public class MainCategoryChooser extends AppCompatActivity {
 		recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
+		contentDataItems.add(addItem(AefConstants.KEY_MAIN_PROJECTS, AefConstants.KEY_MAIN_PROJECTS_TEXT));
 		contentDataItems.add(addItem(AefConstants.KEY_MAIN_ABOUT_US, AefConstants.KEY_MAIN_ABOUT_US_TEXT));
+		contentDataItems.add(addItem(AefConstants.KEY_MAIN_SCHOLARSHIPS, AefConstants.KEY_MAIN_SCHOLARSHIPS_TEXT));
+		contentDataItems.add(addItem(AefConstants.KEY_MAIN_APPLICATION_2017, AefConstants.KEY_MAIN_APPLICATION_2017_TEXT));
+		contentDataItems.add(addItem(AefConstants.KEY_MAIN_VOL_WORK, AefConstants.KEY_MAIN_VOL_WORK_TEXT));
 		contentDataItems.add(addItem(AefConstants.KEY_MAIN_NEWS, AefConstants.KEY_MAIN_NEWS_TEXT));
 		contentDataItems.add(addItem(AefConstants.KEY_MAIN_CONTACT_US, AefConstants.KEY_MAIN_CONTACT_US_TEXT));
-		contentDataItems.add(addItem(AefConstants.KEY_MAIN_HOME, AefConstants.KEY_MAIN_HOME_TEXT));
-		contentDataItems.add(addItem(AefConstants.KEY_MAIN_MORE_DETAILS, AefConstants.KEY_MAIN_MORE_DETAILS_TEXT));
+		contentDataItems.add(addItem(AefConstants.KEY_MAIN_SUCCEED_STORIES, AefConstants.KEY_MAIN_SUCCEED_STORIES_TEXT));
 
 		mainCategoryAdapter = new MainCategoryAdapter(this, contentDataItems);
 		recyclerView.setAdapter(mainCategoryAdapter);

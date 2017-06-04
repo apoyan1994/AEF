@@ -1,8 +1,11 @@
 package com.aef.edu.aef.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
+import android.view.Display;
 
 /**
  * Created by agvan on 12/16/16.
@@ -46,5 +49,33 @@ public class AefUtils {
 			inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
 		}
 		return inSampleSize;
+	}
+
+	public static int getMinSize(Activity activity, double scaleSize) {
+		Display display = activity.getWindowManager().getDefaultDisplay();
+		Point size = new Point();
+		display.getSize(size);
+		int width = size.x;
+		int height = size.y;
+		return (int) (Math.min(width, height) / scaleSize);
+	}
+
+	public static int calculateImageHeight(Context context, int screenWidth, int photoId) {
+		BitmapFactory.Options options = new BitmapFactory.Options();
+
+		options.inJustDecodeBounds = true;
+		BitmapFactory.decodeResource(context.getResources(), photoId, options);
+
+		final int height = options.outHeight;
+		final int width = options.outWidth;
+
+		options.inJustDecodeBounds = false;
+
+		if (width < screenWidth) {
+			return height;
+		} else {
+			double scaleSize = width / ((double) screenWidth);
+			return (int) (height / scaleSize);
+		}
 	}
 }

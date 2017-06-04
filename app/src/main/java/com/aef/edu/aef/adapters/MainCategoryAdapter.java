@@ -52,6 +52,7 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 	@Override
 	public MainCategoryAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_category_chooser_item, parent, false);
+		//ImageLoader.loadImage(activity, R.drawable.large_arrow_left_right, );
 		arrowBitmap = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(activity.getResources(),
 				R.drawable.large_arrow_left_right), activity.getResources().getInteger(R.integer.chooser_item_width),
 				activity.getResources().getInteger(R.integer.chooser_item_height), false);

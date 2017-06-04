@@ -25,7 +25,9 @@
                 style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:ellipsize="end"
                 android:gravity="center"
+                android:maxLines="2"
                 android:text="About us"
                 android:textStyle="bold"/>
 
@@ -36,8 +38,6 @@
         android:id="@+id/content_items_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="4dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 </android.support.design.widget.CoordinatorLayout>

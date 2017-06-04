@@ -28,8 +28,14 @@ public class SubCategoryChooser extends AppCompatActivity {
 		List<ContentDataItem> contentDataItems;
 
 		switch (currentCategory) {
+			case AefConstants.KEY_MAIN_PROJECTS:
+				contentDataItems = mainProjects();
+				break;
 			case AefConstants.KEY_MAIN_ABOUT_US:
 				contentDataItems = aboutUs();
+				break;
+			case AefConstants.KEY_MAIN_SCHOLARSHIPS:
+				contentDataItems = mainScholarships();
 				break;
 			case AefConstants.KEY_MAIN_NEWS:
 				contentDataItems = news();
@@ -100,16 +106,32 @@ public class SubCategoryChooser extends AppCompatActivity {
 		return contentDataItems;
 	}
 
+	private List<ContentDataItem> mainProjects() {
+		List<ContentDataItem> contentDataItems = new ArrayList<>();
+
+		contentDataItems.add(addItem(R.drawable.stationery, AefConstants.KEY_SUB_PROJECTS_STATIONERY_TEXT, AefConstants.KEY_SUB_PROJECTS_STATIONERY));
+		contentDataItems.add(addItem(R.drawable.computer_schools, AefConstants.KEY_SUB_PROJECTS_COMPUTER_SCHOOLS_TEXT, AefConstants.KEY_SUB_PROJECTS_COMPUTER_SCHOOLS));
+		contentDataItems.add(addItem(R.drawable.school_construction, AefConstants.KEY_SUB_PROJECTS_SCHOOL_CONSTRUCTION_TEXT, AefConstants.KEY_SUB_PROJECTS_SCHOOL_CONSTRUCTION));
+		contentDataItems.add(addItem(R.drawable.scholarship_prog, AefConstants.KEY_SUB_PROJECTS_SCHOLARSHIP_PROG_TEXT, AefConstants.KEY_SUB_PROJECTS_SCHOLARSHIP_PROG));
+		return contentDataItems;
+	}
+
 	private List<ContentDataItem> aboutUs() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
 
-//		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ABOUT_US_TEXT, AefConstants.KEY_SUB_ABOUT_US_ABOUT_US));
-//		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ACHIEVEMENTS_TEXT, AefConstants.KEY_SUB_ABOUT_US_ACHIEVEMENTS));
-//		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_MEMBERSHIP_TEXT, AefConstants.KEY_SUB_ABOUT_US_MEMBERSHIP));
-//		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ENDOWMENTS_TEXT, AefConstants.KEY_SUB_ABOUT_US_ENDOWMENTS));
-//		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_HISTORY_TEXT, AefConstants.KEY_SUB_ABOUT_US_HISTORY));
-//		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_NON_PROFIT_TEXT, AefConstants.KEY_SUB_ABOUT_US_NON_PROFIT));
-//		contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.KEY_SUB_ABOUT_US_ANNUAL_ALLOCATION_TEXT, AefConstants.KEY_SUB_ABOUT_US_ANNUAL_ALLOCATION));
+		contentDataItems.add(addItem(R.drawable.aef_sub_history, AefConstants.KEY_SUB_ABOUT_US_ABOUT_US_TEXT, AefConstants.KEY_SUB_ABOUT_US_HISTORY));
+		contentDataItems.add(addItem(R.drawable.achievements, AefConstants.KEY_SUB_ABOUT_US_ACHIEVEMENTS_TEXT, AefConstants.KEY_SUB_ABOUT_US_ACHIEVEMENTS));
+		return contentDataItems;
+	}
+
+	private List<ContentDataItem> mainScholarships() {
+		List<ContentDataItem> contentDataItems = new ArrayList<>();
+
+		contentDataItems.add(addItem(R.drawable.hakob_and_hild, AefConstants.KEY_SUB_SCHOLARSHIPS_HAKOB_AND_HILDA_TEXT, AefConstants.KEY_SUB_SCHOLARSHIPS_HAKOB_AND_HILDA));
+		contentDataItems.add(addItem(R.drawable.greck_and_jina, AefConstants.KEY_SUB_SCHOLARSHIPS_GRECK_AND_JINA_TEXT, AefConstants.KEY_SUB_SCHOLARSHIPS_GRECK_AND_JINA));
+		contentDataItems.add(addItem(R.drawable.jorjoryan, AefConstants.KEY_SUB_SCHOLARSHIPS_JORJOYAN_TEXT, AefConstants.KEY_SUB_SCHOLARSHIPS_JORJOYAN));
+		contentDataItems.add(addItem(R.drawable.sirian_stud, AefConstants.KEY_SUB_SCHOLARSHIPS_SIRIAN_STUD_TEXT, AefConstants.KEY_SUB_SCHOLARSHIPS_SIRIAN_STUD));
+		contentDataItems.add(addItem(R.drawable.app_icon, AefConstants.KEY_SUB_SCHOLARSHIPS_ART_HISTORY_TEXT, AefConstants.KEY_SUB_SCHOLARSHIPS_ART_HISTORY));
 		return contentDataItems;
 	}
 
