@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<com.aef.edu.aef.utils.book_animation_util.CurlView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/category_chooser_curl_view"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="200dp"
+    android:layout_gravity="top"
     android:layout_marginBottom="8dp"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/category_chooser_item_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <com.aef.edu.aef.view.CategoryChooserView
-        android:id="@+id/category_chooser_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"/>
-
-</LinearLayout>
+    android:background="#00000000"/>
