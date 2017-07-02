@@ -61,6 +61,39 @@ public class AefConstants {
 	public static final String KEY_SUB_SCHOLARSHIPS_SIRIAN_STUD_TEXT = "Կրթաթոշակ՝ նախատեսված սիրիահայ ուսանողների համար";
 	public static final String KEY_SUB_SCHOLARSHIPS_ART_HISTORY_TEXT = "Արվեստի պատմության Թուֆենկյան կրթաթոշակի մրցույթ";
 
+	//application
+	public static final String KEY_SUB_APPLICATION_OFTEN_GIVEN_QUESTION = "often_given_question";
+	public static final String KEY_SUB_APPLICATION_APPLICATION_FORM = "application_form ";
+	public static final String KEY_SUB_APPLICATION_SPONSORED_BY_HKH = "sponsored_by_hkh";
+	public static final String KEY_SUB_APPLICATION_NECESSARY_DOCUMENTS = "necessary_documents";
+
+	public static final String KEY_SUB_APPLICATION_OFTEN_GIVEN_QUESTION_TEXT = "Հաճախ տրվող հարցեր";
+	public static final String KEY_SUB_APPLICATION_APPLICATION_FORM_TEXT = "Դիմումի ձև";
+	public static final String KEY_SUB_APPLICATION_SPONSORED_BY_HKH_TEXT = "ԲՈՒՀ-եր և մասնագիտություններ, որոնք հովանավորվում են ՀԿՀ-ի կողմից";
+	public static final String KEY_SUB_APPLICATION_NECESSARY_DOCUMENTS_TEXT = "Անհրաժեշտ փաստաթղթեր";
+
+	//vol work
+	public static final String KEY_SUB_VOL_WORK_POMEGRANATE_GRAINS = "pomegranate_grains";
+
+	public static final String KEY_SUB_VOL_WORK_POMEGRANATE_GRAINS_TEXT = "Նռան Հատիկներ";
+
+	//hkh news
+	public static final String KEY_SUB_HKH_NEWS_SCHOLARSHIP_COMPETITION = "scholarship_competition";
+
+	public static final String KEY_SUB_HKH_NEWS_SCHOLARSHIP_COMPETITION_TEXT = "2017-2018 թթ. ուսումնական տարվա կրթաթոշակի մրցույթ";
+
+	//contact with us
+	public static final String KEY_SUB_CONTACT_WITH_US_OUR_ADDRESS = "our_address";
+	public static final String KEY_SUB_CONTACT_WITH_US_MAP = "our_loacation";
+
+	public static final String KEY_SUB_CONTACT_WITH_US_OUR_ADDRESS_TEXT = "Կապ Մեզ Հետ";
+	public static final String KEY_SUB_CONTACT_WITH_US_MAP_TEXT = "Մեր հասցեն";
+
+	//succeed stories
+	public static final String KEY_SUB_SUCCEED_STORIES_ADDRESS = "succeed_stories";
+
+	public static final String KEY_SUB_SUCCEED_STORIES_ADDRESS_TEXT = "Հաջողված Պատմություններ";
+
 
 	//************* item type **************//
 

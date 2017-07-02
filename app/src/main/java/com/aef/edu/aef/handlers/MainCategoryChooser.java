@@ -37,7 +37,7 @@ public class MainCategoryChooser extends AppCompatActivity {
 		contentDataItems.add(addItem(AefConstants.KEY_MAIN_VOL_WORK, AefConstants.KEY_MAIN_VOL_WORK_TEXT));
 		contentDataItems.add(addItem(AefConstants.KEY_MAIN_NEWS, AefConstants.KEY_MAIN_NEWS_TEXT));
 		contentDataItems.add(addItem(AefConstants.KEY_MAIN_CONTACT_US, AefConstants.KEY_MAIN_CONTACT_US_TEXT));
-		contentDataItems.add(addItem(AefConstants.KEY_MAIN_SUCCEED_STORIES, AefConstants.KEY_MAIN_SUCCEED_STORIES_TEXT));
+		//contentDataItems.add(addItem(AefConstants.KEY_MAIN_SUCCEED_STORIES, AefConstants.KEY_MAIN_SUCCEED_STORIES_TEXT));
 
 		mainCategoryAdapter = new MainCategoryAdapter(this, contentDataItems);
 		recyclerView.setAdapter(mainCategoryAdapter);

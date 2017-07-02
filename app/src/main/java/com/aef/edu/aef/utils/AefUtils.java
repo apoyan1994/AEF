@@ -60,22 +60,33 @@ public class AefUtils {
 		return (int) (Math.min(width, height) / scaleSize);
 	}
 
-	public static int calculateImageHeight(Context context, int screenWidth, int photoId) {
+	public static int calculateImageHeight(Context context, int screenWidth, int imgWidth, int photoId) {
 		BitmapFactory.Options options = new BitmapFactory.Options();
 
 		options.inJustDecodeBounds = true;
 		BitmapFactory.decodeResource(context.getResources(), photoId, options);
 
-		final int height = options.outHeight;
-		final int width = options.outWidth;
+		int height = options.outHeight;
+		int width = options.outWidth;
 
 		options.inJustDecodeBounds = false;
 
-		if (width < screenWidth) {
-			return height;
-		} else {
-			double scaleSize = width / ((double) screenWidth);
-			return (int) (height / scaleSize);
-		}
+
+		double scaleSize = width / ((double) imgWidth);
+		return (int) (height / scaleSize);
+
+	}
+
+	public static int calculateImageWidth(Context context, int screenWidth, int photoId) {
+		BitmapFactory.Options options = new BitmapFactory.Options();
+
+		options.inJustDecodeBounds = true;
+		BitmapFactory.decodeResource(context.getResources(), photoId, options);
+
+		int width = options.outWidth;
+
+		options.inJustDecodeBounds = false;
+		int imageSize = Math.min(width, screenWidth);
+		return imageSize < screenWidth / 2 ? (int) (imageSize * 1.5) : imageSize;
 	}
 }

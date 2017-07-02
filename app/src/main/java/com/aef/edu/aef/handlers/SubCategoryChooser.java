@@ -37,11 +37,20 @@ public class SubCategoryChooser extends AppCompatActivity {
 			case AefConstants.KEY_MAIN_SCHOLARSHIPS:
 				contentDataItems = mainScholarships();
 				break;
+			case AefConstants.KEY_MAIN_APPLICATION_2017:
+				contentDataItems = application2017();
+				break;
+			case AefConstants.KEY_MAIN_VOL_WORK:
+				contentDataItems = volWork();
+				break;
 			case AefConstants.KEY_MAIN_NEWS:
 				contentDataItems = news();
 				break;
 			case AefConstants.KEY_MAIN_CONTACT_US:
-				contentDataItems = News();
+				contentDataItems = contactWithUs();
+				break;
+			case AefConstants.KEY_MAIN_SUCCEED_STORIES:
+				contentDataItems = succeedStories();
 				break;
 			case AefConstants.KEY_MAIN_HOME:
 				contentDataItems = home();
@@ -64,7 +73,7 @@ public class SubCategoryChooser extends AppCompatActivity {
 
 	private List<ContentDataItem> news() {
 		List<ContentDataItem> contentDataItems = new ArrayList<>();
-		//contentDataItems.add(addItem(R.drawable.aef_donation_to_sarf, AefConstants.AEF_SARF_PRESS_RELEASE_DESCR, ""));
+		contentDataItems.add(addItem(R.drawable.scholarship_prog, AefConstants.KEY_SUB_HKH_NEWS_SCHOLARSHIP_COMPETITION_TEXT, AefConstants.KEY_SUB_HKH_NEWS_SCHOLARSHIP_COMPETITION));
 
 		return contentDataItems;
 	}
@@ -131,7 +140,43 @@ public class SubCategoryChooser extends AppCompatActivity {
 		contentDataItems.add(addItem(R.drawable.greck_and_jina, AefConstants.KEY_SUB_SCHOLARSHIPS_GRECK_AND_JINA_TEXT, AefConstants.KEY_SUB_SCHOLARSHIPS_GRECK_AND_JINA));
 		contentDataItems.add(addItem(R.drawable.jorjoryan, AefConstants.KEY_SUB_SCHOLARSHIPS_JORJOYAN_TEXT, AefConstants.KEY_SUB_SCHOLARSHIPS_JORJOYAN));
 		contentDataItems.add(addItem(R.drawable.sirian_stud, AefConstants.KEY_SUB_SCHOLARSHIPS_SIRIAN_STUD_TEXT, AefConstants.KEY_SUB_SCHOLARSHIPS_SIRIAN_STUD));
-		contentDataItems.add(addItem(R.drawable.app_icon, AefConstants.KEY_SUB_SCHOLARSHIPS_ART_HISTORY_TEXT, AefConstants.KEY_SUB_SCHOLARSHIPS_ART_HISTORY));
+		contentDataItems.add(addItem(-1, AefConstants.KEY_SUB_SCHOLARSHIPS_ART_HISTORY_TEXT, AefConstants.KEY_SUB_SCHOLARSHIPS_ART_HISTORY));
+		return contentDataItems;
+	}
+
+	private List<ContentDataItem> application2017() {
+		List<ContentDataItem> contentDataItems = new ArrayList<>();
+
+		contentDataItems.add(addItem(R.drawable.achievements, AefConstants.KEY_SUB_APPLICATION_OFTEN_GIVEN_QUESTION_TEXT, AefConstants.KEY_SUB_APPLICATION_OFTEN_GIVEN_QUESTION));
+		// TODO: 6/14/17  APPLICATION_FORM-i pdf-in download@ chem erel
+		contentDataItems.add(addItem(R.drawable.application_form, AefConstants.KEY_SUB_APPLICATION_APPLICATION_FORM_TEXT, AefConstants.KEY_SUB_APPLICATION_APPLICATION_FORM));
+		// TODO: 6/14/17 get this info dinamically
+		contentDataItems.add(addItem(R.drawable.application_form, AefConstants.KEY_SUB_APPLICATION_SPONSORED_BY_HKH_TEXT, AefConstants.KEY_SUB_APPLICATION_SPONSORED_BY_HKH));
+		// TODO: 6/14/17  APPLICATION_FORM-i pdf-in download@ chem erel
+		contentDataItems.add(addItem(R.drawable.necessary_documents, AefConstants.KEY_SUB_APPLICATION_NECESSARY_DOCUMENTS_TEXT, AefConstants.KEY_SUB_APPLICATION_NECESSARY_DOCUMENTS));
+		return contentDataItems;
+	}
+
+	private List<ContentDataItem> volWork() {
+		List<ContentDataItem> contentDataItems = new ArrayList<>();
+
+		// TODO: 6/14/17  https://www.facebook.com/aefscholarships/   link-in redirect chem erel
+		contentDataItems.add(addItem(R.drawable.app_icon, AefConstants.KEY_SUB_VOL_WORK_POMEGRANATE_GRAINS_TEXT, AefConstants.KEY_SUB_VOL_WORK_POMEGRANATE_GRAINS));
+		return contentDataItems;
+	}
+
+	private List<ContentDataItem> contactWithUs() {
+		List<ContentDataItem> contentDataItems = new ArrayList<>();
+		contentDataItems.add(addItem(-1, AefConstants.KEY_SUB_CONTACT_WITH_US_OUR_ADDRESS_TEXT, AefConstants.KEY_SUB_CONTACT_WITH_US_OUR_ADDRESS));
+		contentDataItems.add(addItem(-1, AefConstants.KEY_SUB_CONTACT_WITH_US_MAP_TEXT, AefConstants.KEY_SUB_CONTACT_WITH_US_MAP));
+
+		return contentDataItems;
+	}
+
+	private List<ContentDataItem> succeedStories() {
+		List<ContentDataItem> contentDataItems = new ArrayList<>();
+		contentDataItems.add(addItem(-1, AefConstants.KEY_SUB_SUCCEED_STORIES_ADDRESS_TEXT, AefConstants.KEY_SUB_SUCCEED_STORIES_ADDRESS));
+
 		return contentDataItems;
 	}
 
@@ -150,56 +195,3 @@ public class SubCategoryChooser extends AppCompatActivity {
 				.setSubNickName(subNickName);
 	}
 }
-
-
-/*maybe can helpful
-
-private void openHome() {
-		startActivityForResult(new Intent(getApplicationContext(), AefHome.class), 45);
-	}
-
-
-
-	private void openNews() {
-		startActivityForResult(new Intent(getApplicationContext(), AefNews.class), 47);
-
-	}
-
-	private void openContactUs() {
-		startActivityForResult(new Intent(getApplicationContext(), AefContactUs.class), 50);
-	}
-
-	private void openCalendarOfActivities() {
-	}
-
-	private void openProjects() {
-	}
-
-	//*****************************
-
-	switch (currentMenuItem) {
-					case AefConstants.KEY_MENU_ITEM_HOME:
-						openHome();
-						break;
-
-					case AefConstants.KEY_MENU_ITEM_ABOUT_US:
-						openAboutUs();
-						break;
-
-					case AefConstants.KEY_MENU_ITEM_NEWS:
-						openNews();
-						break;
-
-					case AefConstants.KEY_MENU_ITEM_CALENDAR_OF_ACTIVITIES:
-						openCalendarOfActivities();
-						break;
-
-					case AefConstants.KEY_MENU_ITEM_PROJECTS:
-						openProjects();
-						break;
-
-					case AefConstants.KEY_MENU_ITEM_CONTACT_US:
-						openContactUs();
-						break;
-				}
- */

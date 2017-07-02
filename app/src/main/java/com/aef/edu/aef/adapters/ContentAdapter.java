@@ -75,13 +75,10 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ViewHold
 			holder.mTextView.setText(context.getResources().getText(contentData.get(gridPos).getItemTextId()));
 
 		} else {
-//			ImageLoader.loadImage(context, contentData.get(gridPos).getPhotoId(), holder.mImageView, displMinSize,
-//					AefUtils.calculateImageHeight(context, displMinSize, contentData.get(gridPos).getPhotoId()));
 
-			ImageLoader.loadImage(context, contentData.get(gridPos).getPhotoId(), holder.mImageView, screenWidth,
-					AefUtils.calculateImageHeight(context, screenWidth, contentData.get(gridPos).getPhotoId()));
-
-
+			int imgWidth = AefUtils.calculateImageWidth(context, screenWidth, contentData.get(gridPos).getPhotoId());
+			int imgHeight = AefUtils.calculateImageHeight(context, screenWidth, imgWidth, contentData.get(gridPos).getPhotoId());
+			ImageLoader.loadImage(context, contentData.get(gridPos).getPhotoId(), holder.mImageView, imgWidth, imgHeight);
 		}
 	}
 

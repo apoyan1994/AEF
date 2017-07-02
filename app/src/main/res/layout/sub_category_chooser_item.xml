@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp"
+    android:layout_marginEnd="16dp"
     android:layout_marginRight="16dp"
     android:layout_marginTop="8dp"
-    android:background="@drawable/gray_background_selector">
+    android:background="@drawable/gray_background_selector"
+    android:minHeight="200dp">
 
     <ImageView
         android:id="@+id/grid_item_icon"
