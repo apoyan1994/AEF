@@ -153,4 +153,94 @@ public class AppContextHandler {
 				.setItemText(itemTextId)
 				.setPhotoId(photoId);
 	}
+
+	public static List<Integer> getCurrentCategorisBitmaps(String mainCategory) {
+		List<Integer> contentList = new ArrayList<>();
+
+		switch (mainCategory) {
+			case AefConstants.KEY_MAIN_PROJECTS:
+				contentList.add(R.drawable.stationery);
+				contentList.add(R.drawable.computer_schools);
+				contentList.add(R.drawable.school_construction);
+				contentList.add(R.drawable.scholarship_prog);
+				break;
+
+			case AefConstants.KEY_MAIN_ABOUT_US:
+				contentList.add(R.drawable.computer_schools);
+				contentList.add(R.drawable.stationery);
+				contentList.add(R.drawable.school_construction);
+				contentList.add(R.drawable.scholarship_prog);
+				break;
+			case AefConstants.KEY_MAIN_SCHOLARSHIPS:
+				contentList.add(R.drawable.school_construction);
+				contentList.add(R.drawable.stationery);
+				contentList.add(R.drawable.computer_schools);
+				contentList.add(R.drawable.scholarship_prog);
+				break;
+			case AefConstants.KEY_MAIN_APPLICATION_2017:
+				contentList.add(R.drawable.stationery);
+				contentList.add(R.drawable.computer_schools);
+				contentList.add(R.drawable.school_construction);
+				contentList.add(R.drawable.scholarship_prog);
+				break;
+			case AefConstants.KEY_MAIN_VOL_WORK:
+				contentList.add(R.drawable.scholarship_prog);
+				contentList.add(R.drawable.stationery);
+				contentList.add(R.drawable.computer_schools);
+				contentList.add(R.drawable.school_construction);
+				break;
+			case AefConstants.KEY_MAIN_NEWS:
+				contentList.add(R.drawable.stationery);
+				contentList.add(R.drawable.computer_schools);
+				contentList.add(R.drawable.school_construction);
+				contentList.add(R.drawable.scholarship_prog);
+				break;
+			case AefConstants.KEY_MAIN_CONTACT_US:
+				contentList.add(R.drawable.school_construction);
+				contentList.add(R.drawable.stationery);
+				contentList.add(R.drawable.computer_schools);
+				contentList.add(R.drawable.scholarship_prog);
+				break;
+			case AefConstants.KEY_MAIN_SUCCEED_STORIES:
+				contentList.add(R.drawable.computer_schools);
+				contentList.add(R.drawable.stationery);
+				contentList.add(R.drawable.school_construction);
+				contentList.add(R.drawable.scholarship_prog);
+				break;
+		}
+
+		return contentList;
+	}
+
+	public static String getCurrentCategoryNameByPos(int pos) {
+		String categoryName = AefConstants.KEY_MAIN_PROJECTS;
+
+		switch (pos) {
+			case 0:
+				categoryName = AefConstants.KEY_MAIN_PROJECTS;
+				break;
+			case 1:
+				categoryName = AefConstants.KEY_MAIN_ABOUT_US;
+				break;
+			case 2:
+				categoryName = AefConstants.KEY_MAIN_SCHOLARSHIPS;
+				break;
+			case 3:
+				categoryName = AefConstants.KEY_MAIN_APPLICATION_2017;
+				break;
+			case 4:
+				categoryName = AefConstants.KEY_MAIN_VOL_WORK;
+				break;
+			case 5:
+				categoryName = AefConstants.KEY_MAIN_NEWS;
+				break;
+			case 6:
+				categoryName = AefConstants.KEY_MAIN_CONTACT_US;
+				break;
+			case 7:
+				categoryName = AefConstants.KEY_MAIN_SUCCEED_STORIES;
+				break;
+		}
+		return categoryName;
+	}
 }
