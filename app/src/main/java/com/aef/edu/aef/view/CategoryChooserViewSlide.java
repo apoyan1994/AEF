@@ -150,11 +150,9 @@ public class CategoryChooserViewSlide extends View {
 				oldX = xCoordinate;
 				oldY = event.getY();
 
-				System.out.println("Apoyanner action down");
 				if (xCoordinate > x1Cord && xCoordinate < x2Cord) {
 					isStartedInsideObject = true;
 					accessPointDiff = xCoordinate - x1Cord;
-					System.out.println("Apoyanner action down isStartedInsideObject = true;");
 				}
 				break;
 			case (MotionEvent.ACTION_MOVE):
@@ -165,7 +163,6 @@ public class CategoryChooserViewSlide extends View {
 				if (xCoordinate > x1Cord && xCoordinate < x2Cord && x1Cord > 0 && x2Cord < parentWidth) {
 					ViewParent parent = getParent();
 					if (parent != null && Math.abs(event.getX() - oldX) > Math.abs(event.getY() - oldY)) {
-						System.out.println("Apoyan action move requestDisallowInterceptTouchEvent");
 						parent.requestDisallowInterceptTouchEvent(true);
 					}
 				}
@@ -182,17 +179,14 @@ public class CategoryChooserViewSlide extends View {
 					onCategorySelectedListener.onCategorySelected(position);
 				} else if (clickDuration > MAX_CLICK_DURATION && isStartedInsideObject && Math.abs(oldX - event.getX()) > MAX_MOVE_SIZE) {
 					boolean isRightToLeft = oldX - event.getX() > 0;
-					System.out.println("Apoyan currentPos " + currentPos);
 					if (isRightToLeft) {
 						if (currentPos < categoryBitmap.size() - 1) {
-							System.out.println("Apoyan RightToLeft");
 							currentPos++;
 							ImageLoader.loadImage(context, categoryBitmap.get(currentPos), imageViewFront, 300, 300);
 							ImageLoader.loadImage(context, categoryBitmap.get(currentPos - 1), imageViewBack, 300, 300);
 							onAnimationStartListener.onAnimationStartListener(imageViewFront, getWidth(), 0);
 						}
 					} else if (currentPos > 0) {
-						System.out.println("Apoyan LeftToRight");
 						ImageLoader.loadImage(context, categoryBitmap.get(currentPos), imageViewFront, 300, 300);
 						ImageLoader.loadImage(context, categoryBitmap.get(currentPos - 1), imageViewBack, 300, 300);
 						onAnimationStartListener.onAnimationStartListener(imageViewFront, 0, getWidth());

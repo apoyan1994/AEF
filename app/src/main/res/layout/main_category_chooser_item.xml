@@ -11,13 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <com.aef.edu.aef.utils.book_animation_util.CurlView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/category_chooser_curl_view"
+    <com.aef.edu.aef.view.CategoryArrowChooserView
+        android:id="@+id/category_chooser_view"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_gravity="top"
-        android:layout_marginBottom="8dp"
-        android:background="#00000000"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"/>
 
 </LinearLayout>
