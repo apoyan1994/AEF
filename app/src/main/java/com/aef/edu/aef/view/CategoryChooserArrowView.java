@@ -1,34 +1,33 @@
 package com.aef.edu.aef.view;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewParent;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.aef.edu.aef.R;
-import com.aef.edu.aef.interfaces.OnAnimationStartListener;
 import com.aef.edu.aef.interfaces.OnCategorySelectedListener;
-import com.aef.edu.aef.utils.ImageLoader;
 
 import java.util.Calendar;
-import java.util.List;
 
 /**
  * Created by agvan on 12/10/16.
  */
 
-public class CategoryChooserViewSlide extends View {
+public class CategoryChooserArrowView extends View {
 
 	private static final int MAX_CLICK_DURATION = 200;
-	private static final int MIN_MOVE_SIZE = 10;
-	private static final int MAX_MOVE_SIZE = 30;
+	private static final int MAX_MOVE_SIZE = 10;
 
 	private long startClickTime;
 
@@ -40,21 +39,15 @@ public class CategoryChooserViewSlide extends View {
 	private Context context;
 
 	private Paint textPaint;
+	private Bitmap bitmap;
 
 	private OnCategorySelectedListener onCategorySelectedListener;
-	private OnAnimationStartListener onAnimationStartListener;
-
-	private ImageView imageViewFront;
-	private ImageView imageViewBack;
-
-	private List<Integer> categoryBitmap;
 
 	private String itemText;
 
 	private int parentWidth;
 	private int parentHeight;
 	private int position;
-	private int currentPos = 0;
 	private float x1Cord = 0;
 	private float x2Cord = 0;
 	private float accessPointDiff;
@@ -63,23 +56,20 @@ public class CategoryChooserViewSlide extends View {
 
 	private boolean isCategorySelected = false;
 	private boolean isStartedInsideObject = false;
-	private boolean animationStarted = false;
-	private boolean isFrontView = true;
 
-
-	public CategoryChooserViewSlide(Context context) {
+	public CategoryChooserArrowView(Context context) {
 		super(context);
 		this.context = context;
 		init();
 	}
 
-	public CategoryChooserViewSlide(Context context, AttributeSet attrs) {
+	public CategoryChooserArrowView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		this.context = context;
 		init();
 	}
 
-	public CategoryChooserViewSlide(Context context, AttributeSet attrs, int defStyleAttr) {
+	public CategoryChooserArrowView(Context context, AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs, defStyleAttr);
 		this.context = context;
 		init();
@@ -87,8 +77,8 @@ public class CategoryChooserViewSlide extends View {
 
 	private void init() {
 		setWillNotDraw(false);
-		KEY_ITEM_WIDTH = 300;//getResources().getInteger(R.integer.chooser_item_width);
-		KEY_ITEM_HEIGHT = 300;//getResources().getInteger(R.integer.chooser_item_height);
+		KEY_ITEM_WIDTH = getResources().getInteger(R.integer.chooser_item_width);
+		KEY_ITEM_HEIGHT = getResources().getInteger(R.integer.chooser_item_height);
 		textPaint = new Paint();
 		textPaint.setColor(ContextCompat.getColor(context, R.color.aef_white));
 		textPaint.setTextSize(getResources().getInteger(R.integer.chooser_item_text_size));
@@ -107,7 +97,7 @@ public class CategoryChooserViewSlide extends View {
 		x2Cord = x1Cord + KEY_ITEM_WIDTH;
 
 		this.setMeasuredDimension(parentWidth, KEY_ITEM_HEIGHT);
-		this.setLayoutParams(new FrameLayout.LayoutParams(parentWidth, KEY_ITEM_HEIGHT));
+		this.setLayoutParams(new LinearLayout.LayoutParams(parentWidth, KEY_ITEM_HEIGHT));
 	}
 
 	private void changePosition(float newPos) {
@@ -115,20 +105,17 @@ public class CategoryChooserViewSlide extends View {
 		x2Cord = x1Cord + KEY_ITEM_WIDTH;
 	}
 
-	public void setOnCategorySelectedListener(OnCategorySelectedListener onCategorySelectedListener, OnAnimationStartListener onAnimationStartListener, int position, List<Integer> categoryBitmaps) {
+	public void setOnCategorySelectedListener(OnCategorySelectedListener onCategorySelectedListener, int position) {
 		this.onCategorySelectedListener = onCategorySelectedListener;
-		this.onAnimationStartListener = onAnimationStartListener;
 		this.position = position;
-		this.categoryBitmap = categoryBitmaps;
+	}
+
+	public void setArrowBitmap(Bitmap bitmap) {
+		this.bitmap = bitmap;
 	}
 
 	public void setItemText(String itemText) {
 		this.itemText = itemText;
-	}
-
-	public void setAnimatedViews(ImageView imageViewFront, ImageView imageViewBack) {
-		this.imageViewFront = imageViewFront;
-		this.imageViewBack = imageViewBack;
 	}
 
 	@Override
@@ -160,47 +147,81 @@ public class CategoryChooserViewSlide extends View {
 					break;
 				}
 
+				if ((x1Cord <= 20 || x2Cord >= parentWidth - 20) && !isCategorySelected) {
+					isCategorySelected = true;
+					onCategorySelectedListener.onCategorySelected(position);
+				}
+
 				if (xCoordinate > x1Cord && xCoordinate < x2Cord && x1Cord > 0 && x2Cord < parentWidth) {
 					ViewParent parent = getParent();
 					if (parent != null && Math.abs(event.getX() - oldX) > Math.abs(event.getY() - oldY)) {
 						parent.requestDisallowInterceptTouchEvent(true);
 					}
+
+					changePosition(xCoordinate - accessPointDiff);
+					invalidate();
+				} else if (x1Cord < 0) {
+					changePosition(0);
+					invalidate();
+				} else if (x2Cord > parentWidth) {
+					changePosition(parentWidth - KEY_ITEM_WIDTH);
+					invalidate();
 				}
+
 				break;
 			case (MotionEvent.ACTION_UP):
-				if (animationStarted) {
-					break;
-				}
-
 				long clickDuration = Calendar.getInstance().getTimeInMillis() - startClickTime;
-				if (clickDuration < MAX_CLICK_DURATION && isStartedInsideObject && Math.abs(oldX - event.getX()) < MIN_MOVE_SIZE) {
+				if (clickDuration < MAX_CLICK_DURATION && isStartedInsideObject && oldX - event.getX() < MAX_MOVE_SIZE) {
 					isCategorySelected = true;
-
 					onCategorySelectedListener.onCategorySelected(position);
-				} else if (clickDuration > MAX_CLICK_DURATION && isStartedInsideObject && Math.abs(oldX - event.getX()) > MAX_MOVE_SIZE) {
-					boolean isRightToLeft = oldX - event.getX() > 0;
-					if (isRightToLeft) {
-						if (currentPos < categoryBitmap.size() - 1) {
-							currentPos++;
-							ImageLoader.loadImage(context, categoryBitmap.get(currentPos), imageViewFront, 300, 300);
-							ImageLoader.loadImage(context, categoryBitmap.get(currentPos - 1), imageViewBack, 300, 300);
-							onAnimationStartListener.onAnimationStartListener(imageViewFront, getWidth(), 0);
-						}
-					} else if (currentPos > 0) {
-						ImageLoader.loadImage(context, categoryBitmap.get(currentPos), imageViewFront, 300, 300);
-						ImageLoader.loadImage(context, categoryBitmap.get(currentPos - 1), imageViewBack, 300, 300);
-						onAnimationStartListener.onAnimationStartListener(imageViewFront, 0, getWidth());
-						currentPos--;
-					}
 				}
 				isStartedInsideObject = false;
 				isCategorySelected = false;
 
+				backStateAnimation();
+				break;
+			case (MotionEvent.ACTION_CANCEL):
+				Log.e("Aef_log", "ACTION_CANCEL");
+				backStateAnimation();
+				break;
+			case (MotionEvent.ACTION_OUTSIDE):
+				Log.e("Aef_log", "ACTION_OUTSIDE");
 				break;
 			default:
 				return super.onTouchEvent(event);
 		}
 
 		return true;
+	}
+
+
+
+	private void backStateAnimation() {
+		ValueAnimator animation = ValueAnimator.ofFloat(x1Cord, parentWidth / 2 - KEY_ITEM_WIDTH / 2);
+		animation.setDuration(300);
+		animation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+			@Override
+			public void onAnimationUpdate(ValueAnimator animation) {
+				changePosition((Float) animation.getAnimatedValue());
+				invalidate();
+			}
+		});
+		animation.start();
+	}
+
+	@Override
+	protected void onDraw(Canvas canvas) {
+		if (bitmap != null) {
+			canvas.drawBitmap(bitmap, x1Cord, 0, null);
+		}
+
+		if (!itemText.isEmpty()) {
+			canvas.drawText(itemText,
+					x1Cord + KEY_ITEM_WIDTH / 2 - textPaint.measureText(itemText) / 2,
+					KEY_ITEM_HEIGHT / 2 + itemTextHeight / 2,
+					textPaint);
+		}
+
+		super.onDraw(canvas);
 	}
 }

@@ -22,14 +22,14 @@ import java.util.List;
  * Created by Hovo on 13/10/2016.
  */
 
-public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapter.ViewHolder> implements OnCategorySelectedListener {
+public class MainCategoryCurlAdapter extends RecyclerView.Adapter<MainCategoryCurlAdapter.ViewHolder> implements OnCategorySelectedListener {
 
 	private List<ContentDataItem> contentData;
 	private Activity activity;
 
 	private boolean subCategoryOpened = false;
 
-	public MainCategoryAdapter(Activity activity, List<ContentDataItem> contentData) {
+	public MainCategoryCurlAdapter(Activity activity, List<ContentDataItem> contentData) {
 		this.activity = activity;
 		this.contentData = contentData;
 	}
@@ -59,13 +59,13 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 	}
 
 	@Override
-	public MainCategoryAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_category_chooser_curel_item, parent, false);
+	public MainCategoryCurlAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_category_chooser_curl_item, parent, false);
 		return new ViewHolder(view, activity);
 	}
 
 	@Override
-	public void onBindViewHolder(MainCategoryAdapter.ViewHolder holder, final int position) {
+	public void onBindViewHolder(MainCategoryCurlAdapter.ViewHolder holder, final int position) {
 		final int itemPos = holder.getAdapterPosition();
 	}
 

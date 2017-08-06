@@ -19,7 +19,7 @@ import com.aef.edu.aef.interfaces.OnCategorySelectedListener;
 import com.aef.edu.aef.items.ContentDataItem;
 import com.aef.edu.aef.utils.AnimationUtil;
 import com.aef.edu.aef.utils.ImageLoader;
-import com.aef.edu.aef.view.CategoryChooserViewSlide;
+import com.aef.edu.aef.view.CategoryChooserSliderView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,14 +46,14 @@ public class MainCategorySliderAdapter extends RecyclerView.Adapter<MainCategory
 		TextView mTextView;
 		ImageView imageViewFront;
 		ImageView imageViewBack;
-		CategoryChooserViewSlide categoryChooserViewSlide;
+		CategoryChooserSliderView categoryChooserSliderView;
 		List<Integer> bitmapIds;
 
 		ViewHolder(View v) {
 			super(v);
 			imageViewFront = (ImageView) v.findViewById(R.id.animated_view_front);
 			imageViewBack = (ImageView) v.findViewById(R.id.animated_view_back);
-			categoryChooserViewSlide = (CategoryChooserViewSlide) v.findViewById(R.id.category_chooser_view);
+			categoryChooserSliderView = (CategoryChooserSliderView) v.findViewById(R.id.category_chooser_view);
 			bitmapIds = new ArrayList<>();
 		}
 	}
@@ -70,10 +70,10 @@ public class MainCategorySliderAdapter extends RecyclerView.Adapter<MainCategory
 
 		ImageLoader.loadImage(activity, AppContextHandler.getCurrentCategorisBitmaps(AppContextHandler.getCurrentCategoryNameByPos(itemPos)).get(0), holder.imageViewFront, 300, 300);
 
-		holder.categoryChooserViewSlide.setItemText(contentData.get(itemPos).getItemText());
-		holder.categoryChooserViewSlide.setAnimatedViews(holder.imageViewFront, holder.imageViewBack);
+		holder.categoryChooserSliderView.setItemText(contentData.get(itemPos).getItemText());
+		holder.categoryChooserSliderView.setAnimatedViews(holder.imageViewFront, holder.imageViewBack);
 		holder.bitmapIds = AppContextHandler.getCurrentCategorisBitmaps(AppContextHandler.getCurrentCategoryNameByPos(itemPos));
-		holder.categoryChooserViewSlide.setOnCategorySelectedListener(this, this, itemPos, holder.bitmapIds);
+		holder.categoryChooserSliderView.setOnCategorySelectedListener(this, this, itemPos, holder.bitmapIds);
 	}
 
 	@Override

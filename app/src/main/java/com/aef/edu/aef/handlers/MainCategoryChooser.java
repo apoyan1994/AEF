@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.aef.edu.aef.R;
-import com.aef.edu.aef.adapters.MainCategoryAdapter;
+import com.aef.edu.aef.adapters.MainCategoryCurlAdapter;
 import com.aef.edu.aef.constants.AefConstants;
 import com.aef.edu.aef.items.ContentDataItem;
 
@@ -15,7 +15,7 @@ import java.util.List;
 
 public class MainCategoryChooser extends AppCompatActivity {
 
-	private MainCategoryAdapter mainCategoryAdapter;
+	private MainCategoryCurlAdapter mainCategoryAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class MainCategoryChooser extends AppCompatActivity {
 		contentDataItems.add(addItem(AefConstants.KEY_MAIN_CONTACT_US, AefConstants.KEY_MAIN_CONTACT_US_TEXT));
 		//contentDataItems.add(addItem(AefConstants.KEY_MAIN_SUCCEED_STORIES, AefConstants.KEY_MAIN_SUCCEED_STORIES_TEXT));
 
-		mainCategoryAdapter = new MainCategoryAdapter(this, contentDataItems);
+		mainCategoryAdapter = new MainCategoryCurlAdapter(this, contentDataItems);
 		recyclerView.setAdapter(mainCategoryAdapter);
 	}
 
