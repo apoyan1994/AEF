@@ -67,27 +67,9 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 	@Override
 	public void onBindViewHolder(MainCategoryAdapter.ViewHolder holder, final int position) {
 		final int itemPos = holder.getAdapterPosition();
-		//holder.itemText.setText();
-		//ImageLoader.loadImage(activity, R.drawable.large_arrow_left_right, );
-
-		/**
-		 *commented for height and width
-		 *then will manage height and width for support other screen sizes
-		 */
-//		Bitmap firstLoadedBitmap = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(activity.getResources(),
-//				AppContextHandler.getCurrentCategorisBitmaps(AppContextHandler.getCurrentCategoryNameByPos(itemPos)).get(0)), activity.getResources().getInteger(R.integer.chooser_item_width),
-//				activity.getResources().getInteger(R.integer.chooser_item_height), false);
 
 		ImageLoader.loadImage(activity, AppContextHandler.getCurrentCategorisBitmaps(AppContextHandler.getCurrentCategoryNameByPos(itemPos)).get(0), holder.imageViewFront, 300, 300);
-//		ImageLoader.loadImage(activity, AppContextHandler.getCurrentCategorisBitmaps(AppContextHandler.getCurrentCategoryNameByPos(itemPos)).get(0), holder.imageViewFront, 300, 300, new OnBitmapLoadListener() {
-//			@Override
-//			public void onBitmapLoaded(Bitmap bitmap, ImageView imageView) {
-//				imageView.setImageBitmap(bitmap);
-//			}
-//		});
 
-
-		//holder.imageViewFront.setImageBitmap(firstLoadedBitmap);
 		holder.categoryChooserViewSlide.setItemText(contentData.get(itemPos).getItemText());
 		holder.categoryChooserViewSlide.setAnimatedViews(holder.imageViewFront, holder.imageViewBack);
 		holder.bitmapIds = AppContextHandler.getCurrentCategorisBitmaps(AppContextHandler.getCurrentCategoryNameByPos(itemPos));
