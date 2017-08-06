@@ -91,7 +91,6 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
 
 	@Override
 	public void onAnimationStartListener(View animatedView, int startPos, int endPos) {
-		System.out.println("Apoyanner animation started");
 		startSlideImageAnimation(animatedView, startPos, endPos);
 	}
 
