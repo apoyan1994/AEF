@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <com.aef.edu.aef.view.CategoryArrowChooserView
+    <com.aef.edu.aef.view.CategoryChooserArrowView
         android:id="@+id/category_chooser_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
